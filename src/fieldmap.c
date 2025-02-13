@@ -19,10 +19,10 @@
 
 struct ConnectionFlags
 {
-    u8 south:1;
-    u8 north:1;
-    u8 west:1;
-    u8 east:1;
+    u8 south : 1;
+    u8 north : 1;
+    u8 west : 1;
+    u8 east : 1;
 };
 
 EWRAM_DATA static u16 ALIGNED(4) sBackupMapData[MAX_MAP_DATA_SIZE] = {0};
@@ -48,15 +48,15 @@ static const struct MapConnection *GetIncomingConnection(u8 direction, int x, in
 static bool8 IsPosInIncomingConnectingMap(u8 direction, int x, int y, const struct MapConnection *connection);
 static bool8 IsCoordInIncomingConnectingMap(int coord, int srcMax, int destMax, int offset);
 
-#define GetBorderBlockAt(x, y) ({                                                                  \
-    u16 block;                                                                                     \
-    int i;                                                                                         \
-    const u16 *border = gMapHeader.mapLayout->border; /* Unused, they read it again below */       \
-                                                                                                   \
-    i = (x + 1) & 1;                                                                               \
-    i += ((y + 1) & 1) * 2;                                                                        \
-                                                                                                   \
-    block = gMapHeader.mapLayout->border[i] | MAPGRID_COLLISION_MASK;                              \
+#define GetBorderBlockAt(x, y) ({                                                            \
+    u16 block;                                                                               \
+    int i;                                                                                   \
+    const u16 *border = gMapHeader.mapLayout->border; /* Unused, they read it again below */ \
+                                                                                             \
+    i = (x + 1) & 1;                                                                         \
+    i += ((y + 1) & 1) * 2;                                                                  \
+                                                                                             \
+    block = gMapHeader.mapLayout->border[i] | MAPGRID_COLLISION_MASK;                        \
 })
 
 #define AreCoordsWithinMapGridBounds(x, y) (x >= 0 && x < gBackupMapLayout.width && y >= 0 && y < gBackupMapLayout.height)
@@ -263,7 +263,6 @@ static void FillNorthConnection(struct MapHeader const *mapHeader, struct MapHea
             connectedMapHeader,
             x2, y2,
             width, /*height*/ MAP_OFFSET);
-
     }
 }
 
@@ -404,9 +403,9 @@ void MapGridSetMetatileEntryAt(int x, int y, u16 metatile)
     }
 }
 
-u16 GetMetatileAttributesById(u16 metatile)
+u32 GetMetatileAttributesById(u16 metatile)
 {
-    const u16 *attributes;
+    const u32 *attributes;
     if (metatile < NUM_METATILES_IN_PRIMARY)
     {
         attributes = gMapHeader.mapLayout->primaryTileset->metatileAttributes;
@@ -454,7 +453,6 @@ static bool32 SavedMapViewIsEmpty(void)
     for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->mapView); i++)
         marker |= gSaveBlock1Ptr->mapView[i];
 #endif
-
 
     if (marker == 0)
         return TRUE;
@@ -770,11 +768,7 @@ const struct MapConnection *GetMapConnectionAtPos(s16 x, s16 y)
         for (i = 0; i < count; i++, connection++)
         {
             direction = connection->direction;
-            if ((direction == CONNECTION_DIVE || direction == CONNECTION_EMERGE)
-             || (direction == CONNECTION_NORTH && y > MAP_OFFSET - 1)
-             || (direction == CONNECTION_SOUTH && y < gMapHeader.mapLayout->height + MAP_OFFSET)
-             || (direction == CONNECTION_WEST && x > MAP_OFFSET - 1)
-             || (direction == CONNECTION_EAST && x < gMapHeader.mapLayout->width + MAP_OFFSET))
+            if ((direction == CONNECTION_DIVE || direction == CONNECTION_EMERGE) || (direction == CONNECTION_NORTH && y > MAP_OFFSET - 1) || (direction == CONNECTION_SOUTH && y < gMapHeader.mapLayout->height + MAP_OFFSET) || (direction == CONNECTION_WEST && x > MAP_OFFSET - 1) || (direction == CONNECTION_EAST && x < gMapHeader.mapLayout->width + MAP_OFFSET))
             {
                 continue;
             }
@@ -862,12 +856,10 @@ static void CopyTilesetToVramUsingHeap(struct Tileset const *tileset, u16 numTil
 // Below two are dummied functions from FRLG, used to tint the overworld palettes for the Quest Log
 static void ApplyGlobalTintToPaletteEntries(u16 offset, u16 size)
 {
-
 }
 
 static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
 {
-
 }
 
 static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)

@@ -31,7 +31,7 @@ void GetCameraCoords(u16 *, u16 *);
 u8 MapGridGetCollisionAt(int, int);
 int GetMapBorderIdAt(int x, int y);
 bool32 CanCameraMoveInDirection(int direction);
-u16 GetMetatileAttributesById(u16 metatileId);
+u32 GetMetatileAttributesById(u16 metatileId);
 void GetCameraFocusCoords(u16 *x, u16 *y);
 u8 MapGridGetMetatileLayerTypeAt(int x, int y);
 u8 MapGridGetElevationAt(int x, int y);
@@ -55,4 +55,4 @@ void MapGridSetMetatileImpassabilityAt(int x, int y, bool32 impassable);
 // field_region_map.c
 void FieldInitRegionMap(MainCallback callback);
 
-#endif //GUARD_FIELDMAP_H
+#endif // GUARD_FIELDMAP_H

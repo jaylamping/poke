@@ -1,5 +1,5 @@
 CASTFORMGFXDIR := graphics/pokemon/castform
-TILESETGFXDIR := data/tilesets/hoenn
+HOENNTILESETGFXDIR := data/tilesets/hoenn
 FONTGFXDIR := graphics/fonts
 INTERFACEGFXDIR := graphics/interface
 BTLANMSPRGFXDIR := graphics/battle_anims/sprites
@@ -65,196 +65,196 @@ $(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
 
 ### Tilesets ###
 
-$(TILESETGFXDIR)/secondary/hoenn_petalburg/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_petalburg/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 159 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_rustboro/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_rustboro/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 498 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_dewford/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_dewford/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_slateport/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_slateport/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_mauville/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_mauville/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_lavaridge/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_lavaridge/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 450 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_fortree/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_fortree/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 493 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_pacifidlog/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_pacifidlog/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_sootopolis/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_sootopolis/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 328 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_battle_frontier_outside_west/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_battle_frontier_outside_west/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_battle_frontier_outside_east/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_battle_frontier_outside_east/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 
-$(TILESETGFXDIR)/primary/building/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/primary/building/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 502 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_shop/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_shop/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 502 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_pokemon_center/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_pokemon_center/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 478 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_cave/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 425 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_pokemon_school/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_pokemon_school/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 278 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_pokemon_fan_club/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_pokemon_fan_club/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 319 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_unused_1/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_unused_1/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 17 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_meteor_falls/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_meteor_falls/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 460 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_oceanic_museum/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_oceanic_museum/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 319 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_cable_club/unknown_tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_cable_club/unknown_tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 120 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_seashore_house/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_seashore_house/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 312 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_pretty_petal_flower_shop/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_pretty_petal_flower_shop/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 345 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_pokemon_day_care/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_pokemon_day_care/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 355 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/brown_cave/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/hoenn_secret_base/brown_cave/tiles.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/brown_cave/unused_tiles.4bpp: $(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/brown_cave/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/tree/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/hoenn_secret_base/tree/tiles.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/tree/unused_tiles.4bpp: $(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/tree/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/shrub/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/hoenn_secret_base/shrub/tiles.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/shrub/unused_tiles.4bpp: $(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/shrub/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/blue_cave/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/hoenn_secret_base/blue_cave/tiles.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/blue_cave/unused_tiles.4bpp: $(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/blue_cave/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/yellow_cave/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/hoenn_secret_base/yellow_cave/tiles.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/yellow_cave/unused_tiles.4bpp: $(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/yellow_cave/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/red_cave/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/hoenn_secret_base/red_cave/tiles.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/red_cave/unused_tiles.4bpp: $(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/red_cave/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/brown_cave/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/brown_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/tree/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/tree/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/shrub/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/shrub/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/blue_cave/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/blue_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/yellow_cave/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/yellow_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_secret_base/red_cave/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_secret_base/red_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_inside_of_truck/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_inside_of_truck/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 62 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_contest/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_contest/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 430 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_lilycove_museum/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_lilycove_museum/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 431 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_lab/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_lab/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 500 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_underwater/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_underwater/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 500 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_generic_building/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_generic_building/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 509 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_mauville_game_corner/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_mauville_game_corner/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 469 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_unused_2/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_unused_2/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 150 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_rustboro_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_rustboro_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 60 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_dewford_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_dewford_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 61 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_lavaridge_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_lavaridge_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 54 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_petalburg_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_petalburg_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 148 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_fortree_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_fortree_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 61 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_mossdeep_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_mossdeep_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_sootopolis_gym/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_sootopolis_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 484 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_trick_house_puzzle/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_trick_house_puzzle/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 294 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_inside_ship/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_inside_ship/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 342 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_elite_four/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_elite_four/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 505 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_battle_frontier/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_battle_frontier/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 310 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_battle_factory/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_battle_factory/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 424 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_battle_pike/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_battle_pike/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 382 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_mirage_tower/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_mirage_tower/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 420 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_mossdeep_game_corner/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_mossdeep_game_corner/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 95 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_island_harbor/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_island_harbor/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_trainer_hill/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_trainer_hill/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 374 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_navel_rock/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_navel_rock/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 420 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_battle_frontier_ranking_hall/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_battle_frontier_ranking_hall/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 136 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/hoenn_mystery_events_house/tiles.4bpp: %.4bpp: %.png
+$(HOENNTILESETGFXDIR)/secondary/hoenn_mystery_events_house/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 509 -Wnum_tiles
 
 
