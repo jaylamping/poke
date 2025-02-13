@@ -152,6 +152,7 @@ PERL := perl
 SHA1 := $(shell { command -v sha1sum || command -v shasum; } 2>/dev/null) -c
 
 MAKEFLAGS += --no-print-directory
+MAKEFLAGS += --jobs=32
 
 # Clear the default suffixes
 .SUFFIXES:
