@@ -409,7 +409,7 @@ gStdScripts_End::
 	.include "data/maps/AbandonedShip_HiddenFloorCorridors/scripts.inc"
 	.include "data/maps/AbandonedShip_HiddenFloorRooms/scripts.inc"
 	.include "data/maps/IslandCave/scripts.inc"
-	.include "data/maps/AncientTomb/scripts.inc"
+	.include "data/maps/hoenn/AncientTomb/scripts.inc"
 	.include "data/maps/Underwater_Route134/scripts.inc"
 	.include "data/maps/Underwater_SealedChamber/scripts.inc"
 	.include "data/maps/SealedChamber_OuterRoom/scripts.inc"

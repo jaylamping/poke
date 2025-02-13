@@ -12,7 +12,8 @@ INCLUDECONSTS_OUTDIR := include/constants
 AUTO_GEN_TARGETS += $(INCLUDECONSTS_OUTDIR)/map_groups.h
 AUTO_GEN_TARGETS += $(INCLUDECONSTS_OUTDIR)/layouts.h
 
-MAP_DIRS := $(dir $(wildcard $(MAPS_DIR)/*/map.json))
+# MAP_DIRS := $(dir $(wildcard $(MAPS_DIR)/*/*/map.json))
+MAP_DIRS := $(dir $(wildcard $(MAPS_DIR)/hoenn/*/map.json)) $(dir $(wildcard $(MAPS_DIR)/kanto/*/map.json) )
 MAP_CONNECTIONS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/connections.inc,$(MAP_DIRS))
 MAP_EVENTS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/events.inc,$(MAP_DIRS))
 MAP_HEADERS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/header.inc,$(MAP_DIRS))
@@ -23,8 +24,15 @@ $(DATA_ASM_BUILDDIR)/map_events.o: $(DATA_ASM_SUBDIR)/map_events.s $(MAPS_DIR)/e
 	$(PREPROC) $< charmap.txt | $(CPP) -I include - | $(PREPROC) -ie $< charmap.txt | $(AS) $(ASFLAGS) -o $@
 
 
-$(MAPS_OUTDIR)/%/header.inc $(MAPS_OUTDIR)/%/events.inc $(MAPS_OUTDIR)/%/connections.inc: $(MAPS_DIR)/%/map.json
+# $(MAPS_OUTDIR)/%/header.inc $(MAPS_OUTDIR)/%/events.inc $(MAPS_OUTDIR)/%/connections.inc: $(MAPS_DIR)/%/map.json
+# 	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/layouts.json $(@D)
+
+$(MAPS_OUTDIR)/hoenn/%/header.inc $(MAPS_OUTDIR)/hoenn/%/events.inc $(MAPS_OUTDIR)/hoenn/%/connections.inc: $(MAPS_DIR)/hoenn/%/map.json
 	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/layouts.json $(@D)
+
+$(MAPS_OUTDIR)/kanto/%/header.inc $(MAPS_OUTDIR)/kanto/%/events.inc $(MAPS_OUTDIR)/kanto/%/connections.inc: $(MAPS_DIR)/kanto/%/map.json
+	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/layouts.json $(@D)
+
 
 $(MAPS_OUTDIR)/connections.inc $(MAPS_OUTDIR)/groups.inc $(MAPS_OUTDIR)/events.inc $(MAPS_OUTDIR)/headers.inc $(INCLUDECONSTS_OUTDIR)/map_groups.h: $(MAPS_DIR)/map_groups.json
 	$(MAPJSON) groups emerald $< $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)

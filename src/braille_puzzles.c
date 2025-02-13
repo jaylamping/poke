@@ -15,43 +15,43 @@
 EWRAM_DATA static bool8 sIsRegisteelPuzzle = 0;
 
 static const u8 sRegicePathCoords[][2] =
-{
-    {4,  21},
-    {5,  21},
-    {6,  21},
-    {7,  21},
-    {8,  21},
-    {9,  21},
-    {10, 21},
-    {11, 21},
-    {12, 21},
-    {12, 22},
-    {12, 23},
-    {13, 23},
-    {13, 24},
-    {13, 25},
-    {13, 26},
-    {13, 27},
-    {12, 27},
-    {12, 28},
-    {4,  29},
-    {5,  29},
-    {6,  29},
-    {7,  29},
-    {8,  29},
-    {9,  29},
-    {10, 29},
-    {11, 29},
-    {12, 29},
-    {4,  28},
-    {4,  27},
-    {3,  27},
-    {3,  26},
-    {3,  25},
-    {3,  24},
-    {3,  23},
-    {4,  23},
-    {4,  22},
+    {
+        {4, 21},
+        {5, 21},
+        {6, 21},
+        {7, 21},
+        {8, 21},
+        {9, 21},
+        {10, 21},
+        {11, 21},
+        {12, 21},
+        {12, 22},
+        {12, 23},
+        {13, 23},
+        {13, 24},
+        {13, 25},
+        {13, 26},
+        {13, 27},
+        {12, 27},
+        {12, 28},
+        {4, 29},
+        {5, 29},
+        {6, 29},
+        {7, 29},
+        {8, 29},
+        {9, 29},
+        {10, 29},
+        {11, 29},
+        {12, 29},
+        {4, 28},
+        {4, 27},
+        {3, 27},
+        {3, 26},
+        {3, 25},
+        {3, 24},
+        {3, 23},
+        {4, 23},
+        {4, 22},
 };
 
 static void Task_SealedChamberShakingEffect(u8);
@@ -60,9 +60,7 @@ static void DoBrailleRegisteelEffect(void);
 
 bool8 ShouldDoBrailleDigEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_BRAILLE_DIG)
-     && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEALED_CHAMBER_OUTER_ROOM)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEALED_CHAMBER_OUTER_ROOM)))
+    if (!FlagGet(FLAG_SYS_BRAILLE_DIG) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEALED_CHAMBER_OUTER_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEALED_CHAMBER_OUTER_ROOM)))
     {
         if (gSaveBlock1Ptr->pos.x == 10 && gSaveBlock1Ptr->pos.y == 3)
             return TRUE;
@@ -77,10 +75,10 @@ bool8 ShouldDoBrailleDigEffect(void)
 
 void DoBrailleDigEffect(void)
 {
-    MapGridSetMetatileIdAt( 9 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopLeft);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopLeft);
     MapGridSetMetatileIdAt(10 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopMid);
     MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopRight);
-    MapGridSetMetatileIdAt( 9 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomLeft | MAPGRID_COLLISION_MASK);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomLeft | MAPGRID_COLLISION_MASK);
     MapGridSetMetatileIdAt(10 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomMid);
     MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomRight | MAPGRID_COLLISION_MASK);
     DrawWholeMapView();
@@ -108,11 +106,11 @@ void ShouldDoBrailleRegirockEffectOld(void)
 {
 }
 
-#define tDelayCounter  data[1]
-#define tShakeCounter  data[2]
-#define tVerticalPan   data[4]
-#define tDelay         data[5]
-#define tNumShakes     data[6]
+#define tDelayCounter data[1]
+#define tShakeCounter data[2]
+#define tVerticalPan data[4]
+#define tDelay data[5]
+#define tNumShakes data[6]
 
 void DoSealedChamberShakingEffect_Long(void)
 {
@@ -166,9 +164,7 @@ static void Task_SealedChamberShakingEffect(u8 taskId)
 
 bool8 ShouldDoBrailleRegirockEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED)
-        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DESERT_RUINS)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(DESERT_RUINS))
+    if (!FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DESERT_RUINS) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(DESERT_RUINS))
     {
         if (gSaveBlock1Ptr->pos.x == 6 && gSaveBlock1Ptr->pos.y == 23)
         {
@@ -218,7 +214,7 @@ static void DoBrailleRegirockEffect(void)
 
 bool8 ShouldDoBrailleRegisteelEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ANCIENT_TOMB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ANCIENT_TOMB)))
+    if (!FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_ANCIENT_TOMB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_ANCIENT_TOMB)))
     {
         if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 25)
         {
@@ -284,8 +280,7 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
 {
     u8 i;
 
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLAND_CAVE)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLAND_CAVE))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLAND_CAVE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLAND_CAVE))
     {
         if (FlagGet(FLAG_SYS_BRAILLE_REGICE_COMPLETED))
             return FALSE;
