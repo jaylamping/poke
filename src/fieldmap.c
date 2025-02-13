@@ -374,13 +374,24 @@ u32 MapGridGetMetatileIdAt(int x, int y)
 u32 MapGridGetMetatileBehaviorAt(int x, int y)
 {
     u16 metatile = MapGridGetMetatileIdAt(x, y);
-    return GetMetatileAttributesById(metatile) & METATILE_ATTR_BEHAVIOR_MASK;
+    u32 attributes = GetMetatileAttributesById(metatile);
+    return attributes & METATILE_ATTR_BEHAVIOR_MASK;
 }
+
+// u8 MapGridGetMetatileLayerTypeAt(int x, int y)
+// {
+//     u16 metatile = MapGridGetMetatileIdAt(x, y);
+//     return (GetMetatileAttributesById(metatile) & METATILE_ATTR_LAYER_MASK_LEGACY) >> METATILE_ATTR_LAYER_SHIFT_LEGACY;
+// }
 
 u8 MapGridGetMetatileLayerTypeAt(int x, int y)
 {
     u16 metatile = MapGridGetMetatileIdAt(x, y);
-    return (GetMetatileAttributesById(metatile) & METATILE_ATTR_LAYER_MASK) >> METATILE_ATTR_LAYER_SHIFT;
+    u32 attributes = GetMetatileAttributesById(metatile);
+
+    // GetMetatileAttributesById now returns attributes in the new format
+    // so we only need to use the new mask and shift
+    return (attributes & METATILE_ATTR_LAYER_TYPE_MASK) >> METATILE_ATTR_LAYER_SHIFT;
 }
 
 void MapGridSetMetatileIdAt(int x, int y, u16 metatile)
@@ -403,23 +414,62 @@ void MapGridSetMetatileEntryAt(int x, int y, u16 metatile)
     }
 }
 
+// u32 GetMetatileAttributesById(u16 metatile)
+// {
+//     const u32 *attributes;
+//     if (metatile < NUM_METATILES_IN_PRIMARY)
+//     {
+//         attributes = gMapHeader.mapLayout->primaryTileset->metatileAttributes;
+//         return attributes[metatile];
+//     }
+//     else if (metatile < NUM_METATILES_TOTAL)
+//     {
+//         attributes = gMapHeader.mapLayout->secondaryTileset->metatileAttributes;
+//         return attributes[metatile - NUM_METATILES_IN_PRIMARY];
+//     }
+//     else
+//     {
+//         return MB_INVALID;
+//     }
+// }
+
 u32 GetMetatileAttributesById(u16 metatile)
 {
-    const u32 *attributes;
+    const struct Tileset *tileset;
+    u32 attributes;
+
     if (metatile < NUM_METATILES_IN_PRIMARY)
     {
-        attributes = gMapHeader.mapLayout->primaryTileset->metatileAttributes;
-        return attributes[metatile];
+        tileset = gMapHeader.mapLayout->primaryTileset;
     }
     else if (metatile < NUM_METATILES_TOTAL)
     {
-        attributes = gMapHeader.mapLayout->secondaryTileset->metatileAttributes;
-        return attributes[metatile - NUM_METATILES_IN_PRIMARY];
+        tileset = gMapHeader.mapLayout->secondaryTileset;
+        metatile -= NUM_METATILES_IN_PRIMARY;
     }
     else
     {
         return MB_INVALID;
     }
+
+    if (tileset->isMetatileAttributesExtended)
+    {
+        // Extended format (u32)
+        const u32 *attrMap = tileset->metatileAttributes;
+        attributes = attrMap[metatile];
+    }
+    else
+    {
+        // Legacy format (u16)
+        const u16 *attrMap = tileset->metatileAttributes;
+        u16 legacyAttr = attrMap[metatile];
+
+        // Convert legacy format to new format
+        attributes = (legacyAttr & METATILE_ATTR_BEHAVIOR_MASK_LEGACY);
+        attributes |= ((legacyAttr & METATILE_ATTR_LAYER_MASK_LEGACY) >> METATILE_ATTR_LAYER_SHIFT_LEGACY) << METATILE_ATTR_LAYER_SHIFT;
+    }
+
+    return attributes;
 }
 
 void SaveMapView(void)

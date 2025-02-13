@@ -16,9 +16,28 @@
 // Masks/shifts for metatile attributes
 // Metatile attributes consist of an 8 bit behavior value, 4 unused bits, and a 4 bit layer type value
 // This is the data stored in each data/tilesets/*/*/metatile_attributes.bin file
-#define METATILE_ATTR_BEHAVIOR_MASK 0x00FF // Bits 0-7
-#define METATILE_ATTR_LAYER_MASK 0xF000    // Bits 12-15
-#define METATILE_ATTR_LAYER_SHIFT 12
+#define METATILE_ATTR_BEHAVIOR_MASK_LEGACY 0x00FF // Bits 0-7
+#define METATILE_ATTR_LAYER_MASK_LEGACY 0xF000    // Bits 12-15
+#define METATILE_ATTR_LAYER_SHIFT_LEGACY 12
+
+// New (u32) metatile attribute masks and shifts
+#define METATILE_ATTR_BEHAVIOR_MASK 0x000001ff       // Bits 0-8
+#define METATILE_ATTR_TERRAIN_MASK 0x00003e00        // Bits 9-13
+#define METATILE_ATTR_2_MASK 0x0003c000              // Bits 14-17
+#define METATILE_ATTR_3_MASK 0x00fc0000              // Bits 18-23
+#define METATILE_ATTR_ENCOUNTER_TYPE_MASK 0x07000000 // Bits 24-26
+#define METATILE_ATTR_5_MASK 0x18000000              // Bits 27-28
+#define METATILE_ATTR_LAYER_TYPE_MASK 0x60000000     // Bits 29-30
+#define METATILE_ATTR_7_MASK 0x80000000              // Bit  31
+
+#define METATILE_ATTR_BEHAVIOR_SHIFT 0
+#define METATILE_ATTR_TERRAIN_SHIFT 9
+#define METATILE_ATTR_2_SHIFT 14
+#define METATILE_ATTR_3_SHIFT 18
+#define METATILE_ATTR_ENCOUNTER_TYPE_SHIFT 24
+#define METATILE_ATTR_5_SHIFT 27
+#define METATILE_ATTR_LAYER_SHIFT 29
+#define METATILE_ATTR_7_SHIFT 31
 
 enum
 {

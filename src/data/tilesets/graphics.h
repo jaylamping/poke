@@ -2493,7 +2493,47 @@ const u16 gTilesetPalettes_Kanto_CeruleanCave[][16] =
 		INCBIN_U16("data/tilesets/secondary/kanto_cerulean_cave/palettes/15.gbapal"),
 };
 
+const u16 gTilesetPalettes_Kanto_DepartmentStore[][16] =
+	{
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/00.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/01.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/02.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/03.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/04.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/05.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/06.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/07.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/08.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/09.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/10.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/11.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/12.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/13.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/14.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_department_store/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_Kanto_GenericBuilding2[] = INCBIN_U32("data/tilesets/secondary/kanto_generic_building_2/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Kanto_GenericBuilding1[][16] =
+	{
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/00.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/01.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/02.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/03.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/04.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/05.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/06.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/07.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/08.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/09.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/10.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/11.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/12.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/13.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/14.gbapal"),
+		INCBIN_U16("data/tilesets/secondary/kanto_generic_building_1/palettes/15.gbapal"),
+};
 
 const u16 gTilesetPalettes_Kanto_GenericBuilding2[][16] =
 	{
