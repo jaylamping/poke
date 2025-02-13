@@ -71,7 +71,7 @@ $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/hoenn_rustboro/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 498 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/dewford/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_dewford/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/slateport/tiles.4bpp: %.4bpp: %.png
@@ -83,7 +83,7 @@ $(TILESETGFXDIR)/secondary/mauville/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/lavaridge/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 450 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/fortree/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_fortree/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 493 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/pacifidlog/tiles.4bpp: %.4bpp: %.png
@@ -92,10 +92,10 @@ $(TILESETGFXDIR)/secondary/pacifidlog/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/sootopolis/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 328 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/battle_frontier_outside_west/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_battle_frontier_outside_west/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/battle_frontier_outside_east/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_battle_frontier_outside_east/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 
 $(TILESETGFXDIR)/primary/building/tiles.4bpp: %.4bpp: %.png
@@ -107,7 +107,7 @@ $(TILESETGFXDIR)/secondary/shop/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/pokemon_center/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 478 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/cave/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 425 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/pokemon_school/tiles.4bpp: %.4bpp: %.png
@@ -125,7 +125,7 @@ $(TILESETGFXDIR)/secondary/meteor_falls/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/oceanic_museum/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 319 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/cable_club/unknown_tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_cable_club/unknown_tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 120 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/seashore_house/tiles.4bpp: %.4bpp: %.png
@@ -176,7 +176,7 @@ $(TILESETGFXDIR)/secondary/secret_base/red_cave/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/inside_of_truck/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 62 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/contest/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_contest/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 430 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/lilycove_museum/tiles.4bpp: %.4bpp: %.png
@@ -188,7 +188,7 @@ $(TILESETGFXDIR)/secondary/lab/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/underwater/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 500 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/generic_building/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_generic_building/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 509 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/mauville_game_corner/tiles.4bpp: %.4bpp: %.png
@@ -200,7 +200,7 @@ $(TILESETGFXDIR)/secondary/unused_2/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/hoenn_rustboro_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 60 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/dewford_gym/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_dewford_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 61 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/lavaridge_gym/tiles.4bpp: %.4bpp: %.png
@@ -209,7 +209,7 @@ $(TILESETGFXDIR)/secondary/lavaridge_gym/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/petalburg_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 148 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/fortree_gym/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_fortree_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 61 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/mossdeep_gym/tiles.4bpp: %.4bpp: %.png
@@ -224,16 +224,16 @@ $(TILESETGFXDIR)/secondary/trick_house_puzzle/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/inside_ship/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 342 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/elite_four/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_elite_four/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 505 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/battle_frontier/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_battle_frontier/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 310 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/battle_factory/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_battle_factory/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 424 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/battle_pike/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_battle_pike/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 382 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/mirage_tower/tiles.4bpp: %.4bpp: %.png
@@ -251,7 +251,7 @@ $(TILESETGFXDIR)/secondary/trainer_hill/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/navel_rock/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 420 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/battle_frontier_ranking_hall/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_battle_frontier_ranking_hall/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 136 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/mystery_events_house/tiles.4bpp: %.4bpp: %.png
