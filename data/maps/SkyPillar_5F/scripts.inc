@@ -7,6 +7,6 @@ SkyPillar_5F_OnTransition:
 	return
 
 SkyPillar_5F_EventScript_CleanFloor::
-	setmaplayoutindex LAYOUT_SKY_PILLAR_5F_CLEAN
+	setmaplayoutindex LAYOUT_HOENN_SKY_PILLAR_5F_CLEAN
 	return
 

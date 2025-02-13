@@ -10,7 +10,7 @@ SkyPillar_2F_OnTransition:
 	end
 
 SkyPillar_2F_EventScript_CleanFloor::
-	setmaplayoutindex LAYOUT_SKY_PILLAR_2F_CLEAN
+	setmaplayoutindex LAYOUT_HOENN_SKY_PILLAR_2F_CLEAN
 	return
 
 SkyPillar_2F_SetHoleWarp:

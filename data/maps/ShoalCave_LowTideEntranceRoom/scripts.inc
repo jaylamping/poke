@@ -8,11 +8,11 @@ ShoalCave_LowTideEntranceRoom_OnTransition:
 	goto ShoalCave_LowTideEntranceRoom_EventScript_SetLowTide
 
 ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide::
-	setmaplayoutindex LAYOUT_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM
+	setmaplayoutindex LAYOUT_HOENN_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_SetLowTide::
-	setmaplayoutindex LAYOUT_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM
+	setmaplayoutindex LAYOUT_HOENN_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_ShellBellExpert::
