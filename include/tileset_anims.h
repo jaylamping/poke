@@ -32,4 +32,11 @@ void InitTilesetAnim_Hoenn_EliteFour(void);
 void InitTilesetAnim_Hoenn_BattleDome(void);
 void InitTilesetAnim_Hoenn_BattlePyramid(void);
 
+void InitTilesetAnim_Kanto_General(void);
+void InitTilesetAnim_Kanto_CeladonCity(void);
+void InitTilesetAnim_Kanto_VermilionGym(void);
+void InitTilesetAnim_Kanto_CeladonGym(void);
+void InitTilesetAnim_Kanto_SilphCo(void);
+void InitTilesetAnim_Kanto_MtEmber(void);
+
 #endif // GUARD_TILESET_ANIMS_H
