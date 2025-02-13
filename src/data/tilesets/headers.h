@@ -826,750 +826,750 @@ const struct Tileset gTileset_Hoenn_UnionRoom =
         .callback = NULL,
 };
 
-const struct Tileset gTileset_Kanto_General =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = FALSE,
-        .tiles = gTilesetTiles_Kanto_General,
-        .palettes = gTilesetPalettes_Kanto_General,
-        .metatiles = gMetatiles_Kanto_General,
-        .metatileAttributes = gMetatileAttributes_Kanto_General,
-        .callback = InitTilesetAnim_Kanto_General,
-};
-
-const struct Tileset gTileset_Kanto_PalletTown =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PalletTown,
-        .palettes = gTilesetPalettes_Kanto_PalletTown,
-        .metatiles = gMetatiles_Kanto_PalletTown,
-        .metatileAttributes = gMetatileAttributes_Kanto_PalletTown,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_ViridianCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_ViridianCity,
-        .palettes = gTilesetPalettes_Kanto_ViridianCity,
-        .metatiles = gMetatiles_Kanto_ViridianCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_ViridianCity,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PewterCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PewterCity,
-        .palettes = gTilesetPalettes_Kanto_PewterCity,
-        .metatiles = gMetatiles_Kanto_PewterCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_PewterCity,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CeruleanCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CeruleanCity,
-        .palettes = gTilesetPalettes_Kanto_CeruleanCity,
-        .metatiles = gMetatiles_Kanto_CeruleanCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_CeruleanCity,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_LavenderTown =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_LavenderTown,
-        .palettes = gTilesetPalettes_Kanto_LavenderTown,
-        .metatiles = gMetatiles_Kanto_LavenderTown,
-        .metatileAttributes = gMetatileAttributes_Kanto_LavenderTown,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_VermilionCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_VermilionCity,
-        .palettes = gTilesetPalettes_Kanto_VermilionCity,
-        .metatiles = gMetatiles_Kanto_VermilionCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_VermilionCity,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CeladonCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CeladonCity,
-        .palettes = gTilesetPalettes_Kanto_CeladonCity,
-        .metatiles = gMetatiles_Kanto_CeladonCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_CeladonCity,
-        .callback = InitTilesetAnim_CeladonCity,
-};
-
-const struct Tileset gTileset_Kanto_FuchsiaCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_FuchsiaCity,
-        .palettes = gTilesetPalettes_Kanto_FuchsiaCity,
-        .metatiles = gMetatiles_Kanto_FuchsiaCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_FuchsiaCity,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CinnabarIsland =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CinnabarIsland,
-        .palettes = gTilesetPalettes_Kanto_CinnabarIsland,
-        .metatiles = gMetatiles_Kanto_CinnabarIsland,
-        .metatileAttributes = gMetatileAttributes_Kanto_CinnabarIsland,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_IndigoPlateau =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_IndigoPlateau,
-        .palettes = gTilesetPalettes_Kanto_IndigoPlateau,
-        .metatiles = gMetatiles_Kanto_IndigoPlateau,
-        .metatileAttributes = gMetatileAttributes_Kanto_IndigoPlateau,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SaffronCity =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SaffronCity,
-        .palettes = gTilesetPalettes_Kanto_SaffronCity,
-        .metatiles = gMetatiles_Kanto_SaffronCity,
-        .metatileAttributes = gMetatileAttributes_Kanto_SaffronCity,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Building =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = FALSE,
-        .tiles = gTilesetTiles_Kanto_Building,
-        .palettes = gTilesetPalettes_Kanto_Building,
-        .metatiles = gMetatiles_Kanto_Building,
-        .metatileAttributes = gMetatileAttributes_Kanto_Building,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Mart =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Mart,
-        .palettes = gTilesetPalettes_Kanto_Mart,
-        .metatiles = gMetatiles_Kanto_Mart,
-        .metatileAttributes = gMetatileAttributes_Kanto_Mart,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PokemonCenter =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PokemonCenter,
-        .palettes = gTilesetPalettes_Kanto_PokemonCenter,
-        .metatiles = gMetatiles_Kanto_PokemonCenter,
-        .metatileAttributes = gMetatileAttributes_Kanto_PokemonCenter,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Cave =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Cave,
-        .palettes = gTilesetPalettes_Kanto_Cave,
-        .metatiles = gMetatiles_Kanto_Cave,
-        .metatileAttributes = gMetatileAttributes_Kanto_Cave,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Dummy1 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Dummy1,
-        .palettes = gTilesetPalettes_Kanto_Dummy1,
-        .metatiles = gMetatiles_Kanto_Dummy1,
-        .metatileAttributes = gMetatileAttributes_Kanto_Dummy1,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Museum =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Museum,
-        .palettes = gTilesetPalettes_Kanto_Museum,
-        .metatiles = gMetatiles_Kanto_Museum,
-        .metatileAttributes = gMetatileAttributes_Kanto_Museum,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CableClub =
-    {
-        .isCompressed = FALSE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CableClub,
-        .palettes = gTilesetPalettes_Kanto_CableClub,
-        .metatiles = gMetatiles_Kanto_CableClub,
-        .metatileAttributes = gMetatileAttributes_Kanto_CableClub,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_BikeShop =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_BikeShop,
-        .palettes = gTilesetPalettes_Kanto_BikeShop,
-        .metatiles = gMetatiles_Kanto_BikeShop,
-        .metatileAttributes = gMetatileAttributes_Kanto_BikeShop,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_GenericBuilding1 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_GenericBuilding1,
-        .palettes = gTilesetPalettes_Kanto_GenericBuilding1,
-        .metatiles = gMetatiles_Kanto_GenericBuilding1,
-        .metatileAttributes = gMetatileAttributes_Kanto_GenericBuilding1,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Lab =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Lab,
-        .palettes = gTilesetPalettes_Kanto_Lab,
-        .metatiles = gMetatiles_Kanto_Lab,
-        .metatileAttributes = gMetatileAttributes_Kanto_Lab,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_FuchsiaGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_FuchsiaGym,
-        .palettes = gTilesetPalettes_Kanto_FuchsiaGym,
-        .metatiles = gMetatiles_Kanto_FuchsiaGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_FuchsiaGym,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_ViridianGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_ViridianGym,
-        .palettes = gTilesetPalettes_Kanto_ViridianGym,
-        .metatiles = gMetatiles_Kanto_ViridianGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_ViridianGym,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_HoennBuilding =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_HoennBuilding,
-        .palettes = gTilesetPalettes_Kanto_HoennBuilding,
-        .metatiles = gMetatiles_Kanto_HoennBuilding,
-        .metatileAttributes = gMetatileAttributes_Kanto_HoennBuilding,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_GameCorner =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_GameCorner,
-        .palettes = gTilesetPalettes_Kanto_GameCorner,
-        .metatiles = gMetatiles_Kanto_GameCorner,
-        .metatileAttributes = gMetatileAttributes_Kanto_GameCorner,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PewterGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PewterGym,
-        .palettes = gTilesetPalettes_Kanto_PewterGym,
-        .metatiles = gMetatiles_Kanto_PewterGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_PewterGym,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CeruleanGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CeruleanGym,
-        .palettes = gTilesetPalettes_Kanto_CeruleanGym,
-        .metatiles = gMetatiles_Kanto_CeruleanGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_CeruleanGym,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_VermilionGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_VermilionGym,
-        .palettes = gTilesetPalettes_Kanto_VermilionGym,
-        .metatiles = gMetatiles_Kanto_VermilionGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_VermilionGym,
-        .callback = InitTilesetAnim_VermilionGym,
-};
-
-const struct Tileset gTileset_Kanto_CeladonGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CeladonGym,
-        .palettes = gTilesetPalettes_Kanto_CeladonGym,
-        .metatiles = gMetatiles_Kanto_CeladonGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_CeladonGym,
-        .callback = InitTilesetAnim_CeladonGym,
-};
-
-const struct Tileset gTileset_Kanto_SaffronGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SaffronGym,
-        .palettes = gTilesetPalettes_Kanto_SaffronGym,
-        .metatiles = gMetatiles_Kanto_SaffronGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_SaffronGym,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CinnabarGym =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CinnabarGym,
-        .palettes = gTilesetPalettes_Kanto_CinnabarGym,
-        .metatiles = gMetatiles_Kanto_CinnabarGym,
-        .metatileAttributes = gMetatileAttributes_Kanto_CinnabarGym,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SSAnne =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SSAnne,
-        .palettes = gTilesetPalettes_Kanto_SSAnne,
-        .metatiles = gMetatiles_Kanto_SSAnne,
-        .metatileAttributes = gMetatileAttributes_Kanto_SSAnne,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Dummy2 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Dummy2,
-        .palettes = gTilesetPalettes_Kanto_Dummy2,
-        .metatiles = gMetatiles_Kanto_Dummy2,
-        .metatileAttributes = gMetatileAttributes_Kanto_Dummy2,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_ViridianForest =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_ViridianForest,
-        .palettes = gTilesetPalettes_Kanto_ViridianForest,
-        .metatiles = gMetatiles_Kanto_ViridianForest,
-        .metatileAttributes = gMetatileAttributes_Kanto_ViridianForest,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_UnusedGatehouse1 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_UnusedGatehouse1,
-        .palettes = gTilesetPalettes_Kanto_UnusedGatehouse1,
-        .metatiles = gMetatiles_Kanto_UnusedGatehouse1,
-        .metatileAttributes = gMetatileAttributes_Kanto_UnusedGatehouse1,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_RockTunnel =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_RockTunnel,
-        .palettes = gTilesetPalettes_Kanto_RockTunnel,
-        .metatiles = gMetatiles_Kanto_RockTunnel,
-        .metatileAttributes = gMetatileAttributes_Kanto_RockTunnel,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_DiglettsCave =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_DiglettsCave,
-        .palettes = gTilesetPalettes_Kanto_DiglettsCave,
-        .metatiles = gMetatiles_Kanto_DiglettsCave,
-        .metatileAttributes = gMetatileAttributes_Kanto_DiglettsCave,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SeafoamIslands =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SeafoamIslands,
-        .palettes = gTilesetPalettes_Kanto_SeafoamIslands,
-        .metatiles = gMetatiles_Kanto_SeafoamIslands,
-        .metatileAttributes = gMetatileAttributes_Kanto_SeafoamIslands,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_UnusedGatehouse2 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_UnusedGatehouse2,
-        .palettes = gTilesetPalettes_Kanto_UnusedGatehouse2,
-        .metatiles = gMetatiles_Kanto_UnusedGatehouse2,
-        .metatileAttributes = gMetatileAttributes_Kanto_UnusedGatehouse2,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_CeruleanCave =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_CeruleanCave,
-        .palettes = gTilesetPalettes_Kanto_CeruleanCave,
-        .metatiles = gMetatiles_Kanto_CeruleanCave,
-        .metatileAttributes = gMetatileAttributes_Kanto_CeruleanCave,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_DepartmentStore =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_DepartmentStore,
-        .palettes = gTilesetPalettes_Kanto_DepartmentStore,
-        .metatiles = gMetatiles_Kanto_DepartmentStore,
-        .metatileAttributes = gMetatileAttributes_Kanto_DepartmentStore,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_GenericBuilding2 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_GenericBuilding2,
-        .palettes = gTilesetPalettes_Kanto_GenericBuilding2,
-        .metatiles = gMetatiles_Kanto_GenericBuilding2,
-        .metatileAttributes = gMetatileAttributes_Kanto_GenericBuilding2,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PowerPlant =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PowerPlant,
-        .palettes = gTilesetPalettes_Kanto_PowerPlant,
-        .metatiles = gMetatiles_Kanto_PowerPlant,
-        .metatileAttributes = gMetatileAttributes_Kanto_PowerPlant,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SeaCottage =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SeaCottage,
-        .palettes = gTilesetPalettes_Kanto_SeaCottage,
-        .metatiles = gMetatiles_Kanto_SeaCottage,
-        .metatileAttributes = gMetatileAttributes_Kanto_SeaCottage,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SilphCo =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Condominiums,
-        .palettes = gTilesetPalettes_Kanto_Condominiums,
-        .metatiles = gMetatiles_Kanto_SilphCo,
-        .metatileAttributes = gMetatileAttributes_Kanto_SilphCo,
-        .callback = InitTilesetAnim_SilphCo,
-};
-
-const struct Tileset gTileset_Kanto_UndergroundPath =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_UndergroundPath,
-        .palettes = gTilesetPalettes_Kanto_UndergroundPath,
-        .metatiles = gMetatiles_Kanto_UndergroundPath,
-        .metatileAttributes = gMetatileAttributes_Kanto_UndergroundPath,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PokemonTower =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PokemonTower,
-        .palettes = gTilesetPalettes_Kanto_PokemonTower,
-        .metatiles = gMetatiles_Kanto_PokemonTower,
-        .metatileAttributes = gMetatileAttributes_Kanto_PokemonTower,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SafariZoneBuilding =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SafariZoneBuilding,
-        .palettes = gTilesetPalettes_Kanto_SafariZoneBuilding,
-        .metatiles = gMetatiles_Kanto_SafariZoneBuilding,
-        .metatileAttributes = gMetatileAttributes_Kanto_SafariZoneBuilding,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PokemonMansion =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PokemonMansion,
-        .palettes = gTilesetPalettes_Kanto_PokemonMansion,
-        .metatiles = gMetatiles_Kanto_PokemonMansion,
-        .metatileAttributes = gMetatileAttributes_Kanto_PokemonMansion,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_RestaurantHotel =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_RestaurantHotel,
-        .palettes = gTilesetPalettes_Kanto_RestaurantHotel,
-        .metatiles = gMetatiles_Kanto_RestaurantHotel,
-        .metatileAttributes = gMetatileAttributes_Kanto_RestaurantHotel,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_School =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_School,
-        .palettes = gTilesetPalettes_Kanto_School,
-        .metatiles = gMetatiles_Kanto_School,
-        .metatileAttributes = gMetatileAttributes_Kanto_School,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_FanClubDaycare =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_FanClubDaycare,
-        .palettes = gTilesetPalettes_Kanto_FanClubDaycare,
-        .metatiles = gMetatiles_Kanto_FanClubDaycare,
-        .metatileAttributes = gMetatileAttributes_Kanto_FanClubDaycare,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Condominiums =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Condominiums,
-        .palettes = gTilesetPalettes_Kanto_Condominiums,
-        .metatiles = gMetatiles_Kanto_Condominiums,
-        .metatileAttributes = gMetatileAttributes_Kanto_Condominiums,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_BurgledHouse =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_BurgledHouse,
-        .palettes = gTilesetPalettes_Kanto_BurgledHouse,
-        .metatiles = gMetatiles_Kanto_BurgledHouse,
-        .metatileAttributes = gMetatileAttributes_Kanto_BurgledHouse,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Dummy3 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Dummy3,
-        .palettes = gTilesetPalettes_Kanto_Dummy3,
-        .metatiles = gMetatiles_Kanto_Dummy3,
-        .metatileAttributes = gMetatileAttributes_Kanto_Dummy3,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_Dummy4 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_Dummy4,
-        .palettes = gTilesetPalettes_Kanto_Dummy4,
-        .metatiles = gMetatiles_Kanto_Dummy4,
-        .metatileAttributes = gMetatileAttributes_Kanto_Dummy4,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_MtEmber =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_MtEmber,
-        .palettes = gTilesetPalettes_Kanto_MtEmber,
-        .metatiles = gMetatiles_Kanto_MtEmber,
-        .metatileAttributes = gMetatileAttributes_Kanto_MtEmber,
-        .callback = InitTilesetAnim_MtEmber,
-};
-
-const struct Tileset gTileset_Kanto_BerryForest =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_BerryForest,
-        .palettes = gTilesetPalettes_Kanto_BerryForest,
-        .metatiles = gMetatiles_Kanto_BerryForest,
-        .metatileAttributes = gMetatileAttributes_Kanto_BerryForest,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_NavelRock =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_NavelRock,
-        .palettes = gTilesetPalettes_Kanto_NavelRock,
-        .metatiles = gMetatiles_Kanto_NavelRock,
-        .metatileAttributes = gMetatileAttributes_Kanto_NavelRock,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_TanobyRuins =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_TanobyRuins,
-        .palettes = gTilesetPalettes_Kanto_TanobyRuins,
-        .metatiles = gMetatiles_Kanto_TanobyRuins,
-        .metatileAttributes = gMetatileAttributes_Kanto_TanobyRuins,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SeviiIslands123 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SeviiIslands123,
-        .palettes = gTilesetPalettes_Kanto_SeviiIslands123,
-        .metatiles = gMetatiles_Kanto_SeviiIslands123,
-        .metatileAttributes = gMetatileAttributes_Kanto_SeviiIslands123,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SeviiIslands45 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SeviiIslands45,
-        .palettes = gTilesetPalettes_Kanto_SeviiIslands45,
-        .metatiles = gMetatiles_Kanto_SeviiIslands45,
-        .metatileAttributes = gMetatileAttributes_Kanto_SeviiIslands45,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_SeviiIslands67 =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_SeviiIslands67,
-        .palettes = gTilesetPalettes_Kanto_SeviiIslands67,
-        .metatiles = gMetatiles_Kanto_SeviiIslands67,
-        .metatileAttributes = gMetatileAttributes_Kanto_SeviiIslands67,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_TrainerTower =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_TrainerTower,
-        .palettes = gTilesetPalettes_Kanto_TrainerTower,
-        .metatiles = gMetatiles_Kanto_TrainerTower,
-        .metatileAttributes = gMetatileAttributes_Kanto_TrainerTower,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_IslandHarbor =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_IslandHarbor,
-        .palettes = gTilesetPalettes_Kanto_IslandHarbor,
-        .metatiles = gMetatiles_Kanto_IslandHarbor,
-        .metatileAttributes = gMetatileAttributes_Kanto_IslandHarbor,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_PokemonLeague =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_PokemonLeague,
-        .palettes = gTilesetPalettes_Kanto_PokemonLeague,
-        .metatiles = gMetatiles_Kanto_PokemonLeague,
-        .metatileAttributes = gMetatileAttributes_Kanto_PokemonLeague,
-        .callback = NULL,
-};
-
-const struct Tileset gTileset_Kanto_HallOfFame =
-    {
-        .isCompressed = TRUE,
-        .isSecondary = TRUE,
-        .tiles = gTilesetTiles_Kanto_HallOfFame,
-        .palettes = gTilesetPalettes_Kanto_HallOfFame,
-        .metatiles = gMetatiles_Kanto_HallOfFame,
-        .metatileAttributes = gMetatileAttributes_Kanto_HallOfFame,
-        .callback = NULL,
-};
+// const struct Tileset gTileset_Kanto_General =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = FALSE,
+//         .tiles = gTilesetTiles_Kanto_General,
+//         .palettes = gTilesetPalettes_Kanto_General,
+//         .metatiles = gMetatiles_Kanto_General,
+//         .metatileAttributes = gMetatileAttributes_Kanto_General,
+//         .callback = InitTilesetAnim_Kanto_General,
+// };
+
+// const struct Tileset gTileset_Kanto_PalletTown =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PalletTown,
+//         .palettes = gTilesetPalettes_Kanto_PalletTown,
+//         .metatiles = gMetatiles_Kanto_PalletTown,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PalletTown,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_ViridianCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_ViridianCity,
+//         .palettes = gTilesetPalettes_Kanto_ViridianCity,
+//         .metatiles = gMetatiles_Kanto_ViridianCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_ViridianCity,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PewterCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PewterCity,
+//         .palettes = gTilesetPalettes_Kanto_PewterCity,
+//         .metatiles = gMetatiles_Kanto_PewterCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PewterCity,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CeruleanCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CeruleanCity,
+//         .palettes = gTilesetPalettes_Kanto_CeruleanCity,
+//         .metatiles = gMetatiles_Kanto_CeruleanCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CeruleanCity,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_LavenderTown =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_LavenderTown,
+//         .palettes = gTilesetPalettes_Kanto_LavenderTown,
+//         .metatiles = gMetatiles_Kanto_LavenderTown,
+//         .metatileAttributes = gMetatileAttributes_Kanto_LavenderTown,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_VermilionCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_VermilionCity,
+//         .palettes = gTilesetPalettes_Kanto_VermilionCity,
+//         .metatiles = gMetatiles_Kanto_VermilionCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_VermilionCity,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CeladonCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CeladonCity,
+//         .palettes = gTilesetPalettes_Kanto_CeladonCity,
+//         .metatiles = gMetatiles_Kanto_CeladonCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CeladonCity,
+//         .callback = InitTilesetAnim_CeladonCity,
+// };
+
+// const struct Tileset gTileset_Kanto_FuchsiaCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_FuchsiaCity,
+//         .palettes = gTilesetPalettes_Kanto_FuchsiaCity,
+//         .metatiles = gMetatiles_Kanto_FuchsiaCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_FuchsiaCity,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CinnabarIsland =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CinnabarIsland,
+//         .palettes = gTilesetPalettes_Kanto_CinnabarIsland,
+//         .metatiles = gMetatiles_Kanto_CinnabarIsland,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CinnabarIsland,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_IndigoPlateau =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_IndigoPlateau,
+//         .palettes = gTilesetPalettes_Kanto_IndigoPlateau,
+//         .metatiles = gMetatiles_Kanto_IndigoPlateau,
+//         .metatileAttributes = gMetatileAttributes_Kanto_IndigoPlateau,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SaffronCity =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SaffronCity,
+//         .palettes = gTilesetPalettes_Kanto_SaffronCity,
+//         .metatiles = gMetatiles_Kanto_SaffronCity,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SaffronCity,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Building =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = FALSE,
+//         .tiles = gTilesetTiles_Kanto_Building,
+//         .palettes = gTilesetPalettes_Kanto_Building,
+//         .metatiles = gMetatiles_Kanto_Building,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Building,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Mart =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Mart,
+//         .palettes = gTilesetPalettes_Kanto_Mart,
+//         .metatiles = gMetatiles_Kanto_Mart,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Mart,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PokemonCenter =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PokemonCenter,
+//         .palettes = gTilesetPalettes_Kanto_PokemonCenter,
+//         .metatiles = gMetatiles_Kanto_PokemonCenter,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PokemonCenter,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Cave =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Cave,
+//         .palettes = gTilesetPalettes_Kanto_Cave,
+//         .metatiles = gMetatiles_Kanto_Cave,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Cave,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Dummy1 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Dummy1,
+//         .palettes = gTilesetPalettes_Kanto_Dummy1,
+//         .metatiles = gMetatiles_Kanto_Dummy1,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Dummy1,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Museum =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Museum,
+//         .palettes = gTilesetPalettes_Kanto_Museum,
+//         .metatiles = gMetatiles_Kanto_Museum,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Museum,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CableClub =
+//     {
+//         .isCompressed = FALSE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CableClub,
+//         .palettes = gTilesetPalettes_Kanto_CableClub,
+//         .metatiles = gMetatiles_Kanto_CableClub,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CableClub,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_BikeShop =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_BikeShop,
+//         .palettes = gTilesetPalettes_Kanto_BikeShop,
+//         .metatiles = gMetatiles_Kanto_BikeShop,
+//         .metatileAttributes = gMetatileAttributes_Kanto_BikeShop,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_GenericBuilding1 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_GenericBuilding1,
+//         .palettes = gTilesetPalettes_Kanto_GenericBuilding1,
+//         .metatiles = gMetatiles_Kanto_GenericBuilding1,
+//         .metatileAttributes = gMetatileAttributes_Kanto_GenericBuilding1,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Lab =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Lab,
+//         .palettes = gTilesetPalettes_Kanto_Lab,
+//         .metatiles = gMetatiles_Kanto_Lab,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Lab,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_FuchsiaGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_FuchsiaGym,
+//         .palettes = gTilesetPalettes_Kanto_FuchsiaGym,
+//         .metatiles = gMetatiles_Kanto_FuchsiaGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_FuchsiaGym,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_ViridianGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_ViridianGym,
+//         .palettes = gTilesetPalettes_Kanto_ViridianGym,
+//         .metatiles = gMetatiles_Kanto_ViridianGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_ViridianGym,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_HoennBuilding =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_HoennBuilding,
+//         .palettes = gTilesetPalettes_Kanto_HoennBuilding,
+//         .metatiles = gMetatiles_Kanto_HoennBuilding,
+//         .metatileAttributes = gMetatileAttributes_Kanto_HoennBuilding,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_GameCorner =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_GameCorner,
+//         .palettes = gTilesetPalettes_Kanto_GameCorner,
+//         .metatiles = gMetatiles_Kanto_GameCorner,
+//         .metatileAttributes = gMetatileAttributes_Kanto_GameCorner,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PewterGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PewterGym,
+//         .palettes = gTilesetPalettes_Kanto_PewterGym,
+//         .metatiles = gMetatiles_Kanto_PewterGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PewterGym,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CeruleanGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CeruleanGym,
+//         .palettes = gTilesetPalettes_Kanto_CeruleanGym,
+//         .metatiles = gMetatiles_Kanto_CeruleanGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CeruleanGym,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_VermilionGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_VermilionGym,
+//         .palettes = gTilesetPalettes_Kanto_VermilionGym,
+//         .metatiles = gMetatiles_Kanto_VermilionGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_VermilionGym,
+//         .callback = InitTilesetAnim_VermilionGym,
+// };
+
+// const struct Tileset gTileset_Kanto_CeladonGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CeladonGym,
+//         .palettes = gTilesetPalettes_Kanto_CeladonGym,
+//         .metatiles = gMetatiles_Kanto_CeladonGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CeladonGym,
+//         .callback = InitTilesetAnim_CeladonGym,
+// };
+
+// const struct Tileset gTileset_Kanto_SaffronGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SaffronGym,
+//         .palettes = gTilesetPalettes_Kanto_SaffronGym,
+//         .metatiles = gMetatiles_Kanto_SaffronGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SaffronGym,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CinnabarGym =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CinnabarGym,
+//         .palettes = gTilesetPalettes_Kanto_CinnabarGym,
+//         .metatiles = gMetatiles_Kanto_CinnabarGym,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CinnabarGym,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SSAnne =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SSAnne,
+//         .palettes = gTilesetPalettes_Kanto_SSAnne,
+//         .metatiles = gMetatiles_Kanto_SSAnne,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SSAnne,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Dummy2 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Dummy2,
+//         .palettes = gTilesetPalettes_Kanto_Dummy2,
+//         .metatiles = gMetatiles_Kanto_Dummy2,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Dummy2,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_ViridianForest =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_ViridianForest,
+//         .palettes = gTilesetPalettes_Kanto_ViridianForest,
+//         .metatiles = gMetatiles_Kanto_ViridianForest,
+//         .metatileAttributes = gMetatileAttributes_Kanto_ViridianForest,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_UnusedGatehouse1 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_UnusedGatehouse1,
+//         .palettes = gTilesetPalettes_Kanto_UnusedGatehouse1,
+//         .metatiles = gMetatiles_Kanto_UnusedGatehouse1,
+//         .metatileAttributes = gMetatileAttributes_Kanto_UnusedGatehouse1,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_RockTunnel =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_RockTunnel,
+//         .palettes = gTilesetPalettes_Kanto_RockTunnel,
+//         .metatiles = gMetatiles_Kanto_RockTunnel,
+//         .metatileAttributes = gMetatileAttributes_Kanto_RockTunnel,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_DiglettsCave =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_DiglettsCave,
+//         .palettes = gTilesetPalettes_Kanto_DiglettsCave,
+//         .metatiles = gMetatiles_Kanto_DiglettsCave,
+//         .metatileAttributes = gMetatileAttributes_Kanto_DiglettsCave,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SeafoamIslands =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SeafoamIslands,
+//         .palettes = gTilesetPalettes_Kanto_SeafoamIslands,
+//         .metatiles = gMetatiles_Kanto_SeafoamIslands,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SeafoamIslands,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_UnusedGatehouse2 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_UnusedGatehouse2,
+//         .palettes = gTilesetPalettes_Kanto_UnusedGatehouse2,
+//         .metatiles = gMetatiles_Kanto_UnusedGatehouse2,
+//         .metatileAttributes = gMetatileAttributes_Kanto_UnusedGatehouse2,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_CeruleanCave =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_CeruleanCave,
+//         .palettes = gTilesetPalettes_Kanto_CeruleanCave,
+//         .metatiles = gMetatiles_Kanto_CeruleanCave,
+//         .metatileAttributes = gMetatileAttributes_Kanto_CeruleanCave,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_DepartmentStore =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_DepartmentStore,
+//         .palettes = gTilesetPalettes_Kanto_DepartmentStore,
+//         .metatiles = gMetatiles_Kanto_DepartmentStore,
+//         .metatileAttributes = gMetatileAttributes_Kanto_DepartmentStore,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_GenericBuilding2 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_GenericBuilding2,
+//         .palettes = gTilesetPalettes_Kanto_GenericBuilding2,
+//         .metatiles = gMetatiles_Kanto_GenericBuilding2,
+//         .metatileAttributes = gMetatileAttributes_Kanto_GenericBuilding2,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PowerPlant =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PowerPlant,
+//         .palettes = gTilesetPalettes_Kanto_PowerPlant,
+//         .metatiles = gMetatiles_Kanto_PowerPlant,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PowerPlant,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SeaCottage =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SeaCottage,
+//         .palettes = gTilesetPalettes_Kanto_SeaCottage,
+//         .metatiles = gMetatiles_Kanto_SeaCottage,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SeaCottage,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SilphCo =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Condominiums,
+//         .palettes = gTilesetPalettes_Kanto_Condominiums,
+//         .metatiles = gMetatiles_Kanto_SilphCo,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SilphCo,
+//         .callback = InitTilesetAnim_SilphCo,
+// };
+
+// const struct Tileset gTileset_Kanto_UndergroundPath =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_UndergroundPath,
+//         .palettes = gTilesetPalettes_Kanto_UndergroundPath,
+//         .metatiles = gMetatiles_Kanto_UndergroundPath,
+//         .metatileAttributes = gMetatileAttributes_Kanto_UndergroundPath,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PokemonTower =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PokemonTower,
+//         .palettes = gTilesetPalettes_Kanto_PokemonTower,
+//         .metatiles = gMetatiles_Kanto_PokemonTower,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PokemonTower,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SafariZoneBuilding =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SafariZoneBuilding,
+//         .palettes = gTilesetPalettes_Kanto_SafariZoneBuilding,
+//         .metatiles = gMetatiles_Kanto_SafariZoneBuilding,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SafariZoneBuilding,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PokemonMansion =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PokemonMansion,
+//         .palettes = gTilesetPalettes_Kanto_PokemonMansion,
+//         .metatiles = gMetatiles_Kanto_PokemonMansion,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PokemonMansion,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_RestaurantHotel =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_RestaurantHotel,
+//         .palettes = gTilesetPalettes_Kanto_RestaurantHotel,
+//         .metatiles = gMetatiles_Kanto_RestaurantHotel,
+//         .metatileAttributes = gMetatileAttributes_Kanto_RestaurantHotel,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_School =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_School,
+//         .palettes = gTilesetPalettes_Kanto_School,
+//         .metatiles = gMetatiles_Kanto_School,
+//         .metatileAttributes = gMetatileAttributes_Kanto_School,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_FanClubDaycare =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_FanClubDaycare,
+//         .palettes = gTilesetPalettes_Kanto_FanClubDaycare,
+//         .metatiles = gMetatiles_Kanto_FanClubDaycare,
+//         .metatileAttributes = gMetatileAttributes_Kanto_FanClubDaycare,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Condominiums =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Condominiums,
+//         .palettes = gTilesetPalettes_Kanto_Condominiums,
+//         .metatiles = gMetatiles_Kanto_Condominiums,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Condominiums,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_BurgledHouse =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_BurgledHouse,
+//         .palettes = gTilesetPalettes_Kanto_BurgledHouse,
+//         .metatiles = gMetatiles_Kanto_BurgledHouse,
+//         .metatileAttributes = gMetatileAttributes_Kanto_BurgledHouse,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Dummy3 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Dummy3,
+//         .palettes = gTilesetPalettes_Kanto_Dummy3,
+//         .metatiles = gMetatiles_Kanto_Dummy3,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Dummy3,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_Dummy4 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_Dummy4,
+//         .palettes = gTilesetPalettes_Kanto_Dummy4,
+//         .metatiles = gMetatiles_Kanto_Dummy4,
+//         .metatileAttributes = gMetatileAttributes_Kanto_Dummy4,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_MtEmber =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_MtEmber,
+//         .palettes = gTilesetPalettes_Kanto_MtEmber,
+//         .metatiles = gMetatiles_Kanto_MtEmber,
+//         .metatileAttributes = gMetatileAttributes_Kanto_MtEmber,
+//         .callback = InitTilesetAnim_MtEmber,
+// };
+
+// const struct Tileset gTileset_Kanto_BerryForest =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_BerryForest,
+//         .palettes = gTilesetPalettes_Kanto_BerryForest,
+//         .metatiles = gMetatiles_Kanto_BerryForest,
+//         .metatileAttributes = gMetatileAttributes_Kanto_BerryForest,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_NavelRock =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_NavelRock,
+//         .palettes = gTilesetPalettes_Kanto_NavelRock,
+//         .metatiles = gMetatiles_Kanto_NavelRock,
+//         .metatileAttributes = gMetatileAttributes_Kanto_NavelRock,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_TanobyRuins =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_TanobyRuins,
+//         .palettes = gTilesetPalettes_Kanto_TanobyRuins,
+//         .metatiles = gMetatiles_Kanto_TanobyRuins,
+//         .metatileAttributes = gMetatileAttributes_Kanto_TanobyRuins,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SeviiIslands123 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SeviiIslands123,
+//         .palettes = gTilesetPalettes_Kanto_SeviiIslands123,
+//         .metatiles = gMetatiles_Kanto_SeviiIslands123,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SeviiIslands123,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SeviiIslands45 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SeviiIslands45,
+//         .palettes = gTilesetPalettes_Kanto_SeviiIslands45,
+//         .metatiles = gMetatiles_Kanto_SeviiIslands45,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SeviiIslands45,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_SeviiIslands67 =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_SeviiIslands67,
+//         .palettes = gTilesetPalettes_Kanto_SeviiIslands67,
+//         .metatiles = gMetatiles_Kanto_SeviiIslands67,
+//         .metatileAttributes = gMetatileAttributes_Kanto_SeviiIslands67,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_TrainerTower =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_TrainerTower,
+//         .palettes = gTilesetPalettes_Kanto_TrainerTower,
+//         .metatiles = gMetatiles_Kanto_TrainerTower,
+//         .metatileAttributes = gMetatileAttributes_Kanto_TrainerTower,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_IslandHarbor =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_IslandHarbor,
+//         .palettes = gTilesetPalettes_Kanto_IslandHarbor,
+//         .metatiles = gMetatiles_Kanto_IslandHarbor,
+//         .metatileAttributes = gMetatileAttributes_Kanto_IslandHarbor,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_PokemonLeague =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_PokemonLeague,
+//         .palettes = gTilesetPalettes_Kanto_PokemonLeague,
+//         .metatiles = gMetatiles_Kanto_PokemonLeague,
+//         .metatileAttributes = gMetatileAttributes_Kanto_PokemonLeague,
+//         .callback = NULL,
+// };
+
+// const struct Tileset gTileset_Kanto_HallOfFame =
+//     {
+//         .isCompressed = TRUE,
+//         .isSecondary = TRUE,
+//         .tiles = gTilesetTiles_Kanto_HallOfFame,
+//         .palettes = gTilesetPalettes_Kanto_HallOfFame,
+//         .metatiles = gMetatiles_Kanto_HallOfFame,
+//         .metatileAttributes = gMetatileAttributes_Kanto_HallOfFame,
+//         .callback = NULL,
+// };
