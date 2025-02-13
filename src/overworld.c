@@ -1003,24 +1003,24 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
     {
         switch (warp->mapNum)
         {
-        case MAP_NUM(LILYCOVE_CITY):
-        case MAP_NUM(MOSSDEEP_CITY):
-        case MAP_NUM(SOOTOPOLIS_CITY):
-        case MAP_NUM(EVER_GRANDE_CITY):
-        case MAP_NUM(ROUTE124):
-        case MAP_NUM(ROUTE125):
-        case MAP_NUM(ROUTE126):
-        case MAP_NUM(ROUTE127):
-        case MAP_NUM(ROUTE128):
+        case MAP_NUM(HOENN_LILYCOVE_CITY):
+        case MAP_NUM(HOENN_MOSSDEEP_CITY):
+        case MAP_NUM(HOENN_SOOTOPOLIS_CITY):
+        case MAP_NUM(HOENN_EVER_GRANDE_CITY):
+        case MAP_NUM(HOENN_ROUTE124):
+        case MAP_NUM(HOENN_ROUTE125):
+        case MAP_NUM(HOENN_ROUTE126):
+        case MAP_NUM(HOENN_ROUTE127):
+        case MAP_NUM(HOENN_ROUTE128):
             return TRUE;
         default:
             if (VarGet(VAR_SOOTOPOLIS_CITY_STATE) < 4)
                 return FALSE;
             switch (warp->mapNum)
             {
-            case MAP_NUM(ROUTE129):
-            case MAP_NUM(ROUTE130):
-            case MAP_NUM(ROUTE131):
+            case MAP_NUM(HOENN_ROUTE129):
+            case MAP_NUM(HOENN_ROUTE130):
+            case MAP_NUM(HOENN_ROUTE131):
                 return TRUE;
             }
         }
@@ -1032,9 +1032,9 @@ static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
 {
     if (VarGet(VAR_SKY_PILLAR_STATE) != 1)
         return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(SOOTOPOLIS_CITY))
+    else if (warp->mapGroup != MAP_GROUP(HOENN_SOOTOPOLIS_CITY))
         return FALSE;
-    else if (warp->mapNum == MAP_NUM(SOOTOPOLIS_CITY))
+    else if (warp->mapNum == MAP_NUM(HOENN_SOOTOPOLIS_CITY))
         return TRUE;
     else
         return FALSE;
@@ -1044,9 +1044,9 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
     if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
         return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F))
+    else if (warp->mapGroup != MAP_GROUP(HOENN_ROUTE119_WEATHER_INSTITUTE_1F))
         return FALSE;
-    else if (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F) || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F))
+    else if (warp->mapNum == MAP_NUM(HOENN_ROUTE119_WEATHER_INSTITUTE_1F) || warp->mapNum == MAP_NUM(HOENN_ROUTE119_WEATHER_INSTITUTE_2F))
         return TRUE;
     else
         return FALSE;
@@ -1058,9 +1058,9 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
         return FALSE;
     else if (VarGet(VAR_MOSSDEEP_CITY_STATE) > 2)
         return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(MOSSDEEP_CITY_SPACE_CENTER_1F))
+    else if (warp->mapGroup != MAP_GROUP(HOENN_MOSSDEEP_CITY_SPACE_CENTER_1F))
         return FALSE;
-    else if (warp->mapNum == MAP_NUM(MOSSDEEP_CITY_SPACE_CENTER_1F) || warp->mapNum == MAP_NUM(MOSSDEEP_CITY_SPACE_CENTER_2F))
+    else if (warp->mapNum == MAP_NUM(HOENN_MOSSDEEP_CITY_SPACE_CENTER_1F) || warp->mapNum == MAP_NUM(HOENN_MOSSDEEP_CITY_SPACE_CENTER_2F))
         return TRUE;
     return FALSE;
 }
@@ -1084,7 +1084,7 @@ u16 GetCurrLocationDefaultMusic(void)
     u16 music;
 
     // Play the desert music only when the sandstorm is active on Route 111.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111) && GetSavedWeather() == WEATHER_SANDSTORM)
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_ROUTE111) && GetSavedWeather() == WEATHER_SANDSTORM)
         return MUS_DESERT;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
@@ -1110,7 +1110,7 @@ u16 GetWarpDestinationMusic(void)
     }
     else
     {
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAUVILLE_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAUVILLE_CITY))
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_MAUVILLE_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_MAUVILLE_CITY))
             return MUS_ROUTE110;
         else
             return MUS_ROUTE119;
@@ -1202,7 +1202,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
-        if (currentMusic == MUS_SURF && VarGet(VAR_SKY_PILLAR_STATE) == 2 && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SOOTOPOLIS_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SOOTOPOLIS_CITY) && sWarpDestination.mapGroup == MAP_GROUP(SOOTOPOLIS_CITY) && sWarpDestination.mapNum == MAP_NUM(SOOTOPOLIS_CITY) && sWarpDestination.x == 29 && sWarpDestination.y == 53)
+        if (currentMusic == MUS_SURF && VarGet(VAR_SKY_PILLAR_STATE) == 2 && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_SOOTOPOLIS_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_SOOTOPOLIS_CITY) && sWarpDestination.mapGroup == MAP_GROUP(HOENN_SOOTOPOLIS_CITY) && sWarpDestination.mapNum == MAP_NUM(HOENN_SOOTOPOLIS_CITY) && sWarpDestination.x == 29 && sWarpDestination.y == 53)
             return;
         FadeOutMapMusic(GetMapMusicFadeoutSpeed());
     }
@@ -1291,7 +1291,7 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 
 static void ChooseAmbientCrySpecies(void)
 {
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE130) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE130)) && !IsMirageIslandPresent())
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_ROUTE130) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_ROUTE130)) && !IsMirageIslandPresent())
     {
         // Only play water Pokémon cries on this route
         // when Mirage Island is not present
@@ -1682,7 +1682,7 @@ void CB2_ContinueSavedGame(void)
     trainerHillMapId = GetCurrentTrainerHillMapId();
     if (gMapHeader.mapLayoutId == LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
         LoadBattlePyramidFloorObjectEventScripts();
-    else if (trainerHillMapId != 0 && trainerHillMapId != TRAINER_HILL_ENTRANCE)
+    else if (trainerHillMapId != 0 && trainerHillMapId != HOENN_TRAINER_HILL_ENTRANCE)
         LoadTrainerHillFloorObjectEventScripts();
     else
         LoadSaveblockObjEventScripts();

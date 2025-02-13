@@ -28,66 +28,59 @@ EWRAM_DATA static u8 sMessageWindowId = 0;
 static TaskFunc sMessageNextTask;
 
 static const struct OamData sOamData_SwapLine =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(16x16),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(16x16),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-    .affineParam = 0
-};
+    {
+        .y = 0,
+        .affineMode = ST_OAM_AFFINE_OFF,
+        .objMode = ST_OAM_OBJ_NORMAL,
+        .mosaic = FALSE,
+        .bpp = ST_OAM_4BPP,
+        .shape = SPRITE_SHAPE(16x16),
+        .x = 0,
+        .matrixNum = 0,
+        .size = SPRITE_SIZE(16x16),
+        .tileNum = 0,
+        .priority = 0,
+        .paletteNum = 0,
+        .affineParam = 0};
 
 static const union AnimCmd sAnim_SwapLine_RightArrow[] =
-{
-    ANIMCMD_FRAME(0, 0),
-    ANIMCMD_END
-};
+    {
+        ANIMCMD_FRAME(0, 0),
+        ANIMCMD_END};
 
 static const union AnimCmd sAnim_SwapLine_Line[] =
-{
-    ANIMCMD_FRAME(4, 0),
-    ANIMCMD_END
-};
+    {
+        ANIMCMD_FRAME(4, 0),
+        ANIMCMD_END};
 
 static const union AnimCmd sAnim_SwapLine_LeftArrow[] =
-{
-    ANIMCMD_FRAME(0, 0, .hFlip = TRUE),
-    ANIMCMD_END
-};
+    {
+        ANIMCMD_FRAME(0, 0, .hFlip = TRUE),
+        ANIMCMD_END};
 
 static const union AnimCmd *const sAnims_SwapLine[] =
-{
-    sAnim_SwapLine_RightArrow,
-    sAnim_SwapLine_Line,
-    sAnim_SwapLine_LeftArrow
-};
+    {
+        sAnim_SwapLine_RightArrow,
+        sAnim_SwapLine_Line,
+        sAnim_SwapLine_LeftArrow};
 
 static const struct CompressedSpriteSheet sSpriteSheet_SwapLine =
-{
-    gSwapLineGfx, 0x100, TAG_SWAP_LINE
-};
+    {
+        gSwapLineGfx, 0x100, TAG_SWAP_LINE};
 
 static const struct CompressedSpritePalette sSpritePalette_SwapLine =
-{
-    gSwapLinePal, TAG_SWAP_LINE
-};
+    {
+        gSwapLinePal, TAG_SWAP_LINE};
 
 static const struct SpriteTemplate sSpriteTemplate_SwapLine =
-{
-    .tileTag = TAG_SWAP_LINE,
-    .paletteTag = TAG_SWAP_LINE,
-    .oam = &sOamData_SwapLine,
-    .anims = sAnims_SwapLine,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
+    {
+        .tileTag = TAG_SWAP_LINE,
+        .paletteTag = TAG_SWAP_LINE,
+        .oam = &sOamData_SwapLine,
+        .anims = sAnims_SwapLine,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
 };
 
 // code
@@ -98,9 +91,9 @@ void ResetVramOamAndBgCntRegs(void)
     SetGpuReg(REG_OFFSET_BG2CNT, 0);
     SetGpuReg(REG_OFFSET_BG1CNT, 0);
     SetGpuReg(REG_OFFSET_BG0CNT, 0);
-    CpuFill16(0, (void *) VRAM, VRAM_SIZE);
-    CpuFill32(0, (void *) OAM, OAM_SIZE);
-    CpuFill16(0, (void *) PLTT, PLTT_SIZE);
+    CpuFill16(0, (void *)VRAM, VRAM_SIZE);
+    CpuFill32(0, (void *)OAM, OAM_SIZE);
+    CpuFill16(0, (void *)PLTT, PLTT_SIZE);
 }
 
 void ResetAllBgsCoordinates(void)
@@ -278,10 +271,7 @@ u8 GetLRKeysPressedAndHeld(void)
 bool8 IsHoldingItemAllowed(u16 itemId)
 {
     // Enigma Berry can't be held in link areas
-    if (itemId == ITEM_ENIGMA_BERRY
-     && ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRADE_CENTER)
-       && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRADE_CENTER))
-       || InUnionRoom() == TRUE))
+    if (itemId == ITEM_ENIGMA_BERRY && ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_TRADE_CENTER) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_TRADE_CENTER)) || InUnionRoom() == TRUE))
         return FALSE;
     else
         return TRUE;
@@ -313,7 +303,7 @@ static bool8 IsActiveOverworldLinkBusy(void)
 
 bool8 MenuHelpers_ShouldWaitForLinkRecv(void)
 {
-    if (IsActiveOverworldLinkBusy() == TRUE || IsLinkRecvQueueAtOverworldMax() == TRUE )
+    if (IsActiveOverworldLinkBusy() == TRUE || IsLinkRecvQueueAtOverworldMax() == TRUE)
         return TRUE;
     else
         return FALSE;

@@ -50,7 +50,8 @@
 #define TAG_SCROLL_ARROW 5112
 
 // Values for registryStatus
-enum {
+enum
+{
     UNREGISTERED,
     REGISTERED,
     NEW, // Temporary, so new secret bases mixed at the same time don't overwrite each other
@@ -96,127 +97,198 @@ static void GoToSecretBasePCRegisterMenu(u8);
 static u8 GetSecretBaseOwnerType(u8);
 
 static const struct SecretBaseEntranceMetatiles sSecretBaseEntranceMetatiles[] =
-{
-    {.closedMetatileId = METATILE_General_SecretBase_TreeLeft,  .openMetatileId = METATILE_General_SecretBase_VineLeft},
-    {.closedMetatileId = METATILE_General_SecretBase_TreeRight, .openMetatileId = METATILE_General_SecretBase_VineRight},
-    {.closedMetatileId = METATILE_General_RedCaveIndent,        .openMetatileId = METATILE_General_RedCaveOpen},
-    {.closedMetatileId = METATILE_General_YellowCaveIndent,     .openMetatileId = METATILE_General_YellowCaveOpen},
-    {.closedMetatileId = METATILE_General_BlueCaveIndent,       .openMetatileId = METATILE_General_BlueCaveOpen},
-    {.closedMetatileId = METATILE_Fallarbor_BrownCaveIndent,    .openMetatileId = METATILE_Fallarbor_BrownCaveOpen},
-    {.closedMetatileId = METATILE_Fortree_SecretBase_Shrub,     .openMetatileId = METATILE_Fortree_SecretBase_ShrubOpen},
+    {
+        {.closedMetatileId = METATILE_General_SecretBase_TreeLeft, .openMetatileId = METATILE_General_SecretBase_VineLeft},
+        {.closedMetatileId = METATILE_General_SecretBase_TreeRight, .openMetatileId = METATILE_General_SecretBase_VineRight},
+        {.closedMetatileId = METATILE_General_RedCaveIndent, .openMetatileId = METATILE_General_RedCaveOpen},
+        {.closedMetatileId = METATILE_General_YellowCaveIndent, .openMetatileId = METATILE_General_YellowCaveOpen},
+        {.closedMetatileId = METATILE_General_BlueCaveIndent, .openMetatileId = METATILE_General_BlueCaveOpen},
+        {.closedMetatileId = METATILE_Fallarbor_BrownCaveIndent, .openMetatileId = METATILE_Fallarbor_BrownCaveOpen},
+        {.closedMetatileId = METATILE_Fortree_SecretBase_Shrub, .openMetatileId = METATILE_Fortree_SecretBase_ShrubOpen},
 };
 
 // mapNum, warpId, x, y
 // x, y positions are for when the player warps in for the first time (in front of the computer)
 static const u8 sSecretBaseEntrancePositions[NUM_SECRET_BASE_GROUPS * 4] =
-{
-    [SECRET_BASE_RED_CAVE1]    = MAP_NUM(SECRET_BASE_RED_CAVE1),    0,  1,  3,
-    [SECRET_BASE_RED_CAVE2]    = MAP_NUM(SECRET_BASE_RED_CAVE2),    0,  5,  9,
-    [SECRET_BASE_RED_CAVE3]    = MAP_NUM(SECRET_BASE_RED_CAVE3),    0,  1,  3,
-    [SECRET_BASE_RED_CAVE4]    = MAP_NUM(SECRET_BASE_RED_CAVE4),    0,  7, 13,
-    [SECRET_BASE_BROWN_CAVE1]  = MAP_NUM(SECRET_BASE_BROWN_CAVE1),  0,  2,  3,
-    [SECRET_BASE_BROWN_CAVE2]  = MAP_NUM(SECRET_BASE_BROWN_CAVE2),  0,  9,  2,
-    [SECRET_BASE_BROWN_CAVE3]  = MAP_NUM(SECRET_BASE_BROWN_CAVE3),  0, 13,  4,
-    [SECRET_BASE_BROWN_CAVE4]  = MAP_NUM(SECRET_BASE_BROWN_CAVE4),  0,  1,  2,
-    [SECRET_BASE_BLUE_CAVE1]   = MAP_NUM(SECRET_BASE_BLUE_CAVE1),   0,  1,  3,
-    [SECRET_BASE_BLUE_CAVE2]   = MAP_NUM(SECRET_BASE_BLUE_CAVE2),   0,  1,  2,
-    [SECRET_BASE_BLUE_CAVE3]   = MAP_NUM(SECRET_BASE_BLUE_CAVE3),   0,  3, 15,
-    [SECRET_BASE_BLUE_CAVE4]   = MAP_NUM(SECRET_BASE_BLUE_CAVE4),   0,  3, 14,
-    [SECRET_BASE_YELLOW_CAVE1] = MAP_NUM(SECRET_BASE_YELLOW_CAVE1), 0,  9,  3,
-    [SECRET_BASE_YELLOW_CAVE2] = MAP_NUM(SECRET_BASE_YELLOW_CAVE2), 0,  8,  7,
-    [SECRET_BASE_YELLOW_CAVE3] = MAP_NUM(SECRET_BASE_YELLOW_CAVE3), 0,  3,  6,
-    [SECRET_BASE_YELLOW_CAVE4] = MAP_NUM(SECRET_BASE_YELLOW_CAVE4), 0,  5,  9,
-    [SECRET_BASE_TREE1]        = MAP_NUM(SECRET_BASE_TREE1),        0,  2,  3,
-    [SECRET_BASE_TREE2]        = MAP_NUM(SECRET_BASE_TREE2),        0,  5,  6,
-    [SECRET_BASE_TREE3]        = MAP_NUM(SECRET_BASE_TREE3),        0, 15,  3,
-    [SECRET_BASE_TREE4]        = MAP_NUM(SECRET_BASE_TREE4),        0,  4, 10,
-    [SECRET_BASE_SHRUB1]       = MAP_NUM(SECRET_BASE_SHRUB1),       0,  3,  3,
-    [SECRET_BASE_SHRUB2]       = MAP_NUM(SECRET_BASE_SHRUB2),       0,  1,  2,
-    [SECRET_BASE_SHRUB3]       = MAP_NUM(SECRET_BASE_SHRUB3),       0,  7,  8,
-    [SECRET_BASE_SHRUB4]       = MAP_NUM(SECRET_BASE_SHRUB4),       0,  9,  6,
+    {
+        [SECRET_BASE_RED_CAVE1] = MAP_NUM(HOENN_SECRET_BASE_RED_CAVE1),
+        0,
+        1,
+        3,
+        [SECRET_BASE_RED_CAVE2] = MAP_NUM(HOENN_SECRET_BASE_RED_CAVE2),
+        0,
+        5,
+        9,
+        [SECRET_BASE_RED_CAVE3] = MAP_NUM(HOENN_SECRET_BASE_RED_CAVE3),
+        0,
+        1,
+        3,
+        [SECRET_BASE_RED_CAVE4] = MAP_NUM(HOENN_SECRET_BASE_RED_CAVE4),
+        0,
+        7,
+        13,
+        [SECRET_BASE_BROWN_CAVE1] = MAP_NUM(HOENN_SECRET_BASE_BROWN_CAVE1),
+        0,
+        2,
+        3,
+        [SECRET_BASE_BROWN_CAVE2] = MAP_NUM(HOENN_SECRET_BASE_BROWN_CAVE2),
+        0,
+        9,
+        2,
+        [SECRET_BASE_BROWN_CAVE3] = MAP_NUM(HOENN_SECRET_BASE_BROWN_CAVE3),
+        0,
+        13,
+        4,
+        [SECRET_BASE_BROWN_CAVE4] = MAP_NUM(HOENN_SECRET_BASE_BROWN_CAVE4),
+        0,
+        1,
+        2,
+        [SECRET_BASE_BLUE_CAVE1] = MAP_NUM(HOENN_SECRET_BASE_BLUE_CAVE1),
+        0,
+        1,
+        3,
+        [SECRET_BASE_BLUE_CAVE2] = MAP_NUM(HOENN_SECRET_BASE_BLUE_CAVE2),
+        0,
+        1,
+        2,
+        [SECRET_BASE_BLUE_CAVE3] = MAP_NUM(HOENN_SECRET_BASE_BLUE_CAVE3),
+        0,
+        3,
+        15,
+        [SECRET_BASE_BLUE_CAVE4] = MAP_NUM(HOENN_SECRET_BASE_BLUE_CAVE4),
+        0,
+        3,
+        14,
+        [SECRET_BASE_YELLOW_CAVE1] = MAP_NUM(HOENN_SECRET_BASE_YELLOW_CAVE1),
+        0,
+        9,
+        3,
+        [SECRET_BASE_YELLOW_CAVE2] = MAP_NUM(HOENN_SECRET_BASE_YELLOW_CAVE2),
+        0,
+        8,
+        7,
+        [SECRET_BASE_YELLOW_CAVE3] = MAP_NUM(HOENN_SECRET_BASE_YELLOW_CAVE3),
+        0,
+        3,
+        6,
+        [SECRET_BASE_YELLOW_CAVE4] = MAP_NUM(HOENN_SECRET_BASE_YELLOW_CAVE4),
+        0,
+        5,
+        9,
+        [SECRET_BASE_TREE1] = MAP_NUM(HOENN_SECRET_BASE_TREE1),
+        0,
+        2,
+        3,
+        [SECRET_BASE_TREE2] = MAP_NUM(HOENN_SECRET_BASE_TREE2),
+        0,
+        5,
+        6,
+        [SECRET_BASE_TREE3] = MAP_NUM(HOENN_SECRET_BASE_TREE3),
+        0,
+        15,
+        3,
+        [SECRET_BASE_TREE4] = MAP_NUM(HOENN_SECRET_BASE_TREE4),
+        0,
+        4,
+        10,
+        [SECRET_BASE_SHRUB1] = MAP_NUM(HOENN_SECRET_BASE_SHRUB1),
+        0,
+        3,
+        3,
+        [SECRET_BASE_SHRUB2] = MAP_NUM(HOENN_SECRET_BASE_SHRUB2),
+        0,
+        1,
+        2,
+        [SECRET_BASE_SHRUB3] = MAP_NUM(HOENN_SECRET_BASE_SHRUB3),
+        0,
+        7,
+        8,
+        [SECRET_BASE_SHRUB4] = MAP_NUM(HOENN_SECRET_BASE_SHRUB4),
+        0,
+        9,
+        6,
 };
 
-#define GET_BASE_MAP_NUM(group)    (sSecretBaseEntrancePositions[(group) + 0])
-#define GET_BASE_WARP_ID(group)    (sSecretBaseEntrancePositions[(group) + 1])
+#define GET_BASE_MAP_NUM(group) (sSecretBaseEntrancePositions[(group) + 0])
+#define GET_BASE_WARP_ID(group) (sSecretBaseEntrancePositions[(group) + 1])
 #define GET_BASE_COMPUTER_X(group) (sSecretBaseEntrancePositions[(group) + 2])
 #define GET_BASE_COMPUTER_Y(group) (sSecretBaseEntrancePositions[(group) + 3])
 
 static const struct MenuAction sRegistryMenuActions[] =
-{
     {
-        .text = gText_DelRegist,
-        .func = { .void_u8 = ShowRegistryMenuDeleteConfirmation },
-    },
-    {
-        .text = gText_Cancel,
-        .func = { .void_u8 = ReturnToMainRegistryMenu },
-    },
+        {
+            .text = gText_DelRegist,
+            .func = {.void_u8 = ShowRegistryMenuDeleteConfirmation},
+        },
+        {
+            .text = gText_Cancel,
+            .func = {.void_u8 = ReturnToMainRegistryMenu},
+        },
 };
 
 static const struct YesNoFuncTable sDeleteRegistryYesNoFuncs =
-{
-    .yesFunc = DeleteRegistry_Yes,
-    .noFunc = DeleteRegistry_No,
+    {
+        .yesFunc = DeleteRegistry_Yes,
+        .noFunc = DeleteRegistry_No,
 };
 
 static const u8 sSecretBaseOwnerGfxIds[10] =
-{
-    // Male
-    OBJ_EVENT_GFX_YOUNGSTER,
-    OBJ_EVENT_GFX_BUG_CATCHER,
-    OBJ_EVENT_GFX_RICH_BOY,
-    OBJ_EVENT_GFX_CAMPER,
-    OBJ_EVENT_GFX_MAN_3,
-    // Female
-    OBJ_EVENT_GFX_LASS,
-    OBJ_EVENT_GFX_GIRL_3,
-    OBJ_EVENT_GFX_WOMAN_2,
-    OBJ_EVENT_GFX_PICNICKER,
-    OBJ_EVENT_GFX_WOMAN_5,
+    {
+        // Male
+        OBJ_EVENT_GFX_YOUNGSTER,
+        OBJ_EVENT_GFX_BUG_CATCHER,
+        OBJ_EVENT_GFX_RICH_BOY,
+        OBJ_EVENT_GFX_CAMPER,
+        OBJ_EVENT_GFX_MAN_3,
+        // Female
+        OBJ_EVENT_GFX_LASS,
+        OBJ_EVENT_GFX_GIRL_3,
+        OBJ_EVENT_GFX_WOMAN_2,
+        OBJ_EVENT_GFX_PICNICKER,
+        OBJ_EVENT_GFX_WOMAN_5,
 };
 
 static const struct WindowTemplate sRegistryWindowTemplates[] =
-{
     {
-        .bg = 0,
-        .tilemapLeft = 18,
-        .tilemapTop = 1,
-        .width = 11,
-        .height = 18,
-        .paletteNum = 15,
-        .baseBlock = 0x01,
-    },
-    {
-        .bg = 0,
-        .tilemapLeft = 2,
-        .tilemapTop = 1,
-        .width = 28,
-        .height = 4,
-        .paletteNum = 15,
-        .baseBlock = 0xc7,
-    }
-};
+        {
+            .bg = 0,
+            .tilemapLeft = 18,
+            .tilemapTop = 1,
+            .width = 11,
+            .height = 18,
+            .paletteNum = 15,
+            .baseBlock = 0x01,
+        },
+        {
+            .bg = 0,
+            .tilemapLeft = 2,
+            .tilemapTop = 1,
+            .width = 28,
+            .height = 4,
+            .paletteNum = 15,
+            .baseBlock = 0xc7,
+        }};
 
 static const struct ListMenuTemplate sRegistryListMenuTemplate =
-{
-    .items = NULL,
-    .moveCursorFunc = RegistryMenu_OnCursorMove,
-    .itemPrintFunc = NULL,
-    .totalItems = 0,
-    .maxShowed = 0,
-    .windowId = 0,
-    .header_X = 0,
-    .item_X = 8,
-    .cursor_X = 0,
-    .upText_Y = 9,
-    .cursorPal = 2,
-    .fillValue = 1,
-    .cursorShadowPal = 3,
-    .lettersSpacing = 0,
-    .itemVerticalPadding = 0,
-    .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
-    .cursorKind = CURSOR_BLACK_ARROW,
+    {
+        .items = NULL,
+        .moveCursorFunc = RegistryMenu_OnCursorMove,
+        .itemPrintFunc = NULL,
+        .totalItems = 0,
+        .maxShowed = 0,
+        .windowId = 0,
+        .header_X = 0,
+        .item_X = 8,
+        .cursor_X = 0,
+        .upText_Y = 9,
+        .cursorPal = 2,
+        .fillValue = 1,
+        .cursorShadowPal = 3,
+        .lettersSpacing = 0,
+        .itemVerticalPadding = 0,
+        .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
+        .fontId = FONT_NORMAL,
+        .cursorKind = CURSOR_BLACK_ARROW,
 };
 
 static void ClearSecretBase(struct SecretBase *secretBase)
@@ -283,8 +355,7 @@ static u8 GetSecretBaseTypeInFrontOfPlayer_(void)
     if (behavior == MB_SECRET_BASE_SPOT_YELLOW_CAVE || behavior == MB_SECRET_BASE_SPOT_YELLOW_CAVE_OPEN)
         return SECRET_BASE_YELLOW_CAVE;
 
-    if (behavior == MB_SECRET_BASE_SPOT_TREE_LEFT  || behavior == MB_SECRET_BASE_SPOT_TREE_LEFT_OPEN
-     || behavior == MB_SECRET_BASE_SPOT_TREE_RIGHT || behavior == MB_SECRET_BASE_SPOT_TREE_RIGHT_OPEN)
+    if (behavior == MB_SECRET_BASE_SPOT_TREE_LEFT || behavior == MB_SECRET_BASE_SPOT_TREE_LEFT_OPEN || behavior == MB_SECRET_BASE_SPOT_TREE_RIGHT || behavior == MB_SECRET_BASE_SPOT_TREE_RIGHT_OPEN)
         return SECRET_BASE_TREE;
 
     if (behavior == MB_SECRET_BASE_SPOT_SHRUB || behavior == MB_SECRET_BASE_SPOT_SHRUB_OPEN)
@@ -412,7 +483,7 @@ void SetOccupiedSecretBaseEntranceMetatiles(struct MapEvents const *events)
 static void SetSecretBaseWarpDestination(void)
 {
     s8 secretBaseGroup = SECRET_BASE_ID_TO_GROUP(sCurSecretBaseId);
-    SetWarpDestinationToMapWarp(MAP_GROUP(SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
+    SetWarpDestinationToMapWarp(MAP_GROUP(HOENN_SECRET_BASE_RED_CAVE1), GET_BASE_MAP_NUM(secretBaseGroup), GET_BASE_WARP_ID(secretBaseGroup));
 }
 
 #define tState data[0]
@@ -509,8 +580,7 @@ void EnterNewlyCreatedSecretBase(void)
 
 bool8 CurMapIsSecretBase(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SECRET_BASE_RED_CAVE1)
-     && (u8)gSaveBlock1Ptr->location.mapNum <= MAP_NUM(SECRET_BASE_SHRUB4))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_SECRET_BASE_RED_CAVE1) && (u8)gSaveBlock1Ptr->location.mapNum <= MAP_NUM(HOENN_SECRET_BASE_SHRUB4))
         return TRUE;
     else
         return FALSE;
@@ -596,8 +666,7 @@ void InitSecretBaseDecorationSprites(void)
             gSpecialVar_0x8006 = decorationPositions[i] >> 4;
             gSpecialVar_0x8007 = decorationPositions[i] & 0xF;
             metatileBehavior = MapGridGetMetatileBehaviorAt(gSpecialVar_0x8006 + MAP_OFFSET, gSpecialVar_0x8007 + MAP_OFFSET);
-            if (MetatileBehavior_HoldsSmallDecoration(metatileBehavior) == TRUE
-             || MetatileBehavior_HoldsLargeDecoration(metatileBehavior) == TRUE)
+            if (MetatileBehavior_HoldsSmallDecoration(metatileBehavior) == TRUE || MetatileBehavior_HoldsLargeDecoration(metatileBehavior) == TRUE)
             {
                 gSpecialVar_Result = VAR_OBJ_GFX_ID_0 + (gMapHeader.events->objectEvents[objectEventId].graphicsId - OBJ_EVENT_GFX_VAR_0);
                 VarSet(gSpecialVar_Result, gDecorations[decorations[i]].tiles[0]);
@@ -661,9 +730,7 @@ void SetCurSecretBaseIdFromPosition(const struct MapPosition *position, const st
     s16 i;
     for (i = 0; i < events->bgEventCount; i++)
     {
-        if (events->bgEvents[i].kind == BG_EVENT_SECRET_BASE
-          && position->x == events->bgEvents[i].x + MAP_OFFSET
-          && position->y == events->bgEvents[i].y + MAP_OFFSET)
+        if (events->bgEvents[i].kind == BG_EVENT_SECRET_BASE && position->x == events->bgEvents[i].x + MAP_OFFSET && position->y == events->bgEvents[i].y + MAP_OFFSET)
         {
             sCurSecretBaseId = events->bgEvents[i].bgUnion.secretBaseId;
             break;
@@ -759,7 +826,7 @@ static bool8 IsSecretBaseRegistered(u8 secretBaseIdx)
 static u8 GetAverageEVs(struct Pokemon *pokemon)
 {
     u16 evTotal;
-    evTotal  = GetMonData(pokemon, MON_DATA_HP_EV);
+    evTotal = GetMonData(pokemon, MON_DATA_HP_EV);
     evTotal += GetMonData(pokemon, MON_DATA_ATK_EV);
     evTotal += GetMonData(pokemon, MON_DATA_DEF_EV);
     evTotal += GetMonData(pokemon, MON_DATA_SPEED_EV);
@@ -790,8 +857,7 @@ void SetPlayerSecretBaseParty(void)
             party->personality[i] = 0;
             party->EVs[i] = 0;
 
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
-            && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
             {
                 for (moveIdx = 0; moveIdx < MAX_MON_MOVES; moveIdx++)
                     party->moves[partyId * MAX_MON_MOVES + moveIdx] = GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + moveIdx);
@@ -830,8 +896,7 @@ static void ClosePlayerSecretBaseEntrance(void)
 
     for (i = 0; i < events->bgEventCount; i++)
     {
-        if (events->bgEvents[i].kind == BG_EVENT_SECRET_BASE
-         && gSaveBlock1Ptr->secretBases[0].secretBaseId == events->bgEvents[i].bgUnion.secretBaseId)
+        if (events->bgEvents[i].kind == BG_EVENT_SECRET_BASE && gSaveBlock1Ptr->secretBases[0].secretBaseId == events->bgEvents[i].bgUnion.secretBaseId)
         {
             metatileId = MapGridGetMetatileIdAt(events->bgEvents[i].x + MAP_OFFSET, events->bgEvents[i].y + MAP_OFFSET);
             for (j = 0; j < ARRAY_COUNT(sSecretBaseEntranceMetatiles); j++)
@@ -903,15 +968,15 @@ void ShowSecretBaseRegistryMenu(void)
     CreateTask(Task_ShowSecretBaseRegistryMenu, 0);
 }
 
-#define tNumBases       data[0]
-#define tSelectedRow    data[1]
-#define tScrollOffset   data[2]
-#define tMaxShownItems  data[3]
+#define tNumBases data[0]
+#define tSelectedRow data[1]
+#define tScrollOffset data[2]
+#define tMaxShownItems data[3]
 #define tSelectedBaseId data[4]
-#define tListTaskId     data[5]
-#define tMainWindowId   data[6]
+#define tListTaskId data[5]
+#define tMainWindowId data[6]
 #define tActionWindowId data[7]
-#define tArrowTaskId    data[8]
+#define tArrowTaskId data[8]
 
 static void Task_ShowSecretBaseRegistryMenu(u8 taskId)
 {
@@ -1131,8 +1196,7 @@ static void GoToSecretBasePCRegisterMenu(u8 taskId)
 
 static u8 GetSecretBaseOwnerType(u8 secretBaseIdx)
 {
-    return (gSaveBlock1Ptr->secretBases[secretBaseIdx].trainerId[0] % 5)
-         + (gSaveBlock1Ptr->secretBases[secretBaseIdx].gender * 5);
+    return (gSaveBlock1Ptr->secretBases[secretBaseIdx].trainerId[0] % 5) + (gSaveBlock1Ptr->secretBases[secretBaseIdx].gender * 5);
 }
 
 const u8 *GetSecretBaseTrainerLoseText(void)
@@ -1189,11 +1253,11 @@ void GetSecretBaseOwnerAndState(void)
     gSpecialVar_Result = gSaveBlock1Ptr->secretBases[secretBaseIdx].battledOwnerToday;
 }
 
-#define tStepCb  data[0] // See Task_RunPerStepCallback
-#define tState   data[1]
+#define tStepCb data[0] // See Task_RunPerStepCallback
+#define tState data[1]
 #define tPlayerX data[2]
 #define tPlayerY data[3]
-#define tFldEff  data[4]
+#define tFldEff data[4]
 
 void SecretBasePerStepCallback(u8 taskId)
 {
@@ -1231,29 +1295,17 @@ void SecretBasePerStepCallback(u8 taskId)
             if (sInFriendSecretBase == TRUE)
                 VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_SOLID_BOARD);
         }
-        else if (tileId == METATILE_SecretBase_SmallChair
-              || tileId == METATILE_SecretBase_PokemonChair
-              || tileId == METATILE_SecretBase_HeavyChair
-              || tileId == METATILE_SecretBase_PrettyChair
-              || tileId == METATILE_SecretBase_ComfortChair
-              || tileId == METATILE_SecretBase_RaggedChair
-              || tileId == METATILE_SecretBase_BrickChair
-              || tileId == METATILE_SecretBase_CampChair
-              || tileId == METATILE_SecretBase_HardChair)
+        else if (tileId == METATILE_SecretBase_SmallChair || tileId == METATILE_SecretBase_PokemonChair || tileId == METATILE_SecretBase_HeavyChair || tileId == METATILE_SecretBase_PrettyChair || tileId == METATILE_SecretBase_ComfortChair || tileId == METATILE_SecretBase_RaggedChair || tileId == METATILE_SecretBase_BrickChair || tileId == METATILE_SecretBase_CampChair || tileId == METATILE_SecretBase_HardChair)
         {
             if (sInFriendSecretBase == TRUE)
                 VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_CHAIR);
         }
-        else if (tileId == METATILE_SecretBase_RedTent_DoorTop
-              || tileId == METATILE_SecretBase_RedTent_Door
-              || tileId == METATILE_SecretBase_BlueTent_DoorTop
-              || tileId == METATILE_SecretBase_BlueTent_Door)
+        else if (tileId == METATILE_SecretBase_RedTent_DoorTop || tileId == METATILE_SecretBase_RedTent_Door || tileId == METATILE_SecretBase_BlueTent_DoorTop || tileId == METATILE_SecretBase_BlueTent_Door)
         {
             if (sInFriendSecretBase == TRUE)
                 VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TENT);
         }
-        else if ((behavior == MB_IMPASSABLE_NORTHEAST && tileId == METATILE_SecretBase_Stand_CornerRight)
-              || (behavior == MB_IMPASSABLE_NORTHWEST && MapGridGetMetatileIdAt(x, y) == METATILE_SecretBase_Stand_CornerLeft))
+        else if ((behavior == MB_IMPASSABLE_NORTHEAST && tileId == METATILE_SecretBase_Stand_CornerRight) || (behavior == MB_IMPASSABLE_NORTHWEST && MapGridGetMetatileIdAt(x, y) == METATILE_SecretBase_Stand_CornerLeft))
         {
             if (sInFriendSecretBase == TRUE)
                 VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_STAND);
@@ -1304,7 +1356,8 @@ void SecretBasePerStepCallback(u8 taskId)
 
             ShatterSecretBaseBreakableDoor(x, y);
         }
-        else if (MetatileBehavior_IsSecretBaseSoundMat(behavior) == TRUE){
+        else if (MetatileBehavior_IsSecretBaseSoundMat(behavior) == TRUE)
+        {
             if (sInFriendSecretBase == TRUE)
                 VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_NOTE_MAT);
         }
@@ -1383,9 +1436,7 @@ static bool8 SecretBasesHaveSameTrainerName(struct SecretBase *sbr1, struct Secr
 
 static bool8 SecretBasesBelongToSamePlayer(struct SecretBase *secretBase1, struct SecretBase *secretBase2)
 {
-    if (secretBase1->gender == secretBase2->gender
-     && SecretBasesHaveSameTrainerId(secretBase1, secretBase2)
-     && SecretBasesHaveSameTrainerName(secretBase1, secretBase2))
+    if (secretBase1->gender == secretBase2->gender && SecretBasesHaveSameTrainerId(secretBase1, secretBase2) && SecretBasesHaveSameTrainerName(secretBase1, secretBase2))
     {
         return TRUE;
     }
@@ -1494,8 +1545,7 @@ static void SortSecretBasesByRegistryStatus(void)
     {
         for (j = i + 1; j < SECRET_BASES_COUNT; j++)
         {
-            if ((secretBases[i].registryStatus == UNREGISTERED && secretBases[j].registryStatus == REGISTERED)
-             || (secretBases[i].registryStatus == NEW && secretBases[j].registryStatus != NEW))
+            if ((secretBases[i].registryStatus == UNREGISTERED && secretBases[j].registryStatus == REGISTERED) || (secretBases[i].registryStatus == NEW && secretBases[j].registryStatus != NEW))
             {
                 struct SecretBase temp;
                 SWAP(secretBases[i], secretBases[j], temp)
@@ -1542,9 +1592,9 @@ static bool8 SecretBaseBelongsToPlayer(struct SecretBase *secretBase)
     return TRUE;
 }
 
-#define DELETED_BASE_A  (1 << 0)
-#define DELETED_BASE_B  (1 << 1)
-#define DELETED_BASE_C  (1 << 2)
+#define DELETED_BASE_A (1 << 0)
+#define DELETED_BASE_B (1 << 1)
+#define DELETED_BASE_C (1 << 2)
 
 static void DeleteFirstOldBaseFromPlayerInRecordMixingFriendsRecords(struct SecretBase *basesA, struct SecretBase *basesB, struct SecretBase *basesC)
 {
@@ -1717,16 +1767,16 @@ static void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
     TrySaveFriendsSecretBases(&mixers[2], UNREGISTERED);
 }
 
-#define INIT_SECRET_BASE_RECORD_MIXER(linkId1, linkId2, linkId3)        \
-            mixers[0].secretBases = secretBases + linkId1 * recordSize; \
-            mixers[0].version = gLinkPlayers[linkId1].version & 0xFF;   \
-            mixers[0].language = gLinkPlayers[linkId1].language;        \
-            mixers[1].secretBases = secretBases + linkId2 * recordSize; \
-            mixers[1].version = gLinkPlayers[linkId2].version & 0xFF;   \
-            mixers[1].language = gLinkPlayers[linkId2].language;        \
-            mixers[2].secretBases = secretBases + linkId3 * recordSize; \
-            mixers[2].version = gLinkPlayers[linkId3].version & 0xFF;   \
-            mixers[2].language = gLinkPlayers[linkId3].language;
+#define INIT_SECRET_BASE_RECORD_MIXER(linkId1, linkId2, linkId3) \
+    mixers[0].secretBases = secretBases + linkId1 * recordSize;  \
+    mixers[0].version = gLinkPlayers[linkId1].version & 0xFF;    \
+    mixers[0].language = gLinkPlayers[linkId1].language;         \
+    mixers[1].secretBases = secretBases + linkId2 * recordSize;  \
+    mixers[1].version = gLinkPlayers[linkId2].version & 0xFF;    \
+    mixers[1].language = gLinkPlayers[linkId2].language;         \
+    mixers[2].secretBases = secretBases + linkId3 * recordSize;  \
+    mixers[2].version = gLinkPlayers[linkId3].version & 0xFF;    \
+    mixers[2].language = gLinkPlayers[linkId3].language;
 
 void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
 {
@@ -1783,8 +1833,7 @@ void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
                 gSaveBlock1Ptr->secretBases[i].registryStatus = UNREGISTERED;
         }
 
-        if (gSaveBlock1Ptr->secretBases[0].secretBaseId != 0
-         && gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived != 0xFFFF)
+        if (gSaveBlock1Ptr->secretBases[0].secretBaseId != 0 && gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived != 0xFFFF)
         {
             gSaveBlock1Ptr->secretBases[0].numSecretBasesReceived++;
         }
@@ -1889,24 +1938,24 @@ void CheckInteractedWithFriendsPosterDecor(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     switch (MapGridGetMetatileIdAt(x, y))
     {
-        case METATILE_SecretBase_PikaPoster_Left:
-        case METATILE_SecretBase_PikaPoster_Right:
-        case METATILE_SecretBase_LongPoster_Left:
-        case METATILE_SecretBase_LongPoster_Right:
-        case METATILE_SecretBase_SeaPoster_Left:
-        case METATILE_SecretBase_SeaPoster_Right:
-        case METATILE_SecretBase_SkyPoster_Left:
-        case METATILE_SecretBase_SkyPoster_Right:
-        case METATILE_SecretBase_KissPoster_Left:
-        case METATILE_SecretBase_KissPoster_Right:
-        case METATILE_SecretBase_BallPoster:
-        case METATILE_SecretBase_GreenPoster:
-        case METATILE_SecretBase_RedPoster:
-        case METATILE_SecretBase_BluePoster:
-        case METATILE_SecretBase_CutePoster:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_POSTER);
-            break;
+    case METATILE_SecretBase_PikaPoster_Left:
+    case METATILE_SecretBase_PikaPoster_Right:
+    case METATILE_SecretBase_LongPoster_Left:
+    case METATILE_SecretBase_LongPoster_Right:
+    case METATILE_SecretBase_SeaPoster_Left:
+    case METATILE_SecretBase_SeaPoster_Right:
+    case METATILE_SecretBase_SkyPoster_Left:
+    case METATILE_SecretBase_SkyPoster_Right:
+    case METATILE_SecretBase_KissPoster_Left:
+    case METATILE_SecretBase_KissPoster_Right:
+    case METATILE_SecretBase_BallPoster:
+    case METATILE_SecretBase_GreenPoster:
+    case METATILE_SecretBase_RedPoster:
+    case METATILE_SecretBase_BluePoster:
+    case METATILE_SecretBase_CutePoster:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_POSTER);
+        break;
     }
 }
 
@@ -1917,74 +1966,74 @@ void CheckInteractedWithFriendsFurnitureBottom(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     switch (MapGridGetMetatileIdAt(x, y))
     {
-        case METATILE_SecretBase_GlassOrnament_Base1:
-        case METATILE_SecretBase_GlassOrnament_Base2:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_GLASS_ORNAMENT);
-            break;
-        case METATILE_SecretBase_RedPlant_Base1:
-        case METATILE_SecretBase_RedPlant_Base2:
-        case METATILE_SecretBase_TropicalPlant_Base1:
-        case METATILE_SecretBase_TropicalPlant_Base2:
-        case METATILE_SecretBase_PrettyFlowers_Base1:
-        case METATILE_SecretBase_PrettyFlowers_Base2:
-        case METATILE_SecretBase_ColorfulPlant_BaseLeft1:
-        case METATILE_SecretBase_ColorfulPlant_BaseRight1:
-        case METATILE_SecretBase_ColorfulPlant_BaseLeft2:
-        case METATILE_SecretBase_ColorfulPlant_BaseRight2:
-        case METATILE_SecretBase_BigPlant_BaseLeft1:
-        case METATILE_SecretBase_BigPlant_BaseRight1:
-        case METATILE_SecretBase_BigPlant_BaseLeft2:
-        case METATILE_SecretBase_BigPlant_BaseRight2:
-        case METATILE_SecretBase_GorgeousPlant_BaseLeft1:
-        case METATILE_SecretBase_GorgeousPlant_BaseRight1:
-        case METATILE_SecretBase_GorgeousPlant_BaseLeft2:
-        case METATILE_SecretBase_GorgeousPlant_BaseRight2:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_PLANT);
-            break;
-        case METATILE_SecretBase_Fence_Horizontal:
-        case METATILE_SecretBase_Fence_Vertical:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_FENCE);
-            break;
-        case METATILE_SecretBase_Tire_BottomLeft:
-        case METATILE_SecretBase_Tire_BottomRight:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_TIRE);
-            break;
-        case METATILE_SecretBase_RedBrick_Bottom:
-        case METATILE_SecretBase_YellowBrick_Bottom:
-        case METATILE_SecretBase_BlueBrick_Bottom:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_BRICK);
-            break;
-        case METATILE_SecretBase_SmallDesk:
-        case METATILE_SecretBase_PokemonDesk:
-        case METATILE_SecretBase_HeavyDesk_BottomLeft:
-        case METATILE_SecretBase_HeavyDesk_BottomMid:
-        case METATILE_SecretBase_HeavyDesk_BottomRight:
-        case METATILE_SecretBase_RaggedDesk_BottomLeft:
-        case METATILE_SecretBase_RaggedDesk_BottomMid:
-        case METATILE_SecretBase_RaggedDesk_BottomRight:
-        case METATILE_SecretBase_ComfortDesk_BottomLeft:
-        case METATILE_SecretBase_ComfortDesk_BottomMid:
-        case METATILE_SecretBase_ComfortDesk_BottomRight:
-        case METATILE_SecretBase_BrickDesk_BottomLeft:
-        case METATILE_SecretBase_BrickDesk_BottomMid:
-        case METATILE_SecretBase_BrickDesk_BottomRight:
-        case METATILE_SecretBase_CampDesk_BottomLeft:
-        case METATILE_SecretBase_CampDesk_BottomMid:
-        case METATILE_SecretBase_CampDesk_BottomRight:
-        case METATILE_SecretBase_HardDesk_BottomLeft:
-        case METATILE_SecretBase_HardDesk_BottomMid:
-        case METATILE_SecretBase_HardDesk_BottomRight:
-        case METATILE_SecretBase_PrettyDesk_BottomLeft:
-        case METATILE_SecretBase_PrettyDesk_BottomMid:
-        case METATILE_SecretBase_PrettyDesk_BottomRight:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_DESK);
-            break;
+    case METATILE_SecretBase_GlassOrnament_Base1:
+    case METATILE_SecretBase_GlassOrnament_Base2:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_GLASS_ORNAMENT);
+        break;
+    case METATILE_SecretBase_RedPlant_Base1:
+    case METATILE_SecretBase_RedPlant_Base2:
+    case METATILE_SecretBase_TropicalPlant_Base1:
+    case METATILE_SecretBase_TropicalPlant_Base2:
+    case METATILE_SecretBase_PrettyFlowers_Base1:
+    case METATILE_SecretBase_PrettyFlowers_Base2:
+    case METATILE_SecretBase_ColorfulPlant_BaseLeft1:
+    case METATILE_SecretBase_ColorfulPlant_BaseRight1:
+    case METATILE_SecretBase_ColorfulPlant_BaseLeft2:
+    case METATILE_SecretBase_ColorfulPlant_BaseRight2:
+    case METATILE_SecretBase_BigPlant_BaseLeft1:
+    case METATILE_SecretBase_BigPlant_BaseRight1:
+    case METATILE_SecretBase_BigPlant_BaseLeft2:
+    case METATILE_SecretBase_BigPlant_BaseRight2:
+    case METATILE_SecretBase_GorgeousPlant_BaseLeft1:
+    case METATILE_SecretBase_GorgeousPlant_BaseRight1:
+    case METATILE_SecretBase_GorgeousPlant_BaseLeft2:
+    case METATILE_SecretBase_GorgeousPlant_BaseRight2:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_PLANT);
+        break;
+    case METATILE_SecretBase_Fence_Horizontal:
+    case METATILE_SecretBase_Fence_Vertical:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_FENCE);
+        break;
+    case METATILE_SecretBase_Tire_BottomLeft:
+    case METATILE_SecretBase_Tire_BottomRight:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_TIRE);
+        break;
+    case METATILE_SecretBase_RedBrick_Bottom:
+    case METATILE_SecretBase_YellowBrick_Bottom:
+    case METATILE_SecretBase_BlueBrick_Bottom:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_BRICK);
+        break;
+    case METATILE_SecretBase_SmallDesk:
+    case METATILE_SecretBase_PokemonDesk:
+    case METATILE_SecretBase_HeavyDesk_BottomLeft:
+    case METATILE_SecretBase_HeavyDesk_BottomMid:
+    case METATILE_SecretBase_HeavyDesk_BottomRight:
+    case METATILE_SecretBase_RaggedDesk_BottomLeft:
+    case METATILE_SecretBase_RaggedDesk_BottomMid:
+    case METATILE_SecretBase_RaggedDesk_BottomRight:
+    case METATILE_SecretBase_ComfortDesk_BottomLeft:
+    case METATILE_SecretBase_ComfortDesk_BottomMid:
+    case METATILE_SecretBase_ComfortDesk_BottomRight:
+    case METATILE_SecretBase_BrickDesk_BottomLeft:
+    case METATILE_SecretBase_BrickDesk_BottomMid:
+    case METATILE_SecretBase_BrickDesk_BottomRight:
+    case METATILE_SecretBase_CampDesk_BottomLeft:
+    case METATILE_SecretBase_CampDesk_BottomMid:
+    case METATILE_SecretBase_CampDesk_BottomRight:
+    case METATILE_SecretBase_HardDesk_BottomLeft:
+    case METATILE_SecretBase_HardDesk_BottomMid:
+    case METATILE_SecretBase_HardDesk_BottomRight:
+    case METATILE_SecretBase_PrettyDesk_BottomLeft:
+    case METATILE_SecretBase_PrettyDesk_BottomMid:
+    case METATILE_SecretBase_PrettyDesk_BottomRight:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_DESK);
+        break;
     }
 }
 
@@ -1995,20 +2044,20 @@ void CheckInteractedWithFriendsFurnitureMiddle(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     switch (MapGridGetMetatileIdAt(x, y))
     {
-        case METATILE_SecretBase_HeavyDesk_TopMid:
-        case METATILE_SecretBase_RaggedDesk_TopMid:
-        case METATILE_SecretBase_ComfortDesk_TopMid:
-        case METATILE_SecretBase_BrickDesk_TopMid:
-        case METATILE_SecretBase_BrickDesk_Center:
-        case METATILE_SecretBase_CampDesk_TopMid:
-        case METATILE_SecretBase_CampDesk_Center:
-        case METATILE_SecretBase_HardDesk_TopMid:
-        case METATILE_SecretBase_HardDesk_Center:
-        case METATILE_SecretBase_PrettyDesk_TopMid:
-        case METATILE_SecretBase_PrettyDesk_Center:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_DESK);
-            break;
+    case METATILE_SecretBase_HeavyDesk_TopMid:
+    case METATILE_SecretBase_RaggedDesk_TopMid:
+    case METATILE_SecretBase_ComfortDesk_TopMid:
+    case METATILE_SecretBase_BrickDesk_TopMid:
+    case METATILE_SecretBase_BrickDesk_Center:
+    case METATILE_SecretBase_CampDesk_TopMid:
+    case METATILE_SecretBase_CampDesk_Center:
+    case METATILE_SecretBase_HardDesk_TopMid:
+    case METATILE_SecretBase_HardDesk_Center:
+    case METATILE_SecretBase_PrettyDesk_TopMid:
+    case METATILE_SecretBase_PrettyDesk_Center:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_DESK);
+        break;
     }
 }
 
@@ -2019,42 +2068,42 @@ void CheckInteractedWithFriendsFurnitureTop(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     switch (MapGridGetMetatileIdAt(x, y))
     {
-        case METATILE_SecretBase_HeavyDesk_TopLeft:
-        case METATILE_SecretBase_HeavyDesk_TopRight:
-        case METATILE_SecretBase_RaggedDesk_TopLeft:
-        case METATILE_SecretBase_RaggedDesk_TopRight:
-        case METATILE_SecretBase_ComfortDesk_TopLeft:
-        case METATILE_SecretBase_ComfortDesk_TopRight:
-        case METATILE_SecretBase_BrickDesk_TopLeft:
-        case METATILE_SecretBase_BrickDesk_TopRight:
-        case METATILE_SecretBase_BrickDesk_MidLeft:
-        case METATILE_SecretBase_BrickDesk_MidRight:
-        case METATILE_SecretBase_CampDesk_TopLeft:
-        case METATILE_SecretBase_CampDesk_TopRight:
-        case METATILE_SecretBase_CampDesk_MidLeft:
-        case METATILE_SecretBase_CampDesk_MidRight:
-        case METATILE_SecretBase_HardDesk_TopLeft:
-        case METATILE_SecretBase_HardDesk_TopRight:
-        case METATILE_SecretBase_HardDesk_MidLeft:
-        case METATILE_SecretBase_HardDesk_MidRight:
-        case METATILE_SecretBase_PrettyDesk_TopLeft:
-        case METATILE_SecretBase_PrettyDesk_TopRight:
-        case METATILE_SecretBase_PrettyDesk_MidLeft:
-        case METATILE_SecretBase_PrettyDesk_MidRight:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_DESK);
-            break;
-        case METATILE_SecretBase_Tire_TopLeft:
-        case METATILE_SecretBase_Tire_TopRight:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_TIRE);
-            break;
-        case METATILE_SecretBase_RedBrick_Top:
-        case METATILE_SecretBase_YellowBrick_Top:
-        case METATILE_SecretBase_BlueBrick_Top:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_BRICK);
-            break;
+    case METATILE_SecretBase_HeavyDesk_TopLeft:
+    case METATILE_SecretBase_HeavyDesk_TopRight:
+    case METATILE_SecretBase_RaggedDesk_TopLeft:
+    case METATILE_SecretBase_RaggedDesk_TopRight:
+    case METATILE_SecretBase_ComfortDesk_TopLeft:
+    case METATILE_SecretBase_ComfortDesk_TopRight:
+    case METATILE_SecretBase_BrickDesk_TopLeft:
+    case METATILE_SecretBase_BrickDesk_TopRight:
+    case METATILE_SecretBase_BrickDesk_MidLeft:
+    case METATILE_SecretBase_BrickDesk_MidRight:
+    case METATILE_SecretBase_CampDesk_TopLeft:
+    case METATILE_SecretBase_CampDesk_TopRight:
+    case METATILE_SecretBase_CampDesk_MidLeft:
+    case METATILE_SecretBase_CampDesk_MidRight:
+    case METATILE_SecretBase_HardDesk_TopLeft:
+    case METATILE_SecretBase_HardDesk_TopRight:
+    case METATILE_SecretBase_HardDesk_MidLeft:
+    case METATILE_SecretBase_HardDesk_MidRight:
+    case METATILE_SecretBase_PrettyDesk_TopLeft:
+    case METATILE_SecretBase_PrettyDesk_TopRight:
+    case METATILE_SecretBase_PrettyDesk_MidLeft:
+    case METATILE_SecretBase_PrettyDesk_MidRight:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_DESK);
+        break;
+    case METATILE_SecretBase_Tire_TopLeft:
+    case METATILE_SecretBase_Tire_TopRight:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_TIRE);
+        break;
+    case METATILE_SecretBase_RedBrick_Top:
+    case METATILE_SecretBase_YellowBrick_Top:
+    case METATILE_SecretBase_BlueBrick_Top:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_BRICK);
+        break;
     }
 }
 
@@ -2065,10 +2114,10 @@ void CheckInteractedWithFriendsSandOrnament(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     switch ((int)MapGridGetMetatileIdAt(x, y))
     {
-        case METATILE_SecretBase_SandOrnament_Base1:
-        case METATILE_SecretBase_SandOrnament_Base2:
-            if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
-                VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_SAND_ORNAMENT);
-            break;
+    case METATILE_SecretBase_SandOrnament_Base1:
+    case METATILE_SecretBase_SandOrnament_Base2:
+        if (VarGet(VAR_CURRENT_SECRET_BASE) != 0)
+            VarSet(VAR_SECRET_BASE_HIGH_TV_FLAGS, VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) | SECRET_BASE_USED_SAND_ORNAMENT);
+        break;
     }
 }

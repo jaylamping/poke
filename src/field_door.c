@@ -8,9 +8,9 @@
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
 
-#define DOOR_SOUND_NORMAL  0
+#define DOOR_SOUND_NORMAL 0
 #define DOOR_SOUND_SLIDING 1
-#define DOOR_SOUND_ARENA   2
+#define DOOR_SOUND_ARENA 2
 
 struct DoorGraphics
 {
@@ -133,39 +133,39 @@ static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/d
 static const u16 sDoorNullPalette49[16] = {};
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
-{
-    {4, -1},
-    {4, 0},
-    {4, 0x100},
-    {4, 0x200},
-    {0, 0},
+    {
+        {4, -1},
+        {4, 0},
+        {4, 0x100},
+        {4, 0x200},
+        {0, 0},
 };
 
 static const struct DoorAnimFrame sDoorCloseAnimFrames[] =
-{
-    {4, 0x200},
-    {4, 0x100},
-    {4, 0},
-    {4, -1},
-    {0, 0},
+    {
+        {4, 0x200},
+        {4, 0x100},
+        {4, 0},
+        {4, -1},
+        {0, 0},
 };
 
 static const struct DoorAnimFrame sBigDoorOpenAnimFrames[] =
-{
-    {4, -1},
-    {4, 0},
-    {4, 0x200},
-    {4, 0x400},
-    {0, 0},
+    {
+        {4, -1},
+        {4, 0},
+        {4, 0x200},
+        {4, 0x400},
+        {0, 0},
 };
 
 static const struct DoorAnimFrame sBigDoorCloseAnimFrames[] =
-{
-    {4, 0x400},
-    {4, 0x200},
-    {4, 0},
-    {4, -1},
-    {0, 0},
+    {
+        {4, 0x400},
+        {4, 0x200},
+        {4, 0},
+        {4, -1},
+        {0, 0},
 };
 
 static const u8 sDoorAnimPalettes_General[] = {1, 1, 1, 1, 1, 1, 1, 1};
@@ -221,63 +221,63 @@ static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
-{
-    {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
-    {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
-    {METATILE_General_Door_Gym,                             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},
-    {METATILE_General_Door_PokeMart,                        DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeMart, sDoorAnimPalettes_PokeMart},
-    {METATILE_Petalburg_Door_Littleroot,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Littleroot, sDoorAnimPalettes_Littleroot},
-    {METATILE_Petalburg_Door_BirchsLab,                     DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_BirchsLab, sDoorAnimPalettes_BirchsLab},
-    {METATILE_Rustboro_Door_Tan,                            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_RustboroTan, sDoorAnimPalettes_RustboroTan},
-    {METATILE_Rustboro_Door_Gray,                           DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_RustboroGray, sDoorAnimPalettes_RustboroGray},
-    {METATILE_Fallarbor_Door_LightRoof,                     DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_FallarborLightRoof, sDoorAnimPalettes_FallarborLightRoof},
-    {METATILE_Petalburg_Door_Oldale,                        DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Oldale, sDoorAnimPalettes_Oldale},
-    {METATILE_Mauville_Door,                                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Mauville, sDoorAnimPalettes_Mauville},
-    {METATILE_Mauville_Door_Verdanturf,                     DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Verdanturf, sDoorAnimPalettes_Verdanturf},
-    {METATILE_Slateport_Door,                               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Slateport, sDoorAnimPalettes_Slateport},
-    {METATILE_Dewford_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Dewford, sDoorAnimPalettes_Dewford},
-    {METATILE_General_Door_Contest,                         DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Contest, sDoorAnimPalettes_Contest},
-    {METATILE_Lilycove_Door,                                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Lilycove, sDoorAnimPalettes_Lilycove},
-    {METATILE_Lilycove_Door_Wooden,                         DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_LilycoveWooden, sDoorAnimPalettes_LilycoveWooden},
-    {METATILE_Mossdeep_Door,                                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Mossdeep, sDoorAnimPalettes_Mossdeep},
-    {METATILE_Sootopolis_Door_PeakedRoof,                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_SootopolisPeakedRoof, sDoorAnimPalettes_SootopolisPeakedRoof},
-    {METATILE_Sootopolis_Door,                              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Sootopolis, sDoorAnimPalettes_Sootopolis},
-    {METATILE_EverGrande_Door_PokemonLeague,                DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokemonLeague, sDoorAnimPalettes_PokemonLeague},
-    {METATILE_Pacifidlog_Door,                              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Pacifidlog, sDoorAnimPalettes_Pacifidlog},
-    {METATILE_PetalburgGym_Door,                            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PetalburgGym, sDoorAnimPalettes_PetalburgGym},
-    {METATILE_Mauville_Door_CyclingRoad,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_CyclingRoad, sDoorAnimPalettes_CyclingRoad},
-    {METATILE_Lilycove_Door_DeptStore,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_LilycoveDeptStore, sDoorAnimPalettes_LilycoveDeptStore},
-    {METATILE_Lilycove_Door_SafariZone,                     DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_SafariZone, sDoorAnimPalettes_SafariZone},
-    {METATILE_Mossdeep_Door_SpaceCenter,                    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_MossdeepSpaceCenter, sDoorAnimPalettes_MossdeepSpaceCenter},
-    {METATILE_PokemonCenter_Door_CableClub,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_CableClub, sDoorAnimPalettes_CableClub},
-    {METATILE_InsideShip_IntactDoor_Bottom_Unlocked,        DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_AbandonedShip, sDoorAnimPalettes_AbandonedShip},
-    {METATILE_Fallarbor_Door_DarkRoof,                      DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_FallarborDarkRoof, sDoorAnimPalettes_FallarborDarkRoof},
-    {METATILE_InsideShip_IntactDoor_Bottom_Interior,        DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_AbandonedShipRoom, sDoorAnimPalettes_AbandonedShipRoom},
-    {METATILE_Shop_Door_Elevator,                           DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_LilycoveDeptStoreElevator, sDoorAnimPalettes_LilycoveDeptStoreElevator},
-    {METATILE_Dewford_Door_BattleTower,                     DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerOld, sDoorAnimPalettes_BattleTowerOld},
-    {METATILE_BattleFrontier_Door_Elevator,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerElevator, sDoorAnimPalettes_BattleTowerElevator},
-    // The metatile for this door doesn't seem to correspond to a door in any Emerald tileset. Given the surrounding door animations, it was likely cut from the Battle Frontier.
-    // From the palettes array we know it uses palette 9, and the door's shadow looks correct using either the Battle Tent or Battle Frontier Outside's 9th palette.
-    {0x3B0,                                                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_UnusedBattleFrontier, sDoorAnimPalettes_UnusedBattleFrontier},
-    {METATILE_BattleFrontierOutsideWest_Door_BattleDome,    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDome, sDoorAnimPalettes_BattleDome},
-    {METATILE_BattleFrontierOutsideWest_Door_BattleFactory, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleFactory, sDoorAnimPalettes_BattleFactory},
-    {METATILE_BattleFrontierOutsideEast_Door_BattleTower,   DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTower, sDoorAnimPalettes_BattleTower},
-    {METATILE_BattleFrontierOutsideEast_Door_BattleArena,   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_BattleArena, sDoorAnimPalettes_BattleArena},
-    {METATILE_BattleArena_Door,                             DOOR_SOUND_ARENA,   1, sDoorAnimTiles_BattleArenaLobby, sDoorAnimPalettes_BattleArenaLobby},
-    {METATILE_BattleDome_Door_Lobby,                        DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDomeLobby, sDoorAnimPalettes_BattleDomeLobby},
-    {METATILE_BattlePalace_Door,                            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_BattlePalaceLobby, sDoorAnimPalettes_BattlePalaceLobby},
-    {METATILE_Slateport_Door_BattleTent,                    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTent, sDoorAnimPalettes_BattleTent},
-    {METATILE_Mauville_Door_BattleTent,                     DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTent, sDoorAnimPalettes_BattleTent},
-    {METATILE_Fallarbor_Door_BattleTent,                    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTent, sDoorAnimPalettes_BattleTent},
-    {METATILE_BattleDome_Door_Corridor,                     DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDomeCorridor, sDoorAnimPalettes_BattleDomeCorridor},
-    {METATILE_BattleFrontier_Door_MultiCorridor,            DOOR_SOUND_SLIDING, 2, sDoorAnimTiles_BattleTowerMultiCorridor, sDoorAnimPalettes_BattleTowerMultiCorridor},
-    {METATILE_BattleFrontierOutsideWest_Door,               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_BattleFrontier, sDoorAnimPalettes_BattleFrontier},
-    {METATILE_BattleFrontierOutsideWest_Door_Sliding,       DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleFrontierSliding, sDoorAnimPalettes_BattleFrontier},
-    {METATILE_BattleDome_Door_PreBattleRoom,                DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDomePreBattleRoom, sDoorAnimPalettes_BattleDomePreBattleRoom},
-    {METATILE_BattleTent_Door,                              DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTentInterior, sDoorAnimPalettes_BattleTentInterior},
-    {METATILE_TrainerHill_Door_Elevator_Lobby,              DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillLobbyElevator, sDoorAnimPalettes_TrainerHillLobbyElevator},
-    {METATILE_TrainerHill_Door_Elevator_Roof,               DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillRoofElevator, sDoorAnimPalettes_TrainerHillRoofElevator},
-    {},
+    {
+        {METATILE_General_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
+        {METATILE_General_Door_PokeCenter, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
+        {METATILE_General_Door_Gym, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},
+        {METATILE_General_Door_PokeMart, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeMart, sDoorAnimPalettes_PokeMart},
+        {METATILE_Petalburg_Door_Littleroot, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Littleroot, sDoorAnimPalettes_Littleroot},
+        {METATILE_Petalburg_Door_BirchsLab, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_BirchsLab, sDoorAnimPalettes_BirchsLab},
+        {METATILE_Rustboro_Door_Tan, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_RustboroTan, sDoorAnimPalettes_RustboroTan},
+        {METATILE_Rustboro_Door_Gray, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_RustboroGray, sDoorAnimPalettes_RustboroGray},
+        {METATILE_Fallarbor_Door_LightRoof, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_FallarborLightRoof, sDoorAnimPalettes_FallarborLightRoof},
+        {METATILE_Petalburg_Door_Oldale, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Oldale, sDoorAnimPalettes_Oldale},
+        {METATILE_Mauville_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Mauville, sDoorAnimPalettes_Mauville},
+        {METATILE_Mauville_Door_Verdanturf, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Verdanturf, sDoorAnimPalettes_Verdanturf},
+        {METATILE_Slateport_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Slateport, sDoorAnimPalettes_Slateport},
+        {METATILE_Dewford_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Dewford, sDoorAnimPalettes_Dewford},
+        {METATILE_General_Door_Contest, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Contest, sDoorAnimPalettes_Contest},
+        {METATILE_Lilycove_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Lilycove, sDoorAnimPalettes_Lilycove},
+        {METATILE_Lilycove_Door_Wooden, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_LilycoveWooden, sDoorAnimPalettes_LilycoveWooden},
+        {METATILE_Mossdeep_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Mossdeep, sDoorAnimPalettes_Mossdeep},
+        {METATILE_Sootopolis_Door_PeakedRoof, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_SootopolisPeakedRoof, sDoorAnimPalettes_SootopolisPeakedRoof},
+        {METATILE_Sootopolis_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Sootopolis, sDoorAnimPalettes_Sootopolis},
+        {METATILE_EverGrande_Door_PokemonLeague, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokemonLeague, sDoorAnimPalettes_PokemonLeague},
+        {METATILE_Pacifidlog_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_Pacifidlog, sDoorAnimPalettes_Pacifidlog},
+        {METATILE_PetalburgGym_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_PetalburgGym, sDoorAnimPalettes_PetalburgGym},
+        {METATILE_Mauville_Door_CyclingRoad, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_CyclingRoad, sDoorAnimPalettes_CyclingRoad},
+        {METATILE_Lilycove_Door_DeptStore, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_LilycoveDeptStore, sDoorAnimPalettes_LilycoveDeptStore},
+        {METATILE_Lilycove_Door_SafariZone, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_SafariZone, sDoorAnimPalettes_SafariZone},
+        {METATILE_Mossdeep_Door_SpaceCenter, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_MossdeepSpaceCenter, sDoorAnimPalettes_MossdeepSpaceCenter},
+        {METATILE_PokemonCenter_Door_CableClub, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_CableClub, sDoorAnimPalettes_CableClub},
+        {METATILE_InsideShip_IntactDoor_Bottom_Unlocked, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_AbandonedShip, sDoorAnimPalettes_AbandonedShip},
+        {METATILE_Fallarbor_Door_DarkRoof, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_FallarborDarkRoof, sDoorAnimPalettes_FallarborDarkRoof},
+        {METATILE_InsideShip_IntactDoor_Bottom_Interior, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_AbandonedShipRoom, sDoorAnimPalettes_AbandonedShipRoom},
+        {METATILE_Shop_Door_Elevator, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_LilycoveDeptStoreElevator, sDoorAnimPalettes_LilycoveDeptStoreElevator},
+        {METATILE_Dewford_Door_BattleTower, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerOld, sDoorAnimPalettes_BattleTowerOld},
+        {METATILE_BattleFrontier_Door_Elevator, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerElevator, sDoorAnimPalettes_BattleTowerElevator},
+        // The metatile for this door doesn't seem to correspond to a door in any Emerald tileset. Given the surrounding door animations, it was likely cut from the Battle Frontier.
+        // From the palettes array we know it uses palette 9, and the door's shadow looks correct using either the Battle Tent or Battle Frontier Outside's 9th palette.
+        {0x3B0, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_UnusedBattleFrontier, sDoorAnimPalettes_UnusedBattleFrontier},
+        {METATILE_BattleFrontierOutsideWest_Door_BattleDome, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDome, sDoorAnimPalettes_BattleDome},
+        {METATILE_BattleFrontierOutsideWest_Door_BattleFactory, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleFactory, sDoorAnimPalettes_BattleFactory},
+        {METATILE_BattleFrontierOutsideEast_Door_BattleTower, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTower, sDoorAnimPalettes_BattleTower},
+        {METATILE_BattleFrontierOutsideEast_Door_BattleArena, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_BattleArena, sDoorAnimPalettes_BattleArena},
+        {METATILE_BattleArena_Door, DOOR_SOUND_ARENA, 1, sDoorAnimTiles_BattleArenaLobby, sDoorAnimPalettes_BattleArenaLobby},
+        {METATILE_BattleDome_Door_Lobby, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDomeLobby, sDoorAnimPalettes_BattleDomeLobby},
+        {METATILE_BattlePalace_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_BattlePalaceLobby, sDoorAnimPalettes_BattlePalaceLobby},
+        {METATILE_Slateport_Door_BattleTent, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTent, sDoorAnimPalettes_BattleTent},
+        {METATILE_Mauville_Door_BattleTent, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTent, sDoorAnimPalettes_BattleTent},
+        {METATILE_Fallarbor_Door_BattleTent, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTent, sDoorAnimPalettes_BattleTent},
+        {METATILE_BattleDome_Door_Corridor, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDomeCorridor, sDoorAnimPalettes_BattleDomeCorridor},
+        {METATILE_BattleFrontier_Door_MultiCorridor, DOOR_SOUND_SLIDING, 2, sDoorAnimTiles_BattleTowerMultiCorridor, sDoorAnimPalettes_BattleTowerMultiCorridor},
+        {METATILE_BattleFrontierOutsideWest_Door, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_BattleFrontier, sDoorAnimPalettes_BattleFrontier},
+        {METATILE_BattleFrontierOutsideWest_Door_Sliding, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleFrontierSliding, sDoorAnimPalettes_BattleFrontier},
+        {METATILE_BattleDome_Door_PreBattleRoom, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDomePreBattleRoom, sDoorAnimPalettes_BattleDomePreBattleRoom},
+        {METATILE_BattleTent_Door, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTentInterior, sDoorAnimPalettes_BattleTentInterior},
+        {METATILE_TrainerHill_Door_Elevator_Lobby, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillLobbyElevator, sDoorAnimPalettes_TrainerHillLobbyElevator},
+        {METATILE_TrainerHill_Door_Elevator_Roof, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillRoofElevator, sDoorAnimPalettes_TrainerHillRoofElevator},
+        {},
 };
 
 // NOTE: The tiles of a door's animation must be copied to VRAM because they are not already part of any given tileset.
@@ -408,7 +408,7 @@ static bool32 AnimateDoorFrame(struct DoorGraphics *gfx, struct DoorAnimFrame *f
 
 static void Task_AnimateDoor(u8 taskId)
 {
-    u16 *data = (u16*) gTasks[taskId].data;
+    u16 *data = (u16 *)gTasks[taskId].data;
     struct DoorAnimFrame *frames = (struct DoorAnimFrame *)(tFramesHi << 16 | tFramesLo);
     struct DoorGraphics *gfx = (struct DoorGraphics *)(tGfxHi << 16 | tGfxLo);
 
@@ -562,8 +562,7 @@ static bool8 ShouldUseMultiCorridorDoor(void)
 {
     if (FlagGet(FLAG_ENABLE_MULTI_CORRIDOR_DOOR))
     {
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR)
-            && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR))
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR))
         {
             return TRUE;
         }

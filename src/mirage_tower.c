@@ -79,88 +79,86 @@ static const u8 ALIGNED(2) sBlankTile_Gfx[32] = {0};
 static const u8 sMirageTower_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower.4bpp");
 static const u16 sMirageTowerTilemap[] = INCBIN_U16("graphics/misc/mirage_tower.bin");
 static const u16 sFossil_Pal[] = INCBIN_U16("graphics/object_events/pics/misc/fossil.gbapal"); // Unused
-static const u8 sFossil_Gfx[] = INCBIN_U8("graphics/object_events/pics/misc/fossil.4bpp"); // Duplicate of gObjectEventPic_Fossil
+static const u8 sFossil_Gfx[] = INCBIN_U8("graphics/object_events/pics/misc/fossil.4bpp");     // Duplicate of gObjectEventPic_Fossil
 static const u8 sMirageTowerCrumbles_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower_crumbles.4bpp");
 static const u16 sMirageTowerCrumbles_Palette[] = INCBIN_U16("graphics/misc/mirage_tower_crumbles.gbapal");
 
 static const s16 sCeilingCrumblePositions[][3] =
-{
-    {  0,  10,  65},
-    { 17,   3,  50},
-    {-12,   0,  75},
-    { 10,  15,  90},
-    {  7,   8,  65},
-    {-18,   5,  75},
-    { 22, -10,  55},
-    {-24,  -4,  65},
+    {
+        {0, 10, 65},
+        {17, 3, 50},
+        {-12, 0, 75},
+        {10, 15, 90},
+        {7, 8, 65},
+        {-18, 5, 75},
+        {22, -10, 55},
+        {-24, -4, 65},
 };
 
 static const struct SpriteSheet sCeilingCrumbleSpriteSheets[] =
-{
-    {sMirageTowerCrumbles_Gfx, sizeof(sMirageTowerCrumbles_Gfx), TAG_CEILING_CRUMBLE},
-    {}
-};
+    {
+        {sMirageTowerCrumbles_Gfx, sizeof(sMirageTowerCrumbles_Gfx), TAG_CEILING_CRUMBLE},
+        {}};
 
 static const struct MetatileCoords sInvisibleMirageTowerMetatiles[] =
-{
-    {18, 53, METATILE_Mauville_DeepSand_Center},
-    {19, 53, METATILE_Mauville_DeepSand_Center},
-    {20, 53, METATILE_Mauville_DeepSand_Center},
-    {18, 54, METATILE_Mauville_DeepSand_Center},
-    {19, 54, METATILE_Mauville_DeepSand_Center},
-    {20, 54, METATILE_Mauville_DeepSand_Center},
-    {18, 55, METATILE_Mauville_DeepSand_Center},
-    {19, 55, METATILE_Mauville_DeepSand_Center},
-    {20, 55, METATILE_Mauville_DeepSand_Center},
-    {18, 56, METATILE_Mauville_DeepSand_Center},
-    {19, 56, METATILE_Mauville_DeepSand_Center},
-    {20, 56, METATILE_Mauville_DeepSand_Center},
-    {18, 57, METATILE_Mauville_DeepSand_BottomMid},
-    {19, 57, METATILE_Mauville_DeepSand_BottomMid},
-    {20, 57, METATILE_Mauville_DeepSand_BottomMid},
-    {18, 58, METATILE_General_SandPit_Center},
-    {19, 58, METATILE_General_SandPit_Center},
-    {20, 58, METATILE_General_SandPit_Center},
+    {
+        {18, 53, METATILE_Mauville_DeepSand_Center},
+        {19, 53, METATILE_Mauville_DeepSand_Center},
+        {20, 53, METATILE_Mauville_DeepSand_Center},
+        {18, 54, METATILE_Mauville_DeepSand_Center},
+        {19, 54, METATILE_Mauville_DeepSand_Center},
+        {20, 54, METATILE_Mauville_DeepSand_Center},
+        {18, 55, METATILE_Mauville_DeepSand_Center},
+        {19, 55, METATILE_Mauville_DeepSand_Center},
+        {20, 55, METATILE_Mauville_DeepSand_Center},
+        {18, 56, METATILE_Mauville_DeepSand_Center},
+        {19, 56, METATILE_Mauville_DeepSand_Center},
+        {20, 56, METATILE_Mauville_DeepSand_Center},
+        {18, 57, METATILE_Mauville_DeepSand_BottomMid},
+        {19, 57, METATILE_Mauville_DeepSand_BottomMid},
+        {20, 57, METATILE_Mauville_DeepSand_BottomMid},
+        {18, 58, METATILE_General_SandPit_Center},
+        {19, 58, METATILE_General_SandPit_Center},
+        {20, 58, METATILE_General_SandPit_Center},
 };
 
 static const union AnimCmd sAnim_FallingFossil[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
+    {
+        ANIMCMD_FRAME(0, 1),
+        ANIMCMD_END,
 };
 
 static const struct OamData sOamData_FallingFossil =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(16x16),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(16x16),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 3,
-    .affineParam = 0,
+    {
+        .y = 0,
+        .affineMode = ST_OAM_AFFINE_OFF,
+        .objMode = ST_OAM_OBJ_NORMAL,
+        .mosaic = FALSE,
+        .bpp = ST_OAM_4BPP,
+        .shape = SPRITE_SHAPE(16x16),
+        .x = 0,
+        .matrixNum = 0,
+        .size = SPRITE_SIZE(16x16),
+        .tileNum = 0,
+        .priority = 0,
+        .paletteNum = 3,
+        .affineParam = 0,
 };
 
 static const union AnimCmd *const sAnims_FallingFossil[] =
-{
-    sAnim_FallingFossil,
+    {
+        sAnim_FallingFossil,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_FallingFossil =
-{
-    .tileTag = TAG_NONE,
-    .paletteTag = TAG_NONE,
-    .oam = &sOamData_FallingFossil,
-    .anims = sAnims_FallingFossil,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
-};
+    {
+        .tileTag = TAG_NONE,
+        .paletteTag = TAG_NONE,
+        .oam = &sOamData_FallingFossil,
+        .anims = sAnims_FallingFossil,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy};
 
 const struct PulseBlendSettings gMirageTowerPulseBlendSettings = {
     .blendColor = RGB(27, 25, 16),
@@ -175,82 +173,80 @@ const struct PulseBlendSettings gMirageTowerPulseBlendSettings = {
 };
 
 static const union AnimCmd sAnim_CeilingCrumbleSmall[] =
-{
-    ANIMCMD_FRAME(0, 12),
-    ANIMCMD_JUMP(0),
+    {
+        ANIMCMD_FRAME(0, 12),
+        ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd *const sAnims_CeilingCrumbleSmall[] =
-{
-    sAnim_CeilingCrumbleSmall,
+    {
+        sAnim_CeilingCrumbleSmall,
 };
 
 static const struct OamData sOamData_CeilingCrumbleSmall =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(8x8),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(8x8),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-    .affineParam = 0,
+    {
+        .y = 0,
+        .affineMode = ST_OAM_AFFINE_OFF,
+        .objMode = ST_OAM_OBJ_NORMAL,
+        .mosaic = FALSE,
+        .bpp = ST_OAM_4BPP,
+        .shape = SPRITE_SHAPE(8x8),
+        .x = 0,
+        .matrixNum = 0,
+        .size = SPRITE_SIZE(8x8),
+        .tileNum = 0,
+        .priority = 0,
+        .paletteNum = 0,
+        .affineParam = 0,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_CeilingCrumbleSmall =
-{
-    .tileTag = TAG_CEILING_CRUMBLE,
-    .paletteTag = TAG_NONE,
-    .oam = &sOamData_CeilingCrumbleSmall,
-    .anims = sAnims_CeilingCrumbleSmall,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_CeilingCrumble
-};
+    {
+        .tileTag = TAG_CEILING_CRUMBLE,
+        .paletteTag = TAG_NONE,
+        .oam = &sOamData_CeilingCrumbleSmall,
+        .anims = sAnims_CeilingCrumbleSmall,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCB_CeilingCrumble};
 
 static const union AnimCmd sAnim_CeilingCrumbleLarge[] =
-{
-    ANIMCMD_FRAME(0, 12),
-    ANIMCMD_JUMP(0),
+    {
+        ANIMCMD_FRAME(0, 12),
+        ANIMCMD_JUMP(0),
 };
 
 static const union AnimCmd *const sAnims_CeilingCrumbleLarge[] =
-{
-    sAnim_CeilingCrumbleLarge,
+    {
+        sAnim_CeilingCrumbleLarge,
 };
 
 static const struct OamData sOamData_CeilingCrumbleLarge =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(16x16),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(16x16),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-    .affineParam = 0,
+    {
+        .y = 0,
+        .affineMode = ST_OAM_AFFINE_OFF,
+        .objMode = ST_OAM_OBJ_NORMAL,
+        .mosaic = FALSE,
+        .bpp = ST_OAM_4BPP,
+        .shape = SPRITE_SHAPE(16x16),
+        .x = 0,
+        .matrixNum = 0,
+        .size = SPRITE_SIZE(16x16),
+        .tileNum = 0,
+        .priority = 0,
+        .paletteNum = 0,
+        .affineParam = 0,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_CeilingCrumbleLarge =
-{
-    .tileTag = TAG_CEILING_CRUMBLE,
-    .paletteTag = TAG_NONE,
-    .oam = &sOamData_CeilingCrumbleLarge,
-    .anims = sAnims_CeilingCrumbleLarge,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_CeilingCrumble
-};
+    {
+        .tileTag = TAG_CEILING_CRUMBLE,
+        .paletteTag = TAG_NONE,
+        .oam = &sOamData_CeilingCrumbleLarge,
+        .anims = sAnims_CeilingCrumbleLarge,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCB_CeilingCrumble};
 
 EWRAM_DATA static u8 *sMirageTowerGfxBuffer = NULL;
 EWRAM_DATA static u8 *sMirageTowerTilemapBuffer = NULL;
@@ -265,7 +261,7 @@ static u16 sDebug_DisintegrationData[8];
 
 bool8 IsMirageTowerVisible(void)
 {
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)))
+    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_ROUTE111)))
         return FALSE;
     return FlagGet(FLAG_MIRAGE_TOWER_VISIBLE);
 }
@@ -288,9 +284,7 @@ void TryStartMirageTowerPulseBlendEffect(void)
         return;
     }
 
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(ROUTE111)
-     || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(HOENN_ROUTE111) || gSaveBlock1Ptr->location.mapNum != MAP_NUM(HOENN_ROUTE111) || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
         return;
 
     sMirageTowerPulseBlend = AllocZeroed(sizeof(*sMirageTowerPulseBlend));
@@ -302,10 +296,7 @@ void TryStartMirageTowerPulseBlendEffect(void)
 
 void ClearMirageTowerPulseBlendEffect(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(ROUTE111)
-     || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE)
-     || sMirageTowerPulseBlend == NULL)
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(HOENN_ROUTE111) || gSaveBlock1Ptr->location.mapNum != MAP_NUM(HOENN_ROUTE111) || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE) || sMirageTowerPulseBlend == NULL)
         return;
 
     if (FuncIsActiveTask(UpdateMirageTowerPulseBlend))
@@ -369,9 +360,9 @@ static void PlayerDescendMirageTower(u8 taskId)
 }
 
 #define tXShakeOffset data[0]
-#define tTimer        data[1]
-#define tNumShakes    data[2]
-#define tShakeDelay   data[3]
+#define tTimer data[1]
+#define tNumShakes data[2]
+#define tShakeDelay data[3]
 #define tYShakeOffset data[4]
 
 static void StartScreenShake(u8 yShakeOffset, u8 xShakeOffset, u8 numShakes, u8 shakeDelay)
@@ -431,7 +422,7 @@ void DoMirageTowerCeilingCrumble(void)
 
 static void WaitCeilingCrumble(u8 taskId)
 {
-    u16 *data = (u16*)gTasks[taskId].data;
+    u16 *data = (u16 *)gTasks[taskId].data;
     data[1]++;
     // Either wait 1000 frames, or until all 16 crumble sprites and the one screen-shake task are completed.
     if (data[1] == 1000 || data[0] == 17)
@@ -470,7 +461,7 @@ static void SpriteCB_CeilingCrumble(struct Sprite *sprite)
 {
     sprite->data[1] += 2;
     sprite->y2 = sprite->data[1] / 2;
-    if(((sprite->y) + (sprite->y2)) >  sCeilingCrumblePositions[sprite->data[0]][2])
+    if (((sprite->y) + (sprite->y2)) > sCeilingCrumblePositions[sprite->data[0]][2])
     {
         DestroySprite(sprite);
         IncrementCeilingCrumbleFinishedCount();
@@ -617,8 +608,8 @@ static void DoMirageTowerDisintegration(u8 taskId)
             for (j = 0; j < 1; j++)
             {
                 UpdateDisintegrationEffect(sMirageTowerGfxBuffer,
-                            (OUTER_BUFFER_LENGTH - 1 - i) * INNER_BUFFER_LENGTH + sFallingTower[i].disintegrateRand[sFallingTower[i].disintegrateIdx++],
-                            0, INNER_BUFFER_LENGTH, 1);
+                                           (OUTER_BUFFER_LENGTH - 1 - i) * INNER_BUFFER_LENGTH + sFallingTower[i].disintegrateRand[sFallingTower[i].disintegrateIdx++],
+                                           0, INNER_BUFFER_LENGTH, 1);
             }
             if (sFallingTower[i].disintegrateIdx > (INNER_BUFFER_LENGTH - 1))
             {
@@ -687,14 +678,14 @@ static void Task_FossilFallAndSink(u8 taskId)
         sFallingFossil->frameImage->size = sizeof(sFossil_Gfx);
         break;
     case 4:
-        {
-            struct SpriteTemplate fossilTemplate = sSpriteTemplate_FallingFossil;
-            fossilTemplate.images = sFallingFossil->frameImage;
-            sFallingFossil->spriteId = CreateSprite(&fossilTemplate, 128, -16, 1);
-            gSprites[sFallingFossil->spriteId].centerToCornerVecX = 0;
-            gSprites[sFallingFossil->spriteId].data[0] = gSprites[sFallingFossil->spriteId].x;
-            gSprites[sFallingFossil->spriteId].data[1] = 1;
-        }
+    {
+        struct SpriteTemplate fossilTemplate = sSpriteTemplate_FallingFossil;
+        fossilTemplate.images = sFallingFossil->frameImage;
+        sFallingFossil->spriteId = CreateSprite(&fossilTemplate, 128, -16, 1);
+        gSprites[sFallingFossil->spriteId].centerToCornerVecX = 0;
+        gSprites[sFallingFossil->spriteId].data[0] = gSprites[sFallingFossil->spriteId].x;
+        gSprites[sFallingFossil->spriteId].data[1] = 1;
+    }
     case 5:
         // Initialize disintegration pattern
         for (i = 0; i < FOSSIL_DISINTEGRATE_LENGTH; i++)
@@ -716,7 +707,8 @@ static void Task_FossilFallAndSink(u8 taskId)
         if (gSprites[sFallingFossil->spriteId].callback != SpriteCallbackDummy)
             return;
         DestroySprite(&gSprites[sFallingFossil->spriteId]);
-        FREE_AND_SET_NULL(sFallingFossil->disintegrateRand);;
+        FREE_AND_SET_NULL(sFallingFossil->disintegrateRand);
+        ;
         FREE_AND_SET_NULL(sFallingFossil->frameImage);
         FREE_AND_SET_NULL(sFallingFossil->frameImageTiles);
         FREE_AND_SET_NULL(sFallingFossil);

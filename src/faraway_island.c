@@ -27,11 +27,11 @@ extern const struct SpritePalette gSpritePalette_GeneralFieldEffect1;
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
 static const s16 sFarawayIslandRockCoords[4][2] =
-{
-    {14 + MAP_OFFSET,  9 + MAP_OFFSET},
-    {18 + MAP_OFFSET,  9 + MAP_OFFSET},
-    { 9 + MAP_OFFSET, 10 + MAP_OFFSET},
-    {13 + MAP_OFFSET, 13 + MAP_OFFSET},
+    {
+        {14 + MAP_OFFSET, 9 + MAP_OFFSET},
+        {18 + MAP_OFFSET, 9 + MAP_OFFSET},
+        {9 + MAP_OFFSET, 10 + MAP_OFFSET},
+        {13 + MAP_OFFSET, 13 + MAP_OFFSET},
 };
 
 static u8 GetMewObjectEventId(void)
@@ -55,8 +55,7 @@ u32 GetMewMoveDirection(void)
         sMewDirectionCandidates[i] = DIR_NONE;
 
     // Player hasn't moved (just facing new direction), don't move
-    if (gObjectEvents[gPlayerAvatar.objectEventId].previousCoords.x == gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x
-     && gObjectEvents[gPlayerAvatar.objectEventId].previousCoords.y == gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y)
+    if (gObjectEvents[gPlayerAvatar.objectEventId].previousCoords.x == gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x && gObjectEvents[gPlayerAvatar.objectEventId].previousCoords.y == gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y)
     {
         return DIR_NONE;
     }
@@ -269,8 +268,7 @@ u32 GetMewMoveDirection(void)
 // Mew can move to any Tall/Long Grass metatile the player isn't currently on
 static bool8 CanMewMoveToCoords(s16 x, s16 y)
 {
-    if (gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x == x
-     && gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y == y)
+    if (gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x == x && gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y == y)
     {
         return FALSE;
     }
@@ -321,8 +319,7 @@ static u8 GetValidMewMoveDirection(u8 ignoredDir)
 void UpdateFarawayIslandStepCounter(void)
 {
     u16 steps = VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER);
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
-     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_FARAWAY_ISLAND_INTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_FARAWAY_ISLAND_INTERIOR))
     {
         steps++;
         if (steps >= 9999)
@@ -334,8 +331,7 @@ void UpdateFarawayIslandStepCounter(void)
 
 bool8 ObjectEventIsFarawayIslandMew(struct ObjectEvent *objectEvent)
 {
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
-     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_FARAWAY_ISLAND_INTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_FARAWAY_ISLAND_INTERIOR))
     {
         if (objectEvent->graphicsId == OBJ_EVENT_GFX_MEW)
             return TRUE;
@@ -346,8 +342,7 @@ bool8 ObjectEventIsFarawayIslandMew(struct ObjectEvent *objectEvent)
 
 bool8 IsMewPlayingHideAndSeek(void)
 {
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
-     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOENN_FARAWAY_ISLAND_INTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOENN_FARAWAY_ISLAND_INTERIOR))
     {
         if (FlagGet(FLAG_CAUGHT_MEW) != TRUE && FlagGet(FLAG_HIDE_MEW) != TRUE)
             return TRUE;
@@ -360,8 +355,7 @@ bool8 IsMewPlayingHideAndSeek(void)
 // Otherwise its movement leaves grass undisturbed
 bool8 ShouldMewShakeGrass(struct ObjectEvent *objectEvent)
 {
-    if (VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER) != 0xFFFF
-     && VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER) % 4 == 0)
+    if (VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER) != 0xFFFF && VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER) % 4 == 0)
         return TRUE;
 
     return FALSE;
