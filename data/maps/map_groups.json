@@ -312,15 +312,9 @@
     "Route114_FossilManiacsTunnel",
     "Route114_LanettesHouse"
   ],
-  "gMapGroup_Hoenn_IndoorRoute116": [
-    "Route116_TunnelersRestHouse"
-  ],
-  "gMapGroup_Hoenn_IndoorRoute117": [
-    "Route117_PokemonDayCare"
-  ],
-  "gMapGroup_Hoenn_IndoorRoute121": [
-    "Route121_SafariZoneEntrance"
-  ],
+  "gMapGroup_Hoenn_IndoorRoute116": ["Route116_TunnelersRestHouse"],
+  "gMapGroup_Hoenn_IndoorRoute117": ["Route117_PokemonDayCare"],
+  "gMapGroup_Hoenn_IndoorRoute121": ["Route121_SafariZoneEntrance"],
   "gMapGroup_Hoenn_Dungeons": [
     "MeteorFalls_1F_1R",
     "MeteorFalls_1F_2R",
@@ -589,9 +583,7 @@
     "Route104_Prototype",
     "Route104_PrototypePrettyPetalFlowerShop"
   ],
-  "gMapGroup_Hoenn_IndoorRoute109": [
-    "Route109_SeashoreHouse"
-  ],
+  "gMapGroup_Hoenn_IndoorRoute109": ["Route109_SeashoreHouse"],
   "gMapGroup_Hoenn_IndoorRoute110": [
     "Route110_TrickHouseEntrance",
     "Route110_TrickHouseEnd",
@@ -607,18 +599,12 @@
     "Route110_SeasideCyclingRoadSouthEntrance",
     "Route110_SeasideCyclingRoadNorthEntrance"
   ],
-  "gMapGroup_Hoenn_IndoorRoute113": [
-    "Route113_GlassWorkshop"
-  ],
-  "gMapGroup_Hoenn_IndoorRoute123": [
-    "Route123_BerryMastersHouse"
-  ],
+  "gMapGroup_Hoenn_IndoorRoute113": ["Route113_GlassWorkshop"],
+  "gMapGroup_Hoenn_IndoorRoute123": ["Route123_BerryMastersHouse"],
   "gMapGroup_Hoenn_IndoorRoute119": [
     "Route119_WeatherInstitute_1F",
     "Route119_WeatherInstitute_2F",
     "Route119_House"
   ],
-  "gMapGroup_Hoenn_IndoorRoute124": [
-    "Route124_DivingTreasureHuntersHouse"
-  ]
+  "gMapGroup_Hoenn_IndoorRoute124": ["Route124_DivingTreasureHuntersHouse"]
 }

@@ -1,5 +1,5 @@
 CASTFORMGFXDIR := graphics/pokemon/castform
-TILESETGFXDIR := data/tilesets
+TILESETGFXDIR := data/tilesets/hoenn
 FONTGFXDIR := graphics/fonts
 INTERFACEGFXDIR := graphics/interface
 BTLANMSPRGFXDIR := graphics/battle_anims/sprites
@@ -68,7 +68,7 @@ $(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
 $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 159 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/rustboro/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_rustboro/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 498 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/dewford/tiles.4bpp: %.4bpp: %.png
@@ -197,7 +197,7 @@ $(TILESETGFXDIR)/secondary/mauville_game_corner/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/unused_2/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 150 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/rustboro_gym/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/hoenn_rustboro_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 60 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/dewford_gym/tiles.4bpp: %.4bpp: %.png
