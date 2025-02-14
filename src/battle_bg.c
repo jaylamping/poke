@@ -1180,7 +1180,7 @@ void DrawBattleEntryBackground(void)
             }
         }
 
-        if (GetCurrentMapBattleScene() == MAP_BATTLE_SCENE_NORMAL)
+        if (GetCurrentMapBattleScene() == MAP_HOENN_BATTLE_SCENE_NORMAL)
         {
             LZDecompressVram(sBattleTerrainTable[gBattleTerrain].entryTileset, (void *)(BG_CHAR_ADDR(1)));
             LZDecompressVram(sBattleTerrainTable[gBattleTerrain].entryTilemap, (void *)(BG_SCREEN_ADDR(28)));
