@@ -1,4 +1,5 @@
 # Map JSON data
+.SHELLFLAGS = -xc
 
 # Inputs
 MAPS_DIR = $(DATA_ASM_SUBDIR)/maps
@@ -12,36 +13,35 @@ INCLUDECONSTS_OUTDIR := include/constants
 AUTO_GEN_TARGETS += $(INCLUDECONSTS_OUTDIR)/map_groups.h
 AUTO_GEN_TARGETS += $(INCLUDECONSTS_OUTDIR)/layouts.h
 
-# Updated directory patterns to include subdirectories
-MAP_DIRS := $(dir $(wildcard $(MAPS_DIR)/*/*/map.json))
+MAP_DIRS := $(dir $(wildcard $(MAPS_DIR)/hoenn/*/map.json) $(wildcard $(MAPS_DIR)/kanto/*/map.json))
 MAP_CONNECTIONS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/connections.inc,$(MAP_DIRS))
 MAP_EVENTS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/events.inc,$(MAP_DIRS))
 MAP_HEADERS := $(patsubst $(MAPS_DIR)/%/,$(MAPS_DIR)/%/header.inc,$(MAP_DIRS))
 
-$(DATA_ASM_BUILDDIR)/maps.o: $(DATA_ASM_SUBDIR)/maps.s $(LAYOUTS_DIR)/*/layouts.inc $(LAYOUTS_DIR)/*/layouts_table.inc $(MAPS_DIR)/*/headers.inc $(MAPS_DIR)/*/groups.inc $(MAPS_DIR)/*/connections.inc $(MAP_CONNECTIONS) $(MAP_HEADERS)
+# $(info MAP_DIRS=$(MAP_DIRS))
+# $(info MAP_CONNECTIONS=$(MAP_CONNECTIONS))
+# $(info MAP_EVENTS=$(MAP_EVENTS))
+# $(info MAP_HEADERS=$(MAP_HEADERS))
+
+$(DATA_ASM_BUILDDIR)/maps.o: $(DATA_ASM_SUBDIR)/maps.s $(LAYOUTS_DIR)/layouts.inc $(LAYOUTS_DIR)/layouts_table.inc $(MAPS_DIR)/headers.inc $(MAPS_DIR)/groups.inc $(MAPS_DIR)/connections.inc $(MAP_CONNECTIONS) $(MAP_HEADERS)
+	$(PREPROC) $< charmap.txt | $(CPP) -I include - | $(PREPROC) -ie $< charmap.txt | $(AS) $(ASFLAGS) -o $@
+$(DATA_ASM_BUILDDIR)/map_events.o: $(DATA_ASM_SUBDIR)/map_events.s $(MAPS_DIR)/events.inc $(MAP_EVENTS)
 	$(PREPROC) $< charmap.txt | $(CPP) -I include - | $(PREPROC) -ie $< charmap.txt | $(AS) $(ASFLAGS) -o $@
 
-$(DATA_ASM_BUILDDIR)/map_events.o: $(DATA_ASM_SUBDIR)/map_events.s $(MAPS_DIR)/*/events.inc $(MAP_EVENTS)
-	$(PREPROC) $< charmap.txt | $(CPP) -I include - | $(PREPROC) -ie $< charmap.txt | $(AS) $(ASFLAGS) -o $@
 
-# Updated pattern rules to accommodate subdirectories
-$(MAPS_OUTDIR)/%/header.inc: $(MAPS_DIR)/%/map.json
-	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/$*/layouts.json $(@D)
+$(MAPS_OUTDIR)/%/header.inc $(MAPS_OUTDIR)/%/events.inc $(MAPS_OUTDIR)/%/connections.inc: $(MAPS_DIR)/%/map.json
+	@echo "Debug information:"
+	@echo "MAPS_DIR = $(MAPS_DIR)"
+	@echo "Target directory = $(@D)"
+	@echo "Input file = $<"
+	@echo "Attempting to read: $(MAPS_DIR)/$*/map.json"
+	@ls -l "$(MAPS_DIR)/$*/map.json" || echo "File not found!"
+	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/layouts.json $(@D)
 
-$(MAPS_OUTDIR)/%/events.inc: $(MAPS_DIR)/%/map.json
-	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/$*/layouts.json $(@D)
-
-$(MAPS_OUTDIR)/%/connections.inc: $(MAPS_DIR)/%/map.json
-	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/$*/layouts.json $(@D)
-
-$(INCLUDECONSTS_OUTDIR)/map_groups.h: $(MAPS_DIR)/map_groups.json
+$(MAPS_OUTDIR)/connections.inc $(MAPS_OUTDIR)/groups.inc $(MAPS_OUTDIR)/events.inc $(MAPS_OUTDIR)/headers.inc $(INCLUDECONSTS_OUTDIR)/map_groups.h: $(MAPS_DIR)/map_groups.json
+	@echo "Generating group files from $<"
 	$(MAPJSON) groups emerald $< $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)
 
-$(LAYOUTS_OUTDIR)/%/layouts.inc: $(LAYOUTS_DIR)/%/layouts.json
-	$(MAPJSON) layouts emerald $< $(LAYOUTS_OUTDIR)/$* $(INCLUDECONSTS_OUTDIR)
-
-$(LAYOUTS_OUTDIR)/%/layouts_table.inc: $(LAYOUTS_DIR)/%/layouts.json
-	$(MAPJSON) layouts emerald $< $(LAYOUTS_OUTDIR)/$* $(INCLUDECONSTS_OUTDIR)
-
-$(INCLUDECONSTS_OUTDIR)/layouts.h: $(LAYOUTS_DIR)/%/layouts.json
-	$(MAPJSON) layouts emerald $< $(LAYOUTS_OUTDIR)/$* $(INCLUDECONSTS_OUTDIR)
+$(LAYOUTS_OUTDIR)/layouts.inc $(LAYOUTS_OUTDIR)/layouts_table.inc $(INCLUDECONSTS_OUTDIR)/layouts.h: $(LAYOUTS_DIR)/layouts.json
+	@echo "Generating layout files from $<"
+	$(MAPJSON) layouts emerald $< $(LAYOUTS_OUTDIR) $(INCLUDECONSTS_OUTDIR)

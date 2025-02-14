@@ -41,7 +41,9 @@ string read_text_file(string filepath)
     ifstream in_file(filepath);
 
     if (!in_file.is_open())
+    {
         FATAL_ERROR("Cannot open file %s for reading.\n", filepath.c_str());
+    }
 
     string text;
 
@@ -108,6 +110,7 @@ string json_to_string(const Json &data, const string &field = "", bool silent = 
 string generate_map_header_text(Json map_data, Json layouts_data)
 {
     string map_layout_id = json_to_string(map_data, "layout");
+    string mapName = json_to_string(map_data, "name");
 
     vector<Json> matched;
 
@@ -122,9 +125,18 @@ string generate_map_header_text(Json map_data, Json layouts_data)
 
     Json layout = matched[0];
 
-    ostringstream text;
+    // Extract region from the layout ID (assuming format LAYOUT_HOENN_*)
+    string region = "hoenn"; // Default to hoenn
+    if (map_layout_id.find("LAYOUT_HOENN_") != string::npos)
+    {
+        region = "hoenn";
+    }
+    else if (map_layout_id.find("LAYOUT_KANTO_") != string::npos)
+    {
+        region = "kanto";
+    }
 
-    string mapName = json_to_string(map_data, "name");
+    ostringstream text;
 
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/" << mapName << "/map.json\n@\n\n";
 
@@ -399,6 +411,12 @@ void process_map(string map_filepath, string layouts_filepath, string output_dir
 {
     string mapdata_err, layouts_err;
 
+    // Extract region from filepath
+    size_t maps_pos = map_filepath.find("maps/");
+    size_t region_start = maps_pos + 5; // length of "maps/"
+    size_t region_end = map_filepath.find("/", region_start);
+    string region = map_filepath.substr(region_start, region_end - region_start);
+
     string mapdata_json_text = read_text_file(map_filepath);
     string layouts_json_text = read_text_file(layouts_filepath);
 
@@ -532,9 +550,25 @@ string generate_map_constants_text(string groups_filepath, Json groups_data)
         vector<string> map_ids;
         size_t max_length = 0;
 
+        // Extract region from group name
+        string region = "hoenn"; // Default to hoenn
+        if (groupName.find("Hoenn_") != string::npos)
+        {
+            region = "hoenn";
+        }
+        else if (groupName.find("Kanto_") != string::npos)
+        {
+            region = "kanto";
+        }
+
         for (auto &map_name : groups_data[groupName].array_items())
         {
-            string map_filepath = file_dir + json_to_string(map_name) + sep + "map.json";
+            string map_str = json_to_string(map_name);
+            string map_filepath = file_dir + sep + region + sep + map_str + sep + "map.json";
+
+            // Debug print
+            fprintf(stderr, "Debug: Trying to read map file: %s\n", map_filepath.c_str());
+
             string err_str;
             Json map_data = Json::parse(read_text_file(map_filepath), err_str);
             if (map_data == Json())
@@ -573,6 +607,41 @@ void process_groups(string groups_filepath, string output_asm, string output_c)
 
     if (groups_data == Json())
         FATAL_ERROR("%s\n", err.c_str());
+
+    // Add debug prints
+    fprintf(stderr, "Debug: groups_filepath = %s\n", groups_filepath.c_str());
+    fprintf(stderr, "Debug: output_asm = %s\n", output_asm.c_str());
+    fprintf(stderr, "Debug: output_c = %s\n", output_c.c_str());
+
+    // Add region handling based on group names
+    for (auto &key : groups_data["group_order"].array_items())
+    {
+        string group = json_to_string(key);
+        string region = "hoenn"; // Default to hoenn
+        if (group.find("Hoenn_") != string::npos)
+        {
+            region = "hoenn";
+        }
+        else if (group.find("Kanto_") != string::npos)
+        {
+            region = "kanto";
+        }
+
+        // When processing maps in this group, modify the paths
+        for (auto &map_name : groups_data[group].array_items())
+        {
+            string map_str = json_to_string(map_name);
+            string map_path = region + "/" + map_str + "/map.json";
+            string full_path = "data/maps/" + map_path;
+
+            // Verify file exists
+            ifstream f(full_path.c_str());
+            if (!f.good())
+            {
+                FATAL_ERROR("Cannot find map file: %s\n", full_path.c_str());
+            }
+        }
+    }
 
     string groups_text = generate_groups_text(groups_data);
     string connections_text = generate_connections_text(groups_data, output_asm);

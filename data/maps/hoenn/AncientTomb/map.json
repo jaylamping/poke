@@ -1,5 +1,5 @@
 {
-  "id": "MAP_HOENN_HOENN_ANCIENT_TOMB",
+  "id": "MAP_HOENN_ANCIENT_TOMB",
   "name": "AncientTomb",
   "layout": "LAYOUT_HOENN_ANCIENT_TOMB",
   "music": "MUS_SEALED_CHAMBER",
@@ -40,14 +40,14 @@
       "x": 8,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_HOENN_HOENN_ANCIENT_TOMB",
+      "dest_map": "MAP_HOENN_ANCIENT_TOMB",
       "dest_warp_id": "2"
     },
     {
       "x": 8,
       "y": 11,
       "elevation": 3,
-      "dest_map": "MAP_HOENN_HOENN_ANCIENT_TOMB",
+      "dest_map": "MAP_HOENN_ANCIENT_TOMB",
       "dest_warp_id": "1"
     }
   ],
