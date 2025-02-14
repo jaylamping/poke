@@ -45,16 +45,16 @@ class CharmapReader
 {
 public:
     CharmapReader(std::string filename);
-    CharmapReader(const CharmapReader&) = delete;
+    CharmapReader(const CharmapReader &) = delete;
     ~CharmapReader();
     Lhs ReadLhs();
     void ExpectEqualsSign();
     std::string ReadSequence();
     void ExpectEmptyRestOfLine();
-    void RaiseError(const char* format, ...);
+    void RaiseError(const char *format, ...);
 
 private:
-    char* m_buffer;
+    char *m_buffer;
     long m_pos;
     long m_size;
     long m_lineNum;
@@ -301,7 +301,7 @@ void CharmapReader::ExpectEmptyRestOfLine()
     }
 }
 
-void CharmapReader::RaiseError(const char* format, ...)
+void CharmapReader::RaiseError(const char *format, ...)
 {
     const int bufferSize = 1024;
     char buffer[bufferSize];

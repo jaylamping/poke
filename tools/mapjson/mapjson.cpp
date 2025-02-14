@@ -496,18 +496,29 @@ string generate_connections_text(Json groups_data, string include_path)
 
 string generate_headers_text(Json groups_data, string include_path)
 {
-    vector<string> map_names;
-
-    for (auto &group : groups_data["group_order"].array_items())
-        for (auto map_name : groups_data[json_to_string(group)].array_items())
-            map_names.push_back(json_to_string(map_name));
-
     ostringstream text;
 
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
 
-    for (string map_name : map_names)
-        text << "\t.include \"" << include_path << "/" << map_name << "/header.inc\"\n";
+    // Loop over each group in order.
+    for (auto &group : groups_data["group_order"].array_items())
+    {
+        string group_str = json_to_string(group);
+        // Determine region based on the group name.
+        string region = "hoenn"; // Default
+        if (group_str.find("Kanto_") != string::npos)
+            region = "kanto";
+        else if (group_str.find("Hoenn_") != string::npos)
+            region = "hoenn";
+
+        // Now iterate over each map in the current group.
+        for (auto map_obj : groups_data[group_str].array_items())
+        {
+            string map_name = json_to_string(map_obj);
+            // Include header file using the region folder.
+            text << "\t.include \"" << include_path << "/" << region << "/" << map_name << "/header.inc\"\n";
+        }
+    }
 
     return text.str();
 }
