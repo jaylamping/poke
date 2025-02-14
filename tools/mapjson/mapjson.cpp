@@ -465,31 +465,59 @@ string generate_groups_text(Json groups_data)
 
 string generate_connections_text(Json groups_data, string include_path)
 {
-    vector<Json> map_names;
+    // Structure to store a map's name along with its region.
+    struct MapEntry
+    {
+        string map_name;
+        string region;
+    };
+    vector<MapEntry> map_entries;
 
+    // Iterate over each group in order.
     for (auto &group : groups_data["group_order"].array_items())
-        for (auto map_name : groups_data[json_to_string(group)].array_items())
-            map_names.push_back(map_name);
+    {
+        string group_str = json_to_string(group);
+        // Determine the region based on the group name.
+        string region = "hoenn"; // Default region.
+        if (group_str.find("Kanto_") != string::npos)
+            region = "kanto";
+        else if (group_str.find("Hoenn_") != string::npos)
+            region = "hoenn";
 
+        // Add each map from this group, along with its region.
+        for (auto &map_obj : groups_data[group_str].array_items())
+        {
+            string map_name = json_to_string(map_obj);
+            map_entries.push_back({map_name, region});
+        }
+    }
+
+    // If connections_include_order is defined, use it to sort the map entries.
     vector<Json> connections_include_order = groups_data["connections_include_order"].array_items();
+    if (!connections_include_order.empty())
+    {
+        // Helper lambda that returns the index of the map name in the include order.
+        auto get_index = [&](const string &name) -> size_t
+        {
+            for (size_t i = 0; i < connections_include_order.size(); i++)
+            {
+                if (json_to_string(connections_include_order[i]) == name)
+                    return i;
+            }
+            return connections_include_order.size() + 1000; // A big number if not found.
+        };
 
-    if (connections_include_order.size() > 0)
-        sort(map_names.begin(), map_names.end(), [connections_include_order](const Json &a, const Json &b)
-             {
-            auto iter_a = find(connections_include_order.begin(), connections_include_order.end(), a);
-            if (iter_a == connections_include_order.end())
-                iter_a = connections_include_order.begin() + numeric_limits<int>::max();
-            auto iter_b = find(connections_include_order.begin(), connections_include_order.end(), b);
-            if (iter_b == connections_include_order.end())
-                iter_b = connections_include_order.begin() + numeric_limits<int>::max();
-            return iter_a < iter_b; });
+        sort(map_entries.begin(), map_entries.end(), [&](const MapEntry &a, const MapEntry &b)
+             { return get_index(a.map_name) < get_index(b.map_name); });
+    }
 
     ostringstream text;
 
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
 
-    for (Json map_name : map_names)
-        text << "\t.include \"" << include_path << "/" << json_to_string(map_name) << "/connections.inc\"\n";
+    // Output the include statement with region folder.
+    for (const auto &entry : map_entries)
+        text << "\t.include \"" << include_path << "/" << entry.region << "/" << entry.map_name << "/connections.inc\"\n";
 
     return text.str();
 }
@@ -525,18 +553,28 @@ string generate_headers_text(Json groups_data, string include_path)
 
 string generate_events_text(Json groups_data, string include_path)
 {
-    vector<string> map_names;
-
-    for (auto &group : groups_data["group_order"].array_items())
-        for (auto map_name : groups_data[json_to_string(group)].array_items())
-            map_names.push_back(json_to_string(map_name));
-
     ostringstream text;
 
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from " << include_path << "/map_groups.json\n@\n\n";
 
-    for (string map_name : map_names)
-        text << "\t.include \"" << include_path << "/" << map_name << "/events.inc\"\n";
+    // Iterate through each group in order.
+    for (auto &group : groups_data["group_order"].array_items())
+    {
+        string group_str = json_to_string(group);
+        // Determine the region based on the group name.
+        string region = "hoenn"; // Default region.
+        if (group_str.find("Kanto_") != string::npos)
+            region = "kanto";
+        else if (group_str.find("Hoenn_") != string::npos)
+            region = "hoenn";
+
+        // Iterate over each map for the current group.
+        for (auto &map_obj : groups_data[group_str].array_items())
+        {
+            string map_name = json_to_string(map_obj);
+            text << "\t.include \"" << include_path << "/" << region << "/" << map_name << "/events.inc\"\n";
+        }
+    }
 
     return text.str();
 }
