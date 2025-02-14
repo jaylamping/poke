@@ -566,9 +566,6 @@ string generate_map_constants_text(string groups_filepath, Json groups_data)
             string map_str = json_to_string(map_name);
             string map_filepath = file_dir + sep + region + sep + map_str + sep + "map.json";
 
-            // Debug print
-            fprintf(stderr, "Debug: Trying to read map file: %s\n", map_filepath.c_str());
-
             string err_str;
             Json map_data = Json::parse(read_text_file(map_filepath), err_str);
             if (map_data == Json())
@@ -607,11 +604,6 @@ void process_groups(string groups_filepath, string output_asm, string output_c)
 
     if (groups_data == Json())
         FATAL_ERROR("%s\n", err.c_str());
-
-    // Add debug prints
-    fprintf(stderr, "Debug: groups_filepath = %s\n", groups_filepath.c_str());
-    fprintf(stderr, "Debug: output_asm = %s\n", output_asm.c_str());
-    fprintf(stderr, "Debug: output_c = %s\n", output_c.c_str());
 
     // Add region handling based on group names
     for (auto &key : groups_data["group_order"].array_items())
