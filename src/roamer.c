@@ -18,7 +18,7 @@ enum
 EWRAM_DATA static u8 sLocationHistory[3][2] = {0};
 EWRAM_DATA static u8 sRoamerLocation[2] = {0};
 
-#define ___ MAP_NUM(UNDEFINED) // For empty spots in the location table
+#define ___ MAP_NUM(HOENN_UNDEFINED) // For empty spots in the location table
 
 // Note: There are two potential softlocks that can occur with this table if its maps are
 //       changed in particular ways. They can be avoided by ensuring the following:
@@ -170,7 +170,7 @@ void RoamerMove(void)
                     // Choose a new map (excluding the first) within this set
                     // Also exclude a map if the roamer was there 2 moves ago
                     mapNum = sRoamerLocations[locSet][(Random() % (NUM_LOCATIONS_PER_SET - 1)) + 1];
-                    if (!(sLocationHistory[2][MAP_GRP] == ROAMER_MAP_GROUP && sLocationHistory[2][MAP_NUM] == mapNum) && mapNum != MAP_NUM(UNDEFINED))
+                    if (!(sLocationHistory[2][MAP_GRP] == ROAMER_MAP_GROUP && sLocationHistory[2][MAP_NUM] == mapNum) && mapNum != MAP_NUM(HOENN_UNDEFINED))
                         break;
                 }
                 sRoamerLocation[MAP_NUM] = mapNum;

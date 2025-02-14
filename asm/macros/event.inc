@@ -447,7 +447,7 @@
 	formatwarp \map, \a, \b, \c
 	.endm
 
-	@ Warps the player to another map using a hole animation. If the specified map is MAP_UNDEFINED it will instead
+	@ Warps the player to another map using a hole animation. If the specified map is MAP_HOENN_UNDEFINED it will instead
 	@ use the map set by setholewarp. In either case the target coordinates on the destination map will be the
 	@ player's current position.
 	.macro warphole map:req

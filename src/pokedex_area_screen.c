@@ -275,7 +275,7 @@ static void FindMapsWithMon(u16 species)
         }
 
         // Add regular species to the area map
-        for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
+        for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(HOENN_UNDEFINED); i++)
         {
             if (MapHasSpecies(&gWildMonHeaders[i], species))
             {

@@ -202,8 +202,8 @@ EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
 
 static const struct WarpData sDummyWarpData =
     {
-        .mapGroup = MAP_GROUP(UNDEFINED),
-        .mapNum = MAP_NUM(UNDEFINED),
+        .mapGroup = MAP_GROUP(HOENN_UNDEFINED),
+        .mapNum = MAP_NUM(HOENN_UNDEFINED),
         .warpId = WARP_ID_NONE,
         .x = -1,
         .y = -1,
@@ -552,9 +552,9 @@ static void SetWarpData(struct WarpData *warp, s8 mapGroup, s8 mapNum, s8 warpId
 
 static bool32 IsDummyWarp(struct WarpData *warp)
 {
-    if (warp->mapGroup != (s8)MAP_GROUP(UNDEFINED))
+    if (warp->mapGroup != (s8)MAP_GROUP(HOENN_UNDEFINED))
         return FALSE;
-    else if (warp->mapNum != (s8)MAP_NUM(UNDEFINED))
+    else if (warp->mapNum != (s8)MAP_NUM(HOENN_UNDEFINED))
         return FALSE;
     else if (warp->warpId != WARP_ID_NONE)
         return FALSE;

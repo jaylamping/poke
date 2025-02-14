@@ -79,8 +79,8 @@ const struct WildPokemonHeader {{ wild_encounter_group.label }}[] =
     },
 ## endfor
     {
-        .mapGroup = MAP_GROUP(UNDEFINED),
-        .mapNum = MAP_NUM(UNDEFINED),
+        .mapGroup = MAP_GROUP(HOENN_UNDEFINED),
+        .mapNum = MAP_NUM(HOENN_UNDEFINED),
         .landMonsInfo = NULL,
         .waterMonsInfo = NULL,
         .rockSmashMonsInfo = NULL,

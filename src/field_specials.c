@@ -2005,12 +2005,12 @@ bool8 UsedPokemonCenterWarp(void)
             MAP_HOENN_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F,
             MAP_HOENN_BATTLE_FRONTIER_POKEMON_CENTER_1F,
             MAP_HOENN_UNION_ROOM,
-            MAP_UNDEFINED};
+            MAP_HOENN_UNDEFINED};
 
     int i;
     u16 map = (gLastUsedWarp.mapGroup << 8) + gLastUsedWarp.mapNum;
 
-    for (i = 0; sPokemonCenters[i] != MAP_UNDEFINED; i++)
+    for (i = 0; sPokemonCenters[i] != MAP_HOENN_UNDEFINED; i++)
     {
         if (sPokemonCenters[i] == map)
             return TRUE;
@@ -3843,12 +3843,12 @@ bool8 InPokemonCenter(void)
             MAP_HOENN_TRADE_CENTER,
             MAP_HOENN_RECORD_CORNER,
             MAP_HOENN_BATTLE_COLOSSEUM_4P,
-            MAP_UNDEFINED};
+            MAP_HOENN_UNDEFINED};
 
     int i;
     u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) + gSaveBlock1Ptr->location.mapNum;
 
-    for (i = 0; sPokemonCenters[i] != MAP_UNDEFINED; i++)
+    for (i = 0; sPokemonCenters[i] != MAP_HOENN_UNDEFINED; i++)
     {
         if (sPokemonCenters[i] == map)
             return TRUE;

@@ -71,24 +71,24 @@ static void CloseBrailleWindow(void);
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
-void * const gNullScriptPtr = NULL;
+void *const gNullScriptPtr = NULL;
 
 static const u8 sScriptConditionTable[6][3] =
-{
-//  <  =  >
-    {1, 0, 0}, // <
-    {0, 1, 0}, // =
-    {0, 0, 1}, // >
-    {1, 1, 0}, // <=
-    {0, 1, 1}, // >=
-    {1, 0, 1}, // !=
+    {
+        //  <  =  >
+        {1, 0, 0}, // <
+        {0, 1, 0}, // =
+        {0, 0, 1}, // >
+        {1, 1, 0}, // <=
+        {0, 1, 1}, // >=
+        {1, 0, 1}, // !=
 };
 
-static u8 * const sScriptStringVars[] =
-{
-    gStringVar1,
-    gStringVar2,
-    gStringVar3,
+static u8 *const sScriptStringVars[] =
+    {
+        gStringVar1,
+        gStringVar2,
+        gStringVar3,
 };
 
 bool8 ScrCmd_nop(struct ScriptContext *ctx)
@@ -109,7 +109,7 @@ bool8 ScrCmd_end(struct ScriptContext *ctx)
 
 bool8 ScrCmd_gotonative(struct ScriptContext *ctx)
 {
-    bool8 (*addr)(void) = (bool8 (*)(void))ScriptReadWord(ctx);
+    bool8 (*addr)(void) = (bool8(*)(void))ScriptReadWord(ctx);
 
     SetupNativeScript(ctx, addr);
     return TRUE;
@@ -786,7 +786,7 @@ bool8 ScrCmd_warphole(struct ScriptContext *ctx)
     u16 y;
 
     PlayerGetDestCoords(&x, &y);
-    if (mapGroup == MAP_GROUP(UNDEFINED) && mapNum == MAP_NUM(UNDEFINED))
+    if (mapGroup == MAP_GROUP(HOENN_UNDEFINED) && mapNum == MAP_NUM(HOENN_UNDEFINED))
         SetWarpDestinationToFixedHoleWarp(x - MAP_OFFSET, y - MAP_OFFSET);
     else
         SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
@@ -1948,7 +1948,6 @@ bool8 ScrCmd_choosecontestmon(struct ScriptContext *ctx)
     return TRUE;
 }
 
-
 bool8 ScrCmd_startcontest(struct ScriptContext *ctx)
 {
     StartContest();
@@ -2114,7 +2113,7 @@ bool8 ScrCmd_addelevmenuitem(struct ScriptContext *ctx)
     u16 v7 = VarGet(ScriptReadHalfword(ctx));
     u16 v9 = VarGet(ScriptReadHalfword(ctx));
 
-    //ScriptAddElevatorMenuItem(v3, v5, v7, v9);
+    // ScriptAddElevatorMenuItem(v3, v5, v7, v9);
     return FALSE;
 }
 
