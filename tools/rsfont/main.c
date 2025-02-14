@@ -39,7 +39,7 @@ int ExtensionToBpp(const char *extension)
 int main(int argc, char **argv)
 {
     if (argc < 5)
-        FATAL_ERROR("Usage: rsfont INPUT_FILE OUTPUT_FILE NUM_GLYPHS LAYOUT_HOENN_TYPE\n");
+        FATAL_ERROR("Usage: rsfont INPUT_FILE OUTPUT_FILE NUM_GLYPHS LAYOUT_TYPE\n");
 
     char *inputPath = argv[1];
     char *outputPath = argv[2];
