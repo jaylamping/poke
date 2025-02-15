@@ -188,7 +188,7 @@ static const struct SpriteTemplate sCameraSpriteTemplate = {
     .paletteTag = TAG_NONE,
     .oam = &gDummyOamData,
     .anims = gDummySpriteAnimTable,
-    .images = NULL,
+    .images = (const struct SpriteFrameImage *)NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_CameraObject};
 
@@ -462,7 +462,6 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 // kanto
 #define OBJ_EVENT_PAL_TAG_PLAYER_RED 0x1200
 #define OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION 0x1201
-#define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION 0x1202
 #define OBJ_EVENT_PAL_TAG_NPC_BLUE 0x1203
 #define OBJ_EVENT_PAL_TAG_NPC_PINK 0x1204
 #define OBJ_EVENT_PAL_TAG_NPC_GREEN 0x1205
