@@ -459,6 +459,25 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_RS_MAY 0x1123
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF
 
+// kanto
+#define OBJ_EVENT_PAL_TAG_PLAYER_RED 0x1200
+#define OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION 0x1201
+#define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION 0x1202
+#define OBJ_EVENT_PAL_TAG_NPC_BLUE 0x1203
+#define OBJ_EVENT_PAL_TAG_NPC_PINK 0x1204
+#define OBJ_EVENT_PAL_TAG_NPC_GREEN 0x1205
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE 0x1206
+#define OBJ_EVENT_PAL_TAG_NPC_BLUE_REFLECTION 0x1207
+#define OBJ_EVENT_PAL_TAG_NPC_PINK_REFLECTION 0x1208
+#define OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION 0x1209
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE_REFLECTION 0x120A
+#define OBJ_EVENT_PAL_TAG_MACHOKE 0x120B
+#define OBJ_EVENT_PAL_TAG_PLAYER_GREEN 0x120C
+#define OBJ_EVENT_PAL_TAG_PLAYER_GREEN_REFLECTION 0x120D
+#define OBJ_EVENT_PAL_TAG_METEORITE 0x120E
+#define OBJ_EVENT_PAL_TAG_SEAGALLOP 0x120F
+#define OBJ_EVENT_PAL_TAG_SS_ANNE 0x1210
+
 #include "data/object_events/object_event_graphics_info_pointers.h"
 #include "data/field_effects/field_effect_object_template_pointers.h"
 #include "data/object_events/object_event_pic_tables.h"
