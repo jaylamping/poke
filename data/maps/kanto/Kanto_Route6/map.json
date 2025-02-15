@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SAFFRON_CITY_CONNECTION",
+      "map": "MAP_KANTO_SAFFRON_CITY_CONNECTION",
       "offset": 0,
       "direction": "up"
     },
     {
-      "map": "MAP_VERMILION_CITY",
+      "map": "MAP_KANTO_VERMILION_CITY",
       "offset": -12,
       "direction": "down"
     }

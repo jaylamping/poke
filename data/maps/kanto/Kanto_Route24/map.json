@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_CERULEAN_CITY",
+      "map": "MAP_KANTO_CERULEAN_CITY",
       "offset": -12,
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE25",
+      "map": "MAP_KANTO_ROUTE25",
       "offset": 0,
       "direction": "right"
     }

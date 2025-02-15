@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_FIVE_ISLAND_WATER_LABYRINTH",
+      "map": "MAP_KANTO_FIVE_ISLAND_WATER_LABYRINTH",
       "offset": -48,
       "direction": "up"
     },
     {
-      "map": "MAP_FIVE_ISLAND_MEADOW",
+      "map": "MAP_KANTO_FIVE_ISLAND_MEADOW",
       "offset": 0,
       "direction": "right"
     }

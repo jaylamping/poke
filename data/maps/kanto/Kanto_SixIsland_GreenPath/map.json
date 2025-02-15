@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
+      "map": "MAP_KANTO_SIX_ISLAND_OUTCAST_ISLAND",
       "offset": 0,
       "direction": "up"
     },
     {
-      "map": "MAP_SIX_ISLAND_WATER_PATH",
+      "map": "MAP_KANTO_SIX_ISLAND_WATER_PATH",
       "offset": 0,
       "direction": "right"
     }

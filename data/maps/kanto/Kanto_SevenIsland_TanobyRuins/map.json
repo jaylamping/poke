@@ -15,7 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON",
+      "map": "MAP_KANTO_SEVEN_ISLAND_SEVAULT_CANYON",
       "offset": 48,
       "direction": "up"
     }

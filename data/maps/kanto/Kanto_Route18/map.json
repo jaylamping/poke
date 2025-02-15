@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE17",
+      "map": "MAP_KANTO_ROUTE17",
       "offset": 0,
       "direction": "up"
     },
     {
-      "map": "MAP_FUCHSIA_CITY",
+      "map": "MAP_KANTO_FUCHSIA_CITY",
       "offset": -10,
       "direction": "right"
     }

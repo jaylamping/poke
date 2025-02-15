@@ -15,7 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_THREE_ISLAND",
+      "map": "MAP_KANTO_THREE_ISLAND",
       "offset": 0,
       "direction": "up"
     }

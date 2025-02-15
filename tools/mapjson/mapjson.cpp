@@ -200,10 +200,26 @@ string generate_map_connections_text(Json map_data)
 
     for (auto &connection : map_data["connections"].array_items())
     {
+        string destMap = json_to_string(connection, "map");
+        string region = "HOENN";
+        if (destMap.find("MAP_KANTO_") != string::npos)
+        {
+            region = "KANTO";
+        }
+        else if (destMap.find("MAP_HOENN_") != string::npos)
+        {
+            region = "HOENN";
+        }
+
+        if (destMap.find("MAP_") != 0)
+        {
+            destMap = "MAP_" + region + "_" + destMap;
+        }
+
         text << "\tconnection "
              << json_to_string(connection, "direction") << ", "
              << json_to_string(connection, "offset") << ", "
-             << json_to_string(connection, "map") << "\n";
+             << destMap << "\n";
     }
 
     text << "\n"

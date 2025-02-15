@@ -15,17 +15,17 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE2",
+      "map": "MAP_KANTO_ROUTE2",
       "offset": 12,
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE1",
+      "map": "MAP_KANTO_ROUTE1",
       "offset": 12,
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE22",
+      "map": "MAP_KANTO_ROUTE22",
       "offset": 10,
       "direction": "left"
     }

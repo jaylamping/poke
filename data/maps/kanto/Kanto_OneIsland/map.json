@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ONE_ISLAND_TREASURE_BEACH",
+      "map": "MAP_KANTO_ONE_ISLAND_TREASURE_BEACH",
       "offset": 0,
       "direction": "down"
     },
     {
-      "map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "map": "MAP_KANTO_ONE_ISLAND_KINDLE_ROAD",
       "offset": -120,
       "direction": "right"
     }

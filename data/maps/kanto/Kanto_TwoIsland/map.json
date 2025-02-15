@@ -15,7 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_TWO_ISLAND_CAPE_BRINK",
+      "map": "MAP_KANTO_TWO_ISLAND_CAPE_BRINK",
       "offset": 24,
       "direction": "up"
     }

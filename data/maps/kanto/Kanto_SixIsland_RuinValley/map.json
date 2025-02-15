@@ -15,7 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SIX_ISLAND_WATER_PATH",
+      "map": "MAP_KANTO_SIX_ISLAND_WATER_PATH",
       "offset": -80,
       "direction": "right"
     }

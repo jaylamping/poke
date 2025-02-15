@@ -15,12 +15,12 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE4",
+      "map": "MAP_KANTO_ROUTE4",
       "offset": 60,
       "direction": "up"
     },
     {
-      "map": "MAP_PEWTER_CITY",
+      "map": "MAP_KANTO_PEWTER_CITY",
       "offset": -10,
       "direction": "left"
     }
