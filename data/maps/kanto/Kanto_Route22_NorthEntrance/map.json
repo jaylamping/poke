@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ROUTE22_NORTH_ENTRANCE",
   "name": "Route22_NorthEntrance",
-  "layout": "LAYOUT_KANTO__ROUTE22_NORTH_ENTRANCE",
+  "layout": "LAYOUT_KANTO_ROUTE22_NORTH_ENTRANCE",
   "music": "MUS_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_ROUTE_22",
   "requires_flash": false,

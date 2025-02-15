@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_LAVENDER_TOWN_HOUSE1",
   "name": "LavenderTown_House1",
-  "layout": "LAYOUT_KANTO__HOUSE5",
+  "layout": "LAYOUT_KANTO_HOUSE5",
   "music": "MUS_LAVENDER",
   "region_map_section": "MAPSEC_LAVENDER_TOWN",
   "requires_flash": false,

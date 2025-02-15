@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_THREE_ISLAND_DUNSPARCE_TUNNEL",
   "name": "ThreeIsland_DunsparceTunnel",
-  "layout": "LAYOUT_KANTO__THREE_ISLAND_DUNSPARCE_TUNNEL",
+  "layout": "LAYOUT_KANTO_THREE_ISLAND_DUNSPARCE_TUNNEL",
   "music": "MUS_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_THREE_ISLE_PATH",
   "requires_flash": false,

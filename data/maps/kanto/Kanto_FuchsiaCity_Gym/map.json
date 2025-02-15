@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_FUCHSIA_CITY_GYM",
   "name": "FuchsiaCity_Gym",
-  "layout": "LAYOUT_KANTO__FUCHSIA_CITY_GYM",
+  "layout": "LAYOUT_KANTO_FUCHSIA_CITY_GYM",
   "music": "MUS_GYM",
   "region_map_section": "MAPSEC_FUCHSIA_CITY",
   "requires_flash": false,

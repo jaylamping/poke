@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ONE_ISLAND_KINDLE_ROAD",
   "name": "OneIsland_KindleRoad",
-  "layout": "LAYOUT_KANTO__ONE_ISLAND_KINDLE_ROAD",
+  "layout": "LAYOUT_KANTO_ONE_ISLAND_KINDLE_ROAD",
   "music": "MUS_ROUTE3",
   "region_map_section": "MAPSEC_KINDLE_ROAD",
   "requires_flash": false,

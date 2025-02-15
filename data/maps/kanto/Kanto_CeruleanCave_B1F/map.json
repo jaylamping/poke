@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_CERULEAN_CAVE_B1F",
   "name": "CeruleanCave_B1F",
-  "layout": "LAYOUT_KANTO__CERULEAN_CAVE_B1F",
+  "layout": "LAYOUT_KANTO_CERULEAN_CAVE_B1F",
   "music": "MUS_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_CERULEAN_CAVE",
   "requires_flash": false,

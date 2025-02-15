@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_POKEMON_LEAGUE_HALL_OF_FAME",
   "name": "PokemonLeague_HallOfFame",
-  "layout": "LAYOUT_KANTO__POKEMON_LEAGUE_HALL_OF_FAME",
+  "layout": "LAYOUT_KANTO_POKEMON_LEAGUE_HALL_OF_FAME",
   "music": "MUS_SLOW_PALLET",
   "region_map_section": "MAPSEC_POKEMON_LEAGUE",
   "requires_flash": false,

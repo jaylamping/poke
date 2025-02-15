@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_VIRIDIAN_CITY",
   "name": "ViridianCity",
-  "layout": "LAYOUT_KANTO__VIRIDIAN_CITY",
+  "layout": "LAYOUT_KANTO_VIRIDIAN_CITY",
   "music": "MUS_PEWTER",
   "region_map_section": "MAPSEC_VIRIDIAN_CITY",
   "requires_flash": false,

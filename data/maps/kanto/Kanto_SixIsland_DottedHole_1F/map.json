@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_SIX_ISLAND_DOTTED_HOLE_1F",
   "name": "SixIsland_DottedHole_1F",
-  "layout": "LAYOUT_KANTO__SIX_ISLAND_DOTTED_HOLE_1F",
+  "layout": "LAYOUT_KANTO_SIX_ISLAND_DOTTED_HOLE_1F",
   "music": "MUS_SEVII_DUNGEON",
   "region_map_section": "MAPSEC_DOTTED_HOLE",
   "requires_flash": false,

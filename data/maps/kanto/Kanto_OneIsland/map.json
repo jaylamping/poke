@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ONE_ISLAND",
   "name": "OneIsland",
-  "layout": "LAYOUT_KANTO__ONE_ISLAND",
+  "layout": "LAYOUT_KANTO_ONE_ISLAND",
   "music": "MUS_SEVII_123",
   "region_map_section": "MAPSEC_ONE_ISLAND",
   "requires_flash": false,

@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
   "name": "SevenIsland_TanobyRuins_DilfordChamber",
-  "layout": "LAYOUT_KANTO__SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
+  "layout": "LAYOUT_KANTO_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
   "music": "MUS_SEVII_DUNGEON",
   "region_map_section": "MAPSEC_DILFORD_CHAMBER",
   "requires_flash": false,

@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_VIRIDIAN_FOREST",
   "name": "ViridianForest",
-  "layout": "LAYOUT_KANTO__VIRIDIAN_FOREST",
+  "layout": "LAYOUT_KANTO_VIRIDIAN_FOREST",
   "music": "MUS_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_VIRIDIAN_FOREST",
   "requires_flash": false,

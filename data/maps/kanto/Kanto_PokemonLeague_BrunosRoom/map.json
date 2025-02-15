@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_POKEMON_LEAGUE_BRUNOS_ROOM",
   "name": "PokemonLeague_BrunosRoom",
-  "layout": "LAYOUT_KANTO__POKEMON_LEAGUE_BRUNOS_ROOM",
+  "layout": "LAYOUT_KANTO_POKEMON_LEAGUE_BRUNOS_ROOM",
   "music": "MUS_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_POKEMON_LEAGUE",
   "requires_flash": false,

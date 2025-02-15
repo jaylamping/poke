@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ROUTE11",
   "name": "Route11",
-  "layout": "LAYOUT_KANTO__ROUTE11",
+  "layout": "LAYOUT_KANTO_ROUTE11",
   "music": "MUS_ROUTE11",
   "region_map_section": "MAPSEC_ROUTE_11",
   "requires_flash": false,
