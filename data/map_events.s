@@ -14,8 +14,6 @@
 #include "constants/berry.h"
 	.include "asm/macros.inc"
 	.include "constants/constants.inc"
-
 	.section .rodata
-
 	.include "data/maps/events.inc"
 
