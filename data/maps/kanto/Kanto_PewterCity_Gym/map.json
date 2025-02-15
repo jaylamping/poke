@@ -63,21 +63,21 @@
       "x": 5,
       "y": 14,
       "elevation": 3,
-      "dest_map": "MAP_PEWTER_CITY",
+      "dest_map": "MAP_KANTO_PEWTER_CITY",
       "dest_warp_id": "2"
     },
     {
       "x": 6,
       "y": 14,
       "elevation": 3,
-      "dest_map": "MAP_PEWTER_CITY",
+      "dest_map": "MAP_KANTO_PEWTER_CITY",
       "dest_warp_id": "2"
     },
     {
       "x": 7,
       "y": 14,
       "elevation": 3,
-      "dest_map": "MAP_PEWTER_CITY",
+      "dest_map": "MAP_KANTO_PEWTER_CITY",
       "dest_warp_id": "2"
     }
   ],

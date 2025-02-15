@@ -119,14 +119,14 @@
       "x": 4,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_POKEMON_TOWER_4F",
+      "dest_map": "MAP_KANTO_POKEMON_TOWER_4F",
       "dest_warp_id": "0"
     },
     {
       "x": 18,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_POKEMON_TOWER_6F",
+      "dest_map": "MAP_KANTO_POKEMON_TOWER_6F",
       "dest_warp_id": "1"
     }
   ],

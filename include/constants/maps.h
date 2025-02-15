@@ -6,6 +6,7 @@
 // Warps using this map will instead use the warp data stored in gSaveBlock1Ptr->dynamicWarp.
 // Used for warps that need to change destinations, e.g. when stepping off an elevator.
 #define MAP_HOENN_DYNAMIC (0x7F | (0x7F << 8))
+#define MAP_KANTO_DYNAMIC (0x7E | (0x7E << 8))
 
 #define MAP_HOENN_UNDEFINED (0xFF | (0xFF << 8))
 

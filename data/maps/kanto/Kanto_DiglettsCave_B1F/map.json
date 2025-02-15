@@ -20,14 +20,14 @@
       "x": 3,
       "y": 3,
       "elevation": 3,
-      "dest_map": "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE",
+      "dest_map": "MAP_KANTO_DIGLETTS_CAVE_NORTH_ENTRANCE",
       "dest_warp_id": "0"
     },
     {
       "x": 82,
       "y": 71,
       "elevation": 3,
-      "dest_map": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
+      "dest_map": "MAP_KANTO_DIGLETTS_CAVE_SOUTH_ENTRANCE",
       "dest_warp_id": "1"
     }
   ],

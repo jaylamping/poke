@@ -214,21 +214,21 @@
       "x": 6,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
+      "dest_map": "MAP_KANTO_DIGLETTS_CAVE_SOUTH_ENTRANCE",
       "dest_warp_id": "0"
     },
     {
       "x": 58,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE11_EAST_ENTRANCE_1F",
+      "dest_map": "MAP_KANTO_ROUTE11_EAST_ENTRANCE_1F",
       "dest_warp_id": "0"
     },
     {
       "x": 65,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE11_EAST_ENTRANCE_1F",
+      "dest_map": "MAP_KANTO_ROUTE11_EAST_ENTRANCE_1F",
       "dest_warp_id": "2"
     }
   ],

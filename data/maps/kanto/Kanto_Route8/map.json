@@ -242,14 +242,14 @@
       "x": 13,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_UNDERGROUND_PATH_EAST_ENTRANCE",
+      "dest_map": "MAP_KANTO_UNDERGROUND_PATH_EAST_ENTRANCE",
       "dest_warp_id": "1"
     },
     {
       "x": 7,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE8_WEST_ENTRANCE",
+      "dest_map": "MAP_KANTO_ROUTE8_WEST_ENTRANCE",
       "dest_warp_id": "2"
     }
   ],

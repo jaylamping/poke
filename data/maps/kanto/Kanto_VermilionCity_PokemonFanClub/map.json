@@ -105,21 +105,21 @@
       "x": 4,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_VERMILION_CITY",
+      "dest_map": "MAP_KANTO_VERMILION_CITY",
       "dest_warp_id": "5"
     },
     {
       "x": 5,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_VERMILION_CITY",
+      "dest_map": "MAP_KANTO_VERMILION_CITY",
       "dest_warp_id": "5"
     },
     {
       "x": 6,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_VERMILION_CITY",
+      "dest_map": "MAP_KANTO_VERMILION_CITY",
       "dest_warp_id": "5"
     }
   ],

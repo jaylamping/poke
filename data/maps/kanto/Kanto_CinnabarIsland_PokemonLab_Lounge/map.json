@@ -63,7 +63,7 @@
       "x": 7,
       "y": 9,
       "elevation": 3,
-      "dest_map": "MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE",
+      "dest_map": "MAP_KANTO_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE",
       "dest_warp_id": "3"
     }
   ],

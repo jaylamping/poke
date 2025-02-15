@@ -63,21 +63,21 @@
       "x": 4,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CITY",
+      "dest_map": "MAP_KANTO_CERULEAN_CITY",
       "dest_warp_id": "5"
     },
     {
       "x": 5,
       "y": 8,
       "elevation": 3,
-      "dest_map": "MAP_CERULEAN_CITY",
+      "dest_map": "MAP_KANTO_CERULEAN_CITY",
       "dest_warp_id": "5"
     },
     {
       "x": 6,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CITY",
+      "dest_map": "MAP_KANTO_CERULEAN_CITY",
       "dest_warp_id": "5"
     }
   ],

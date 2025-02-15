@@ -49,14 +49,14 @@
       "x": 11,
       "y": 7,
       "elevation": 3,
-      "dest_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
+      "dest_map": "MAP_KANTO_SIX_ISLAND_DOTTED_HOLE_1F",
       "dest_warp_id": "2"
     },
     {
       "x": 5,
       "y": 9,
       "elevation": 3,
-      "dest_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B4F",
+      "dest_map": "MAP_KANTO_SIX_ISLAND_DOTTED_HOLE_B4F",
       "dest_warp_id": "3"
     }
   ],
