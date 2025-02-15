@@ -1473,7 +1473,7 @@ u8 SpawnSpecialObjectEvent(struct ObjectEventTemplate *objectEventTemplate)
     return TrySpawnObjectEventTemplate(objectEventTemplate, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
 }
 
-u8 SpawnSpecialObjectEventParameterized(u8 graphicsId, u8 movementBehavior, u8 localId, s16 x, s16 y, u8 elevation)
+u8 SpawnSpecialObjectEventParameterized(u16 graphicsId, u8 movementBehavior, u8 localId, s16 x, s16 y, u8 elevation)
 {
     struct ObjectEventTemplate objectEventTemplate;
 
@@ -1780,7 +1780,7 @@ static void SetPlayerAvatarObjectEventIdAndObjectId(u8 objectEventId, u8 spriteI
     SetPlayerAvatarExtraStateTransition(gObjectEvents[objectEventId].graphicsId, PLAYER_AVATAR_FLAG_CONTROLLABLE);
 }
 
-void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
+void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo;
     struct Sprite *sprite;
@@ -1819,7 +1819,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
         CameraObjectReset();
 }
 
-void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u8 graphicsId)
+void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
 {
     u8 objectEventId;
 
@@ -1874,7 +1874,7 @@ static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, struct Sprite 
     }
 }
 
-const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
+const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
 {
     u8 bard;
 
