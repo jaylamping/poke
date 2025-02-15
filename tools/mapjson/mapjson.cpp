@@ -672,8 +672,11 @@ void process_groups(string groups_filepath, string output_asm, string output_c)
         for (auto &map_name : groups_data[group].array_items())
         {
             string map_str = json_to_string(map_name);
-            string map_path = region + "/" + map_str + "/map.json";
+            string map_path = region + "/" + region + "_" + map_str + "/map.json";
             string full_path = "data/maps/" + map_path;
+
+            // Debug log to check the constructed path
+            std::cout << "Attempting to open file: " << full_path << std::endl;
 
             // Verify file exists
             ifstream f(full_path.c_str());

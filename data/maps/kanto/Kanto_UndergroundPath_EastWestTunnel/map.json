@@ -1,5 +1,5 @@
 {
-  "id": "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
+  "id": "MAP_KANTO_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
   "name": "UndergroundPath_EastWestTunnel",
   "layout": "LAYOUT_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
   "music": "MUS_ROUTE1",
