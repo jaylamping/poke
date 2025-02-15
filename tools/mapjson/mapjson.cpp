@@ -40,8 +40,6 @@ string read_text_file(string filepath)
 {
     ifstream in_file(filepath);
 
-    std::cout << "File Path: " << filepath << std::endl;
-
     if (!in_file.is_open())
     {
         FATAL_ERROR("Cannot open file %s for reading.\n", filepath.c_str());
@@ -131,11 +129,11 @@ string generate_map_header_text(Json map_data, Json layouts_data)
     string region = "hoenn"; // Default to hoenn
     if (map_layout_id.find("LAYOUT_HOENN_") != string::npos)
     {
-        region = "hoenn";
+        region = "Hoenn";
     }
     else if (map_layout_id.find("LAYOUT_KANTO_") != string::npos)
     {
-        region = "kanto";
+        region = "Kanto";
     }
 
     ostringstream text;
@@ -480,11 +478,11 @@ string generate_connections_text(Json groups_data, string include_path)
     {
         string group_str = json_to_string(group);
         // Determine the region based on the group name.
-        string region = "hoenn"; // Default region.
+        string region = "Hoenn"; // Default region.
         if (group_str.find("Kanto_") != string::npos)
-            region = "kanto";
+            region = "Kanto";
         else if (group_str.find("Hoenn_") != string::npos)
-            region = "hoenn";
+            region = "Hoenn";
 
         // Add each map from this group, along with its region.
         for (auto &map_obj : groups_data[group_str].array_items())
@@ -519,7 +517,7 @@ string generate_connections_text(Json groups_data, string include_path)
 
     // Output the include statement with region folder.
     for (const auto &entry : map_entries)
-        text << "\t.include \"" << include_path << "/" << entry.region << "/" << entry.map_name << "/connections.inc\"\n";
+        text << "\t.include \"" << include_path << "/" << entry.region << "/" << entry.region << "_" << entry.map_name << "/connections.inc\"\n";
 
     return text.str();
 }
@@ -539,16 +537,16 @@ string generate_headers_text(Json groups_data, string include_path)
         // Determine region based on the group name.
         string region = "hoenn"; // Default
         if (group_str.find("Kanto_") != string::npos)
-            region = "kanto";
+            region = "Kanto";
         else if (group_str.find("Hoenn_") != string::npos)
-            region = "hoenn";
+            region = "Hoenn";
 
         // Now iterate over each map in the current group.
         for (auto map_obj : groups_data[group_str].array_items())
         {
             string map_name = json_to_string(map_obj);
             // Include header file using the region folder.
-            text << "\t.include \"" << include_path << "/" << region << "/" << map_name << "/header.inc\"\n";
+            text << "\t.include \"" << include_path << "/" << region << "/" << region << "_" << map_name << "/header.inc\"\n";
         }
     }
 
@@ -568,15 +566,15 @@ string generate_events_text(Json groups_data, string include_path)
         // Determine the region based on the group name.
         string region = "hoenn"; // Default region.
         if (group_str.find("Kanto_") != string::npos)
-            region = "kanto";
+            region = "Kanto";
         else if (group_str.find("Hoenn_") != string::npos)
-            region = "hoenn";
+            region = "Hoenn";
 
         // Iterate over each map for the current group.
         for (auto &map_obj : groups_data[group_str].array_items())
         {
             string map_name = json_to_string(map_obj);
-            text << "\t.include \"" << include_path << "/" << region << "/" << map_name << "/events.inc\"\n";
+            text << "\t.include \"" << include_path << "/" << region << "/" << region << "_" << map_name << "/events.inc\"\n";
         }
     }
 
