@@ -585,7 +585,7 @@ string generate_events_text(Json groups_data, string include_path)
 
 string generate_map_constants_text(string groups_filepath, Json groups_data)
 {
-    string file_dir = file_parent(groups_filepath) + sep;
+    string file_dir = strip_trailing_separator(file_parent(groups_filepath));
 
     ostringstream text;
 
@@ -607,17 +607,17 @@ string generate_map_constants_text(string groups_filepath, Json groups_data)
         string region = "hoenn"; // Default to hoenn
         if (groupName.find("Hoenn_") != string::npos)
         {
-            region = "hoenn";
+            region = "Hoenn";
         }
         else if (groupName.find("Kanto_") != string::npos)
         {
-            region = "kanto";
+            region = "Kanto";
         }
 
         for (auto &map_name : groups_data[groupName].array_items())
         {
             string map_str = json_to_string(map_name);
-            string map_filepath = file_dir + sep + region + sep + map_str + sep + "map.json";
+            string map_filepath = file_dir + sep + region + sep + region + "_" + map_str + sep + "map.json";
 
             string err_str;
             Json map_data = Json::parse(read_text_file(map_filepath), err_str);
@@ -678,8 +678,6 @@ void process_groups(string groups_filepath, string output_asm, string output_c)
             string map_str = json_to_string(map_name);
             string map_path = region + "/" + region + "_" + map_str + "/map.json";
             string full_path = "data/maps/" + map_path;
-
-            std::cout << "Full Path: " << full_path << std::endl;
 
             // Verify file exists
             ifstream f(full_path.c_str());
