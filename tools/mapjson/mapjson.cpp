@@ -542,8 +542,6 @@ string generate_headers_text(Json groups_data, string include_path)
 {
     ostringstream text;
 
-    // std::cout << "Header's Test: " << groups_data << std::endl;
-
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
 
     // Loop over each group in order.
