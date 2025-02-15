@@ -447,79 +447,74 @@
 	formatwarp \map, \a, \b, \c
 	.endm
 
-	@ Warps the player to another map using a hole animation. If the specified map is MAP_HOENN_UNDEFINED it will instead
+	@ Warps the player to another map using a hole animation. If the specified map is MAP_UNDEFINED it will instead
 	@ use the map set by setholewarp. In either case the target coordinates on the destination map will be the
 	@ player's current position.
-	.macro warphole map:
-	req
-			.byte SCR_OP_WARPHOLE
-				map \map
-			.endm
+	.macro warphole map:req
+	.byte SCR_OP_WARPHOLE
+	map \map
+	.endm
 
-		@Warps the player to the specified map using a teleport effect.Effect is similar to warpspinenter but
-		@ this warp has a fade out first and doesn't maintain the original facing direction.
-		@Warp commands can be given either the id of which warp location to go to on the destination map
-		@ or
-		a pair of x / y coordinates to go to directly on the destination map.
-						  .macro warpteleport map : req,
-		a, b, c.byte SCR_OP_WARPTELEPORT formatwarp \map, \a, \b, \c
-																		  .endm
+	@ Warps the player to the specified map using a teleport effect. Effect is similar to warpspinenter but
+	@ this warp has a fade out first and doesn't maintain the original facing direction.
+	@ Warp commands can be given either the id of which warp location to go to on the destination map
+	@ or a pair of x/y coordinates to go to directly on the destination map.
+	.macro warpteleport map:req, a, b, c
+	.byte SCR_OP_WARPTELEPORT
+	formatwarp \map, \a, \b, \c
+	.endm
 
-																	  @Sets the warp destination to be used later.
-																	  @Warp commands can be given either the id of which warp location to go to on the destination map
-																	  @ or
-																	  a pair of x / y coordinates to go to directly on the destination map.
-																						.macro setwarp map : req,
-		a, b, c.byte SCR_OP_SETWARP formatwarp \map, \a, \b, \c
-																	 .endm
+	@ Sets the warp destination to be used later.
+	@ Warp commands can be given either the id of which warp location to go to on the destination map
+	@ or a pair of x/y coordinates to go to directly on the destination map.
+	.macro setwarp map:req, a, b, c
+	.byte SCR_OP_SETWARP
+	formatwarp \map, \a, \b, \c
+	.endm
 
-																 @Sets the dynamic warp destination.Warps with a destination map of MAP_DYNAMIC will target this destination.
-																 @Warp commands can be given either the id of which warp location to go to on the destination map
-																 @ or
-																 a pair of x / y coordinates to go to directly on the destination map.
-																				   .macro setdynamicwarp map : req,
-		a, b, c.byte SCR_OP_SETDYNAMICWARP formatwarp \map, \a, \b, \c
-																			.endm
+	@ Sets the dynamic warp destination. Warps with a destination map of MAP_DYNAMIC will target this destination.
+	@ Warp commands can be given either the id of which warp location to go to on the destination map
+	@ or a pair of x/y coordinates to go to directly on the destination map.
+	.macro setdynamicwarp map:req, a, b, c
+	.byte SCR_OP_SETDYNAMICWARP
+	formatwarp \map, \a, \b, \c
+	.endm
 
-																		@Sets the destination that diving or
-																		emerging from a dive will take the player to.Note that this only
-																				@applies if the current map does not have a dive /
-																				emerge connection.If it does have a corresponding
-																				@map connection then that map and
-																			the player's current coordinates will be used as the destination instead.
-																			@Warp commands can be given either the id of which warp location to go to on the destination map
-																			@ or
-																		a pair of x / y coordinates to go to directly on the destination map.
-																						  .macro setdivewarp map : req,
-		a, b, c.byte SCR_OP_SETDIVEWARP formatwarp \map, \a, \b, \c
-																		 .endm
+	@ Sets the destination that diving or emerging from a dive will take the player to. Note that this only
+	@ applies if the current map does not have a dive/emerge connection. If it does have a corresponding
+	@ map connection then that map and the player's current coordinates will be used as the destination instead.
+	@ Warp commands can be given either the id of which warp location to go to on the destination map
+	@ or a pair of x/y coordinates to go to directly on the destination map.
+	.macro setdivewarp map:req, a, b, c
+	.byte SCR_OP_SETDIVEWARP
+	formatwarp \map, \a, \b, \c
+	.endm
 
-																	 @Sets the destination that falling into a hole will take the player to.
-																	 @While it does accept and set the x /
-																	 y coordinates and warpId,
-		they are ultimately ignored.
-			@This is only used to set the map the player should fall to.The exact location on the
-			@map to fall to is determined by warphole.
-			@Warp commands can be given either the id of which warp location to go to on the destination map
-			@ or
-			a pair of x / y coordinates to go to directly on the destination map.
-							  .macro setholewarp map : req,
-		a = 0, b = 0, c.byte SCR_OP_SETHOLEWARP formatwarp \map, \a, \b, \c
-																			 .endm
+	@ Sets the destination that falling into a hole will take the player to.
+	@ While it does accept and set the x/y coordinates and warpId, they are ultimately ignored.
+	@ This is only used to set the map the player should fall to. The exact location on the
+	@ map to fall to is determined by warphole.
+	@ Warp commands can be given either the id of which warp location to go to on the destination map
+	@ or a pair of x/y coordinates to go to directly on the destination map.
+	.macro setholewarp map:req, a=0, b=0, c
+	.byte SCR_OP_SETHOLEWARP
+	formatwarp \map, \a, \b, \c
+	.endm
 
-																		 @Retrieves the player's zero-indexed x- and y-coordinates in the map, and stores them in the specified variables.
-																			 .macro getplayerxy x : req,
-		y : req
-				.byte SCR_OP_GETPLAYERXY.2byte \x.2byte \y
-				.endm
+	@ Retrieves the player's zero-indexed x- and y-coordinates in the map, and stores them in the specified variables.
+	.macro getplayerxy x:req, y:req
+	.byte SCR_OP_GETPLAYERXY
+	.2byte \x
+	.2byte \y
+	.endm
 
-			@Retrieves the number of Pokemon in the player's party, and stores that number in VAR_RESULT.
-				.macro getpartysize
-				.byte SCR_OP_GETPARTYSIZE
-				.endm
+	@ Retrieves the number of Pokemon in the player's party, and stores that number in VAR_RESULT.
+	.macro getpartysize
+	.byte SCR_OP_GETPARTYSIZE
+	.endm
 
-			@Attempts to add quantity of the specified item to the player's Bag. If the player has enough room, the item will
-			@be added and VAR_RESULT will be set to TRUE; otherwise, VAR_RESULT is set to FALSE.
+	@ Attempts to add quantity of the specified item to the player's Bag. If the player has enough room, the item will
+	@ be added and VAR_RESULT will be set to TRUE; otherwise, VAR_RESULT is set to FALSE.
 	.macro additem itemId:req, quantity=1
 	.byte SCR_OP_ADDITEM
 	.2byte \itemId
@@ -611,42 +606,36 @@
 		.endif
 	.endm
 
-	@ Blocks script execution until the movements being applied to the specified (localId)
-	object finish.
-		@If localId is 0,
-		then the id of the last - moved object will be used instead.If the specified object
-								  @is not currently being manipulated with applymovement,
-		then this command does nothing.
-		@If no map is specified,
-		then the current map is used.
-			.macro waitmovement localId : req,
-		map
-			.ifb \map
-			.byte SCR_OP_WAITMOVEMENT.2byte \localId
-			.else
-			.byte SCR_OP_WAITMOVEMENTAT.2byte \localId
-				map \map
-			.endif
-			.endm
+	@ Blocks script execution until the movements being applied to the specified (localId) object finish.
+	@ If localId is 0, then the id of the last-moved object will be used instead. If the specified object
+	@ is not currently being manipulated with applymovement, then this command does nothing.
+	@ If no map is specified, then the current map is used.
+	.macro waitmovement localId:req, map
+		.ifb \map
+			.byte SCR_OP_WAITMOVEMENT
+			.2byte \localId
+		.else
+			.byte SCR_OP_WAITMOVEMENTAT
+			.2byte \localId
+			map \map
+		.endif
+	.endm
 
-		@Attempts to despawn the
-		specified(localId)
-	object on the specified map.
-		@It also sets the object's visibility flag if it has one.
-		@If no map is specified,
-		then the current map is used.
-			.macro removeobject localId : req,
-		map
-			.ifb \map
-			.byte SCR_OP_REMOVEOBJECT.2byte \localId
-			.else
-			.byte SCR_OP_REMOVEOBJECTAT.2byte \localId
-				map \map
-			.endif
-			.endm
+	@ Attempts to despawn the specified (localId) object on the specified map.
+	@ It also sets the object's visibility flag if it has one.
+	@ If no map is specified, then the current map is used.
+	.macro removeobject localId:req, map
+		.ifb \map
+			.byte SCR_OP_REMOVEOBJECT
+			.2byte \localId
+		.else
+			.byte SCR_OP_REMOVEOBJECTAT
+			.2byte \localId
+			map \map
+		.endif
+	.endm
 
-		@Attempts to spawn the
-		specified(localId) object the specified map.
+	@ Attempts to spawn the specified (localId) object the specified map.
 	@ Note that unlike removeobject this does not modify the object's flag.
 	@ If no map is specified, then the current map is used.
 	.macro addobject localId:req, map
