@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ROUTE21_NORTH",
   "name": "Route21_North",
-  "layout": "LAYOUT_ROUTE21_NORTH",
+  "layout": "LAYOUT_KANTO__ROUTE21_NORTH",
   "music": "MUS_ROUTE3",
   "region_map_section": "MAPSEC_ROUTE_21",
   "requires_flash": false,

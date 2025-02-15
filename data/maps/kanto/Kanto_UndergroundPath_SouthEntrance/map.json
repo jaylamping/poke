@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_UNDERGROUND_PATH_SOUTH_ENTRANCE",
   "name": "UndergroundPath_SouthEntrance",
-  "layout": "LAYOUT_UNDERGROUND_PATH_ENTRANCE",
+  "layout": "LAYOUT_KANTO__UNDERGROUND_PATH_ENTRANCE",
   "music": "MUS_PEWTER",
   "region_map_section": "MAPSEC_UNDERGROUND_PATH",
   "requires_flash": false,

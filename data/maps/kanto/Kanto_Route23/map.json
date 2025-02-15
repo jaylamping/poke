@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ROUTE23",
   "name": "Route23",
-  "layout": "LAYOUT_ROUTE23",
+  "layout": "LAYOUT_KANTO__ROUTE23",
   "music": "MUS_VICTORY_ROAD",
   "region_map_section": "MAPSEC_ROUTE_23",
   "requires_flash": false,

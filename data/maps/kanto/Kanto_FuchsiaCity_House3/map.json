@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_FUCHSIA_CITY_HOUSE3",
   "name": "FuchsiaCity_House3",
-  "layout": "LAYOUT_HOUSE1",
+  "layout": "LAYOUT_KANTO__HOUSE1",
   "music": "MUS_FUCHSIA",
   "region_map_section": "MAPSEC_FUCHSIA_CITY",
   "requires_flash": false,

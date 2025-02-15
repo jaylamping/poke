@@ -40,6 +40,8 @@ string read_text_file(string filepath)
 {
     ifstream in_file(filepath);
 
+    std::cout << "File Path: " << filepath << std::endl;
+
     if (!in_file.is_open())
     {
         FATAL_ERROR("Cannot open file %s for reading.\n", filepath.c_str());
@@ -526,6 +528,8 @@ string generate_headers_text(Json groups_data, string include_path)
 {
     ostringstream text;
 
+    // std::cout << "Header's Test: " << groups_data << std::endl;
+
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
 
     // Loop over each group in order.
@@ -661,11 +665,11 @@ void process_groups(string groups_filepath, string output_asm, string output_c)
         string region = "hoenn"; // Default to hoenn
         if (group.find("Hoenn_") != string::npos)
         {
-            region = "hoenn";
+            region = "Hoenn";
         }
         else if (group.find("Kanto_") != string::npos)
         {
-            region = "kanto";
+            region = "Kanto";
         }
 
         // When processing maps in this group, modify the paths
@@ -675,8 +679,7 @@ void process_groups(string groups_filepath, string output_asm, string output_c)
             string map_path = region + "/" + region + "_" + map_str + "/map.json";
             string full_path = "data/maps/" + map_path;
 
-            // Debug log to check the constructed path
-            std::cout << "Attempting to open file: " << full_path << std::endl;
+            std::cout << "Full Path: " << full_path << std::endl;
 
             // Verify file exists
             ifstream f(full_path.c_str());

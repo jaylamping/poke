@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_CELADON_CITY_RESTAURANT",
   "name": "CeladonCity_Restaurant",
-  "layout": "LAYOUT_CELADON_CITY_RESTAURANT",
+  "layout": "LAYOUT_KANTO__CELADON_CITY_RESTAURANT",
   "music": "MUS_CELADON",
   "region_map_section": "MAPSEC_CELADON_CITY",
   "requires_flash": false,

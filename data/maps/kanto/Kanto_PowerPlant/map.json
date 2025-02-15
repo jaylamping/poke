@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_POWER_PLANT",
   "name": "PowerPlant",
-  "layout": "LAYOUT_POWER_PLANT",
+  "layout": "LAYOUT_KANTO__POWER_PLANT",
   "music": "MUS_POKE_MANSION",
   "region_map_section": "MAPSEC_POWER_PLANT",
   "requires_flash": false,

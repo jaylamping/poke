@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_ROCKET_HIDEOUT_B1F",
   "name": "RocketHideout_B1F",
-  "layout": "LAYOUT_ROCKET_HIDEOUT_B1F",
+  "layout": "LAYOUT_KANTO__ROCKET_HIDEOUT_B1F",
   "music": "MUS_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_ROCKET_HIDEOUT",
   "requires_flash": false,
