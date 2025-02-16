@@ -6553,25 +6553,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Snorlax = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fossil = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_WHITE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 128,
-    .width = 16,
-    .height = 16,
-    .paletteSlot = PALSLOT_NPC_4,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x16,
-    .subspriteTables = gObjectEventSpriteOamTables_16x16,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_Fossil,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ruby = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
@@ -6702,25 +6683,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clipboard = {
     .subspriteTables = gObjectEventSpriteOamTables_16x16,
     .anims = sAnimTable_Inanimate,
     .images = sPicTable_Clipboard,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meteorite = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_METEORITE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_BirthIslandStone,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -7199,25 +7161,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mew = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_GREEN,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 128,
-    .width = 16,
-    .height = 16,
-    .paletteSlot = PALSLOT_NPC_3,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x16,
-    .subspriteTables = gObjectEventSpriteOamTables_16x16,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Mew,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Entei = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
@@ -7272,44 +7215,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Suicune = {
     .subspriteTables = gObjectEventSpriteOamTables_16x16,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Suicune,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_PINK,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_2,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Lugia,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_1,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_HoOh,
-    .images = sPicTable_HoOh,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -7446,25 +7351,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chansey = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pikachu = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 128,
-    .width = 16,
-    .height = 16,
-    .paletteSlot = PALSLOT_NPC_1,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x16,
-    .subspriteTables = gObjectEventSpriteOamTables_16x16,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Pikachu,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jigglypuff = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_PINK,
@@ -7519,25 +7405,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clefairy = {
     .subspriteTables = gObjectEventSpriteOamTables_16x16,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Clefairy,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_1,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = gObjectEventSpriteOamTables_16x32,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Mom,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

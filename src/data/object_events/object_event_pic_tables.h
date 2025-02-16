@@ -3075,10 +3075,6 @@ static const struct SpriteFrameImage sPicTable_GBAKid[] = {
     overworld_frame(gObjectEventPic_GBAKid, 2, 4, 2),
 };
 
-static const struct SpriteFrameImage sPicTable_Fossil[] = {
-    overworld_frame(gObjectEventPic_Fossil, 2, 2, 0),
-};
-
 static const struct SpriteFrameImage sPicTable_Ruby[] = {
     overworld_frame(gObjectEventPic_Ruby, 2, 2, 0),
 };
