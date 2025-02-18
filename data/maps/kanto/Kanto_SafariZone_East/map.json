@@ -1,7 +1,7 @@
 {
   "id": "MAP_KANTO_SAFARI_ZONE_EAST",
   "name": "SafariZone_East",
-  "layout": "LAYOUT_SAFARI_ZONE_EAST",
+  "layout": "LAYOUT_KANTO_SAFARI_ZONE_EAST",
   "music": "MUS_EVOLUTION",
   "region_map_section": "MAPSEC_KANTO_SAFARI_ZONE",
   "requires_flash": false,
@@ -77,21 +77,21 @@
       "x": 8,
       "y": 9,
       "elevation": 3,
-      "dest_map": "MAP_KANTO_SAFARI_ZONE_NORTH",
+      "dest_map": "MAP_HOENN_SAFARI_ZONE_NORTH",
       "dest_warp_id": "6"
     },
     {
       "x": 8,
       "y": 10,
       "elevation": 3,
-      "dest_map": "MAP_KANTO_SAFARI_ZONE_NORTH",
+      "dest_map": "MAP_HOENN_SAFARI_ZONE_NORTH",
       "dest_warp_id": "7"
     },
     {
       "x": 8,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_KANTO_SAFARI_ZONE_NORTH",
+      "dest_map": "MAP_HOENN_SAFARI_ZONE_NORTH",
       "dest_warp_id": "8"
     },
     {

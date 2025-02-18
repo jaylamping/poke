@@ -689,7 +689,6 @@
     "DiglettsCave_NorthEntrance",
     "DiglettsCave_B1F",
     "DiglettsCave_SouthEntrance",
-    "VictoryRoad_1F",
     "VictoryRoad_2F",
     "VictoryRoad_3F",
     "RocketHideout_B1F",
@@ -715,7 +714,6 @@
     "PokemonMansion_B1F",
     "SafariZone_Center",
     "SafariZone_East",
-    "SafariZone_North",
     "SafariZone_West",
     "SafariZone_Center_RestHouse",
     "SafariZone_East_RestHouse",
@@ -775,7 +773,6 @@
     "SixIsland_AlteringCave"
   ],
   "gMapGroup_Kanto_SpecialArea": [
-    "NavelRock_Exterior",
     "TrainerTower_1F",
     "TrainerTower_2F",
     "TrainerTower_3F",
@@ -829,12 +826,7 @@
     "NavelRock_BasePath_B9F",
     "NavelRock_BasePath_B10F",
     "NavelRock_BasePath_B11F",
-    "NavelRock_B1F",
-    "NavelRock_Fork",
-    "BirthIsland_Exterior",
-    "OneIsland_KindleRoad_EmberSpa",
-    "BirthIsland_Harbor",
-    "NavelRock_Harbor"
+    "OneIsland_KindleRoad_EmberSpa"
   ],
   "gMapGroup_Kanto_TownsAndRoutes": [
     "PalletTown",

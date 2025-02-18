@@ -5713,18 +5713,6 @@
       "blockdata_filepath": "data/layouts/kanto/DiglettsCave_B1F/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_VICTORY_ROAD_1F",
-      "name": "Kanto_VictoryRoad_1F_Layout",
-      "width": 48,
-      "height": 22,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_General",
-      "secondary_tileset": "gTileset_Kanto_Cave",
-      "border_filepath": "data/layouts/kanto/VictoryRoad_1F/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/VictoryRoad_1F/map.bin"
-    },
-    {
       "id": "LAYOUT_KANTO_VICTORY_ROAD_2F",
       "name": "Kanto_VictoryRoad_2F_Layout",
       "width": 51,
@@ -5999,18 +5987,6 @@
       "secondary_tileset": "gTileset_Kanto_FuchsiaCity",
       "border_filepath": "data/layouts/kanto/SafariZone_East/border.bin",
       "blockdata_filepath": "data/layouts/kanto/SafariZone_East/map.bin"
-    },
-    {
-      "id": "LAYOUT_KANTO_SAFARI_ZONE_NORTH",
-      "name": "Kanto_SafariZone_North_Layout",
-      "width": 57,
-      "height": 40,
-      "border_width": 3,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_General",
-      "secondary_tileset": "gTileset_Kanto_FuchsiaCity",
-      "border_filepath": "data/layouts/kanto/SafariZone_North/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/SafariZone_North/map.bin"
     },
     {
       "id": "LAYOUT_KANTO_SAFARI_ZONE_WEST",
@@ -8306,30 +8282,6 @@
       "blockdata_filepath": "data/layouts/kanto/SevenIsland_SevaultCanyon_TanobyKey/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_BIRTH_ISLAND_EXTERIOR",
-      "name": "Kanto_BirthIsland_Exterior_Layout",
-      "width": 30,
-      "height": 30,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_General",
-      "secondary_tileset": "gTileset_Kanto_SeviiIslands67",
-      "border_filepath": "data/layouts/kanto/BirthIsland_Exterior/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/BirthIsland_Exterior/map.bin"
-    },
-    {
-      "id": "LAYOUT_KANTO_NAVEL_ROCK_EXTERIOR",
-      "name": "Kanto_NavelRock_Exterior_Layout",
-      "width": 20,
-      "height": 23,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_General",
-      "secondary_tileset": "gTileset_Kanto_SeviiIslands123",
-      "border_filepath": "data/layouts/kanto/NavelRock_Exterior/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/NavelRock_Exterior/map.bin"
-    },
-    {
       "id": "LAYOUT_KANTO_NAVEL_ROCK_1F",
       "name": "Kanto_NavelRock_1F_Layout",
       "width": 17,
@@ -8568,30 +8520,6 @@
       "secondary_tileset": "gTileset_Kanto_TanobyRuins",
       "border_filepath": "data/layouts/kanto/SevenIsland_TanobyRuins_ViapoisChamber/border.bin",
       "blockdata_filepath": "data/layouts/kanto/SevenIsland_TanobyRuins_ViapoisChamber/map.bin"
-    },
-    {
-      "id": "LAYOUT_KANTO_NAVEL_ROCK_B1F",
-      "name": "Kanto_NavelRock_B1F_Layout",
-      "width": 17,
-      "height": 7,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_General",
-      "secondary_tileset": "gTileset_Kanto_NavelRock",
-      "border_filepath": "data/layouts/kanto/NavelRock_B1F/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/NavelRock_B1F/map.bin"
-    },
-    {
-      "id": "LAYOUT_KANTO_NAVEL_ROCK_FORK",
-      "name": "Kanto_NavelRock_Fork_Layout",
-      "width": 30,
-      "height": 100,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_General",
-      "secondary_tileset": "gTileset_Kanto_NavelRock",
-      "border_filepath": "data/layouts/kanto/NavelRock_Fork/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/NavelRock_Fork/map.bin"
     },
     {
       "id": "LAYOUT_KANTO_TRAINER_TOWER_1F_DOUBLES",
