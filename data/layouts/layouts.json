@@ -4855,18 +4855,6 @@
       "blockdata_filepath": "data/layouts/kanto/BattleColosseum_2P/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_TRADE_CENTER",
-      "name": "Kanto_TradeCenter_Layout",
-      "width": 12,
-      "height": 9,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_Building",
-      "secondary_tileset": "gTileset_Kanto_CableClub",
-      "border_filepath": "data/layouts/kanto/TradeCenter/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/TradeCenter/map.bin"
-    },
-    {
       "id": "LAYOUT_KANTO_RECORD_CORNER",
       "name": "Kanto_RecordCorner_Layout",
       "width": 20,
