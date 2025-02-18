@@ -251,6 +251,23 @@ string generate_map_events_text(Json map_data)
         {
             auto obj_event = map_data["object_events"].array_items()[i];
             string type = json_to_string(obj_event, "type", true);
+            string targetMap = json_to_string(obj_event, "target_map");
+
+            string region = "";
+            if (mapName.find("HOENN_") != string::npos)
+            {
+                region = "HOENN_";
+            }
+            else if (mapName.find("KANTO_") != string::npos)
+            {
+                region = "KANTO_";
+            }
+
+            if (!targetMap.empty() && targetMap.find("MAP_HOENN_") == string::npos &&
+                targetMap.find("MAP_KANTO_") == string::npos && targetMap.find("MAP_") == 0)
+            {
+                targetMap = "MAP_" + region + targetMap.substr(4);
+            }
 
             // If no type field is present, assume it's a regular object event.
             if (type == "" || type == "object")
@@ -275,7 +292,7 @@ string generate_map_events_text(Json map_data)
                      << json_to_string(obj_event, "x") << ", "
                      << json_to_string(obj_event, "y") << ", "
                      << json_to_string(obj_event, "target_local_id") << ", "
-                     << json_to_string(obj_event, "target_map") << "\n";
+                     << targetMap << "\n";
             }
             else
             {
