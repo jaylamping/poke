@@ -3,7 +3,7 @@ PokemonMansion_Text_PressSecretSwitchJP::
     .string "おして　みますか？$"
 
 PokemonMansion_Text_LetsTryIt::
-    .string "おしてみよう！　‥ポチッとな$"
+    .string "おしてみよう！　..ポチッとな$"
 
 PokemonMansion_Text_GaveUpOnPressingSwitch::
     .string "おすのは　あきらめた$"

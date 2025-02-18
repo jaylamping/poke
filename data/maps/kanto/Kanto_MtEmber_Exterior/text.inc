@@ -25,7 +25,7 @@ Text_ExplosionTeachJP::
     .string "こ　この　かざんが\n"
     .string "もし　だいばくはつ　したら\l"
     .string "お　おれら　ひとたまりも\l"
-    .string "ないなあ　‥ブルブル！\p"
+    .string "ないなあ　..ブルブル！\p"
     .string "こ　こわい　ついでに\n"
     .string "だいばくはつ　でも　おぼえてみる？$"
 
@@ -38,7 +38,7 @@ Text_ExplosionWhichMonJP::
     .string "じゃあ　どの　ポケモンに　する？$"
 
 Text_ExplosionTaughtJP::
-    .string "かざんで　だいばくはつを‥\n"
+    .string "かざんで　だいばくはつを..\n"
     .string "す　すごい　スリル！$"
 
 MtEmber_Exterior_Text_WellTryDiggingHere::

@@ -26,7 +26,7 @@ SilphCo_7F_Text_RocketBossWentToBoardroom::
     .string "I'm worried.$"
 
 SilphCo_7F_Text_OhNo::
-    .string "あ‥　もう　もてないぞ$"
+    .string "あ..　もう　もてないぞ$"
 
 SilphCo_7F_Text_SavedAtLast::
     .string "たすかったよ　ありがと！$"
@@ -120,9 +120,9 @@ SilphCo_7F_Text_RivalDefeat::
     .string "ROCKET!$"
 
 SilphCo_7F_Text_RivalVictory::
-    .string "{RIVAL}“おまえなあ‥\p"
+    .string "{RIVAL}“おまえなあ..\p"
     .string "こんな　うでまえじゃ\n"
-    .string "まだまだ‥\l"
+    .string "まだまだ..\l"
     .string "いちにんまえ　とは　いえないぜ$"
 
 SilphCo_7F_Text_RivalPostBattle::

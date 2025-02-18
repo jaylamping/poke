@@ -6,7 +6,7 @@ JPText_BodySlamTeach::
     .string "どっちが　さきに　へたばるか？\l"
     .string "のしかかり　しょうぶ　してるんだ\p"
     .string "きみは　なかまに　はいったら\n"
-    .string "つぶれそうだな‥\l"
+    .string "つぶれそうだな..\l"
     .string "かわりに　きみの　ポケモンに\l"
     .string "のしかかり　おしえて　やろっか？$"
 

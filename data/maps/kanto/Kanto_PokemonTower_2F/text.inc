@@ -14,7 +14,7 @@ PokemonTower_2F_Text_RivalDefeat::
 @ Unused. Translated below
 @ Aw, man! They really kicked the bucket! Weak! Do them a favor and raise them more properly.
 PokemonTower_2F_Text_RivalVictory::
-    .string "{RIVAL}“あーあ‥！\n"
+    .string "{RIVAL}“あーあ..！\n"
     .string "ほんとに　くたばっちまったぞ！\l"
     .string "よわいなー！\l"
     .string "もっと　ちゃんと　そだてて　やれよ$"

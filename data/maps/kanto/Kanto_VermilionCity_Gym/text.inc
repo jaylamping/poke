@@ -123,10 +123,10 @@ VermilionCity_Gym_Text_SwitchUnderTrashFirstLockOpened::
     .string "The first electric lock opened!$"
 
 VermilionCity_Gym_Text_AnotherSwitchInTrash::
-    .string "ガサゴソ‥！\n"
+    .string "ガサゴソ..！\n"
     .string "おっと！　ゴミばこの　そこに\l"
     .string "また　スイッチが　あった！\l"
-    .string "おして　みよう！　‥　ポチッとな$"
+    .string "おして　みよう！　..　ポチッとな$"
 
 VermilionCity_Gym_Text_SecondLockOpened::
     .string "The second electric lock opened!\n"

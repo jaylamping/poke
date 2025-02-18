@@ -33,7 +33,7 @@ SevenIsland_TrainerTower_Text_TrainerTowerAhead::
 @ Unused text perhaps indicating Trainer Tower was planned to be unlocked by something
 SevenIsland_TrainerTower_Text_LooksLikeTrainerTowerIsClosed::
     .string "トレーナータワーには\n"
-    .string "いまは　はいれない　みたい‥$"
+    .string "いまは　はいれない　みたい..$"
 
 SevenIsland_TrainerTower_Text_TrainerTowerIsOpenLetsGoIn::
     .string "トレーナータワーが　あいてる！\n"

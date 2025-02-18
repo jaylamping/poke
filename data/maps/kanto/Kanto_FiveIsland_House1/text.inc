@@ -2,7 +2,7 @@ FiveIsland_House1_JPText_HusbandWentOffFishing::
     .string "こんばんの　おかずは\n"
     .string "ようい　しなくて　いいぞ！\p"
     .string "って　だんなが\n"
-    .string "つりに　いったん　だけど‥\l"
+    .string "つりに　いったん　だけど..\l"
     .string "しんじて　いいのかねえ$"
 
 FiveIsland_House1_Text_HusbandWentOffFishing::

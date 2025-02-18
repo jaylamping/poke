@@ -98,7 +98,7 @@ PewterCity_Text_CitySign::
 @ The below 3 JP texts are unused. Possibly a cut NPC meant to give the player the Berry Pouch
 PewterCity_Text_DefeatedBrockYouCanHaveTreasure::
     .string "あッれー！\n"
-    .string "その　ジムバッジ‥‥\l"
+    .string "その　ジムバッジ....\l"
     .string "すげえな　タケシに　かったのかよ！\p"
     .string "かんどう　したから\n"
     .string "おれの　たからもの　やるよ！$"

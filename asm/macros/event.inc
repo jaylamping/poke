@@ -53,6 +53,13 @@
 	.byte \function
 	.endm
 
+	@ Prints the message "{PLAYER} put the {ITEM} in the {POCKET}." The item name is pluralized, if applicable.
+	.macro putitemaway item:req, amount=1
+	setorcopyvar VAR_0x8000, \item
+	setorcopyvar VAR_0x8001, \amount
+	callstd STD_PUT_ITEM_AWAY
+	.endm
+
 	@ callstd function names
 	STD_OBTAIN_ITEM = 0
 	STD_FIND_ITEM = 1
