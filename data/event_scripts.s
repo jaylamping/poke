@@ -1050,7 +1050,6 @@ gStdScripts_End::
 	.include "data/maps/kanto/Kanto_PokemonMansion_B1F/text.inc"
 	.include "data/maps/kanto/Kanto_SafariZone_Center/text.inc"
 	.include "data/maps/kanto/Kanto_SafariZone_East/text.inc"
-	.include "data/maps/kanto/Kanto_SafariZone_North/text.inc"
 	.include "data/maps/kanto/Kanto_SafariZone_West/text.inc"
 	.include "data/maps/kanto/Kanto_SafariZone_Center_RestHouse/text.inc"
 	.include "data/maps/kanto/Kanto_SafariZone_East_RestHouse/text.inc"

@@ -7,7 +7,8 @@
 // loaded at once but not copied to vram yet.
 #define TEXT_SKIP_DRAW 0xFF
 
-enum {
+enum
+{
     FONT_SMALL,
     FONT_NORMAL,
     FONT_SHORT,
@@ -17,11 +18,14 @@ enum {
     FONT_BRAILLE,
     FONT_NARROW,
     FONT_SMALL_NARROW, // Very similar to FONT_SMALL, some glyphs are narrower
-    FONT_BOLD, // JP glyph set only
+    FONT_BOLD,         // JP glyph set only
+    FONT_MALE,
+    FONT_FEMALE,
 };
 
 // Return values for font functions
-enum {
+enum
+{
     RENDER_PRINT,
     RENDER_FINISH,
     RENDER_REPEAT, // Run render function again, if e.g. a control code is encountered.
@@ -29,7 +33,8 @@ enum {
 };
 
 // Text printer states read by RenderText / FontFunc_Braille
-enum {
+enum
+{
     RENDER_STATE_HANDLE_CHAR,
     RENDER_STATE_WAIT,
     RENDER_STATE_CLEAR,
@@ -39,12 +44,13 @@ enum {
     RENDER_STATE_PAUSE,
 };
 
-enum {
+enum
+{
     FONTATTR_MAX_LETTER_WIDTH,
     FONTATTR_MAX_LETTER_HEIGHT,
     FONTATTR_LETTER_SPACING,
     FONTATTR_LINE_SPACING,
-    FONTATTR_UNKNOWN,   // dunno what this is yet
+    FONTATTR_UNKNOWN, // dunno what this is yet
     FONTATTR_COLOR_FOREGROUND,
     FONTATTR_COLOR_BACKGROUND,
     FONTATTR_COLOR_SHADOW
@@ -52,12 +58,12 @@ enum {
 
 struct TextPrinterSubStruct
 {
-    u8 fontId:4;  // 0x14
-    bool8 hasPrintBeenSpedUp:1;
-    u8 unk:3;
-    u8 downArrowDelay:5;
-    u8 downArrowYPosIdx:2;
-    bool8 hasFontIdBeenSet:1;
+    u8 fontId : 4; // 0x14
+    bool8 hasPrintBeenSpedUp : 1;
+    u8 unk : 3;
+    u8 downArrowDelay : 5;
+    u8 downArrowYPosIdx : 2;
+    bool8 hasFontIdBeenSet : 1;
     u8 autoScrollDelay;
 };
 
@@ -68,14 +74,14 @@ struct TextPrinterTemplate
     u8 fontId;
     u8 x;
     u8 y;
-    u8 currentX;        // 0x8
+    u8 currentX; // 0x8
     u8 currentY;
     u8 letterSpacing;
     u8 lineSpacing;
-    u8 unk:4;   // 0xC
-    u8 fgColor:4;
-    u8 bgColor:4;
-    u8 shadowColor:4;
+    u8 unk : 4; // 0xC
+    u8 fgColor : 4;
+    u8 bgColor : 4;
+    u8 shadowColor : 4;
 };
 
 struct TextPrinter
@@ -86,11 +92,11 @@ struct TextPrinter
 
     u8 subStructFields[7]; // always cast to struct TextPrinterSubStruct... so why bother
     u8 active;
-    u8 state;       // 0x1C
+    u8 state; // 0x1C
     u8 textSpeed;
     u8 delayCounter;
     u8 scrollDistance;
-    u8 minLetterSpacing;  // 0x20
+    u8 minLetterSpacing; // 0x20
     u8 japanese;
 };
 
@@ -101,10 +107,10 @@ struct FontInfo
     u8 maxLetterHeight;
     u8 letterSpacing;
     u8 lineSpacing;
-    u8 unk:4;
-    u8 fgColor:4;
-    u8 bgColor:4;
-    u8 shadowColor:4;
+    u8 unk : 4;
+    u8 fgColor : 4;
+    u8 bgColor : 4;
+    u8 shadowColor : 4;
 };
 
 extern const struct FontInfo *gFonts;
@@ -115,11 +121,12 @@ struct GlyphWidthFunc
     u32 (*func)(u16 glyphId, bool32 isJapanese);
 };
 
-typedef struct {
-    bool8 canABSpeedUpPrint:1;
-    bool8 useAlternateDownArrow:1;
-    bool8 autoScroll:1;
-    bool8 forceMidTextSpeed:1;
+typedef struct
+{
+    bool8 canABSpeedUpPrint : 1;
+    bool8 useAlternateDownArrow : 1;
+    bool8 autoScroll : 1;
+    bool8 forceMidTextSpeed : 1;
 } TextFlags;
 
 struct TextGlyph
