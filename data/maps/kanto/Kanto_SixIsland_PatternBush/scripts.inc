@@ -10,11 +10,11 @@ SixIsland_PatternBush_OnTransition::
 	end
 
 SixIsland_PatternBush_EventScript_SetEscapeRightExit::
-	setescapewarp MAP_SIX_ISLAND_GREEN_PATH, 255, 64, 10
+	setescapewarp MAP_KANTO_SIX_ISLAND_GREEN_PATH, 255, 64, 10
 	return
 
 SixIsland_PatternBush_EventScript_SetEscapeLeftExit::
-	setescapewarp MAP_SIX_ISLAND_GREEN_PATH, 255, 45, 10
+	setescapewarp MAP_KANTO_SIX_ISLAND_GREEN_PATH, 255, 45, 10
 	return
 
 SixIsland_PatternBush_EventScript_Bethany::

@@ -23,7 +23,7 @@ FourIsland_IcefallCave_1F_EventScript_FallDownHole::
 	waitmovement 0
 	playse SE_FALL
 	delay 60
-	warphole MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F
+	warphole MAP_KANTO_FOUR_ISLAND_ICEFALL_CAVE_B1F
 	waitstate
 	releaseall
 	end

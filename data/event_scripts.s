@@ -39,6 +39,7 @@
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_labels.h"
 #include "constants/moves.h"
+#include "constants/mystery_gift.h"
 #include "constants/party_menu.h"
 #include "constants/pokemon.h"
 #include "constants/roulette.h"
@@ -54,6 +55,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/trainer_tower.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -991,8 +993,6 @@ gStdScripts_End::
 	.include "data/maps/kanto/Kanto_SixIsland_WaterPath_House1/scripts.inc"
 	.include "data/maps/kanto/Kanto_SixIsland_WaterPath_House2/scripts.inc"
 	.include "data/maps/kanto/Kanto_SevenIsland_SevaultCanyon_House/scripts.inc"
-
-	; Kanto Texts incs
 
 	.include "data/maps/kanto/Kanto_ViridianForest/text.inc"
 	.include "data/maps/kanto/Kanto_MtMoon_1F/text.inc"

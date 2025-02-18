@@ -6,7 +6,7 @@ ThreeIsland_BerryForest_MapScripts::
 
 ThreeIsland_BerryForest_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST
-	setescapewarp MAP_THREE_ISLAND_BOND_BRIDGE, 12, 6
+	setescapewarp MAP_KANTO_THREE_ISLAND_BOND_BRIDGE, 12, 6
 	end
 
 ThreeIsland_BerryForest_EventScript_Lostelle::
@@ -38,7 +38,7 @@ ThreeIsland_BerryForest_EventScript_Lostelle::
 	setflag FLAG_HIDE_LOSTELLE_IN_BERRY_FOREST
 	setvar VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 2
 	clearflag FLAG_HIDE_TWO_ISLAND_GAME_CORNER_LOSTELLE
-	warp MAP_TWO_ISLAND_JOYFUL_GAME_CORNER, 6, 6
+	warp MAP_KANTO_TWO_ISLAND_JOYFUL_GAME_CORNER, 6, 6
 	waitstate
 	release
 	end

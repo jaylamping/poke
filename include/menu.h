@@ -5,21 +5,24 @@
 #include "text.h"
 #include "window.h"
 
+#define SCR_MENU_CANCEL 127
+#define SCR_MENU_UNSET 255
+
 #define MENU_NOTHING_CHOSEN -2
 #define MENU_B_PRESSED -1
 
-#define MENU_CURSOR_DELTA_NONE   0
-#define MENU_CURSOR_DELTA_UP    -1
-#define MENU_CURSOR_DELTA_DOWN   1
-#define MENU_CURSOR_DELTA_LEFT  -1
-#define MENU_CURSOR_DELTA_RIGHT  1
+#define MENU_CURSOR_DELTA_NONE 0
+#define MENU_CURSOR_DELTA_UP -1
+#define MENU_CURSOR_DELTA_DOWN 1
+#define MENU_CURSOR_DELTA_LEFT -1
+#define MENU_CURSOR_DELTA_RIGHT 1
 
-#define MENU_INFO_ICON_TYPE      (NUMBER_OF_MON_TYPES + 1)
-#define MENU_INFO_ICON_POWER     (NUMBER_OF_MON_TYPES + 2)
-#define MENU_INFO_ICON_ACCURACY  (NUMBER_OF_MON_TYPES + 3)
-#define MENU_INFO_ICON_PP        (NUMBER_OF_MON_TYPES + 4)
-#define MENU_INFO_ICON_EFFECT    (NUMBER_OF_MON_TYPES + 5)
-#define MENU_INFO_ICON_BALL_RED  (NUMBER_OF_MON_TYPES + 6)
+#define MENU_INFO_ICON_TYPE (NUMBER_OF_MON_TYPES + 1)
+#define MENU_INFO_ICON_POWER (NUMBER_OF_MON_TYPES + 2)
+#define MENU_INFO_ICON_ACCURACY (NUMBER_OF_MON_TYPES + 3)
+#define MENU_INFO_ICON_PP (NUMBER_OF_MON_TYPES + 4)
+#define MENU_INFO_ICON_EFFECT (NUMBER_OF_MON_TYPES + 5)
+#define MENU_INFO_ICON_BALL_RED (NUMBER_OF_MON_TYPES + 6)
 #define MENU_INFO_ICON_BALL_BLUE (NUMBER_OF_MON_TYPES + 7)
 
 enum
@@ -34,7 +37,8 @@ enum
 struct MenuAction
 {
     const u8 *text;
-    union {
+    union
+    {
         void (*void_u8)(u8);
         u8 (*u8_void)(void);
     } func;

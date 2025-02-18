@@ -31,7 +31,7 @@ SevenIsland_House_Room2_EventScript_BattleVisitingTrainer::
 	waitmovement 0
 	special LoadPlayerParty
 	setvar VAR_TEMP_1, 1
-	warp MAP_SEVEN_ISLAND_HOUSE_ROOM1, 4, 1
+	warp MAP_KANTO_SEVEN_ISLAND_HOUSE_ROOM1, 4, 1
 	waitstate
 	releaseall
 	end
