@@ -269,8 +269,6 @@ string generate_map_events_text(Json map_data)
                 targetMap = "MAP_" + region + targetMap.substr(4);
             }
 
-            cout << "targetMap: " << targetMap << endl;
-
             // If no type field is present, assume it's a regular object event.
             if (type == "" || type == "object")
             {
