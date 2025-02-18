@@ -285,7 +285,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GBAKid;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SuperNerd;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blackbelt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisher;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeler;
@@ -655,7 +654,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GBA_KID] = &gObjectEventGraphicsInfo_GBAKid,
     [OBJ_EVENT_GFX_SUPER_NERD] = &gObjectEventGraphicsInfo_SuperNerd,
     [OBJ_EVENT_GFX_BIKER] = &gObjectEventGraphicsInfo_Biker,
-    [OBJ_EVENT_GFX_BLACKBELT] = &gObjectEventGraphicsInfo_Blackbelt,
     [OBJ_EVENT_GFX_SCIENTIST] = &gObjectEventGraphicsInfo_Scientist,
     [OBJ_EVENT_GFX_FISHER] = &gObjectEventGraphicsInfo_Fisher,
     [OBJ_EVENT_GFX_CHANNELER] = &gObjectEventGraphicsInfo_Channeler,
