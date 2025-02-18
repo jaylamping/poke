@@ -579,8 +579,6 @@ gStdScripts_End::
 	.include "data/maps/hoenn/Hoenn_Route119_House/scripts.inc"
 	.include "data/maps/hoenn/Hoenn_Route124_DivingTreasureHuntersHouse/scripts.inc"
 
-	.include "data/maps/kanto/Kanto_RecordCorner/scripts.inc"
-	.include "data/maps/kanto/Kanto_BattleColosseum_4P/scripts.inc"
 	.include "data/maps/kanto/Kanto_ViridianForest/scripts.inc"
 	.include "data/maps/kanto/Kanto_MtMoon_1F/scripts.inc"
 	.include "data/maps/kanto/Kanto_MtMoon_B1F/scripts.inc"

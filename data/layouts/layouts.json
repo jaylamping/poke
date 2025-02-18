@@ -4855,18 +4855,6 @@
       "blockdata_filepath": "data/layouts/kanto/RecordCorner/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_BATTLE_COLOSSEUM_4P",
-      "name": "Kanto_BattleColosseum_4P_Layout",
-      "width": 14,
-      "height": 9,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Kanto_Building",
-      "secondary_tileset": "gTileset_Kanto_CableClub",
-      "border_filepath": "data/layouts/kanto/BattleColosseum_4P/border.bin",
-      "blockdata_filepath": "data/layouts/kanto/BattleColosseum_4P/map.bin"
-    },
-    {
       "id": "LAYOUT_KANTO_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE",
       "name": "Kanto_FuchsiaCity_SafariZone_Entrance_Layout",
       "width": 9,
