@@ -1905,6 +1905,19 @@
 	callstd STD_OBTAIN_ITEM
 	.endm
 
+	@ Adds the specified item to the bag, then prints a message with fanfare. See description of msgreceiveditem.
+	.macro giveitem_msg msg:req, item:req, amount=1, fanfare=MUS_LEVEL_UP
+	additem \item, \amount
+	msgreceiveditem \msg, \item, \amount, \fanfare
+	.endm
+
+	@ Depends on the provided function. With the default argument, unlocks the specified entry in the Fame Checker.
+	.macro famechecker person:req, index:req, function=SetFlavorTextFlagFromSpecialVars
+	setvar VAR_0x8004, \person
+	setvar VAR_0x8005, \index
+	special \function
+	.endm
+
 	@ For picking up items in the overworld. Similar to giveitem, but with different language and
 	@ sets the flag of the last-talked to object (the item the player picked up).
 	.macro finditem item:req, amount=1
