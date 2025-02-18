@@ -251,7 +251,7 @@ string generate_map_events_text(Json map_data)
         {
             auto obj_event = map_data["object_events"].array_items()[i];
             string type = json_to_string(obj_event, "type", true);
-            string targetMap = json_to_string(obj_event, "target_map");
+            string targetMap = json_to_string(obj_event, "target_map", true);
 
             string region = "";
             if (mapName.find("HOENN_") != string::npos)
@@ -268,6 +268,8 @@ string generate_map_events_text(Json map_data)
             {
                 targetMap = "MAP_" + region + targetMap.substr(4);
             }
+
+            cout << "targetMap: " << targetMap << endl;
 
             // If no type field is present, assume it's a regular object event.
             if (type == "" || type == "object")
