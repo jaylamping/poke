@@ -14,3 +14,5 @@
     .include "asm/macros/battle_frontier/battle_pyramid.inc"
     .include "asm/macros/battle_frontier/battle_tower.inc"
     .include "asm/macros/battle_frontier/frontier_util.inc"
+    .include "asm/macros/trainer_tower.inc"
+    .include "asm/macros/ec.inc"

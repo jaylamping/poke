@@ -754,7 +754,6 @@ gStdScripts_End::
 	.include "data/maps/kanto/Kanto_NavelRock_BasePath_B10F/scripts.inc"
 	.include "data/maps/kanto/Kanto_NavelRock_BasePath_B11F/scripts.inc"
 	.include "data/maps/kanto/Kanto_OneIsland_KindleRoad_EmberSpa/scripts.inc"
-	.include "data/maps/kanto/Kanto_NavelRock_Harbor/scripts.inc"
 	.include "data/maps/kanto/Kanto_PalletTown/scripts.inc"
 	.include "data/maps/kanto/Kanto_ViridianCity/scripts.inc"
 	.include "data/maps/kanto/Kanto_PewterCity/scripts.inc"

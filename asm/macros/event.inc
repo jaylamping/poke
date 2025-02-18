@@ -1905,6 +1905,48 @@
 	callstd STD_OBTAIN_ITEM
 	.endm
 
+	@ Sets the 'defeated' flag for all trainers in the specified gym.
+	.macro set_gym_trainers gym:req
+	setvar VAR_0x8008, \gym
+	call EventScript_SetGymTrainers
+	.endm
+
+	@ Prints the provided message after playing the fanfare music (can only be MUS_LEVEL_UP or MUS_OBTAIN_KEY_ITEM).
+	@ It then prints the message shown by using putitemaway.
+	.macro msgreceiveditem msg:req, item:req, amount=1, fanfare=MUS_LEVEL_UP
+	loadword 0, \msg
+	setorcopyvar VAR_0x8000, \item
+	setorcopyvar VAR_0x8001, \amount
+	setorcopyvar VAR_0x8002, \fanfare
+	callstd STD_RECEIVED_ITEM
+	.endm
+
+	@ Prints a braille message, then waits for users input.
+	.macro braillemessage_wait text:req
+	setvar VAR_0x8006, 0
+	braillemessage \text
+	getbraillestringwidth \text
+	call EventScript_BrailleCursorWaitButton
+	.endm
+
+	@ Gets the width of the specified message in the Braille font and sets the result to VAR_0x8004.
+	.macro getbraillestringwidth msg:req
+	.byte 0xd3
+	.4byte \msg
+	.endm
+
+	@ Jumps to dest if the Quest Log is currently showing playback scenes (dest is usually a release/end)
+	.macro goto_if_questlog dest:req
+	special GetQuestLogState
+	compare VAR_RESULT, 2
+	goto_if_eq \dest
+	.endm
+
+	@ Starts a trainer battle with victory text if the player loses. If flags is nonzero, the player will be healed after battle (and its assumed to be the tutorial battle)
+	.macro trainerbattle_earlyrival trainer:req, flags:req, defeat_text:req, victory_text:req
+	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, \trainer, \flags, \defeat_text, \victory_text
+	.endm
+
 	@ Adds the specified item to the bag, then prints a message with fanfare. See description of msgreceiveditem.
 	.macro giveitem_msg msg:req, item:req, amount=1, fanfare=MUS_LEVEL_UP
 	additem \item, \amount
