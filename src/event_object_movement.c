@@ -1163,6 +1163,36 @@ static const u8 sPlayerDirectionToCopyDirection[][4] = {
 
 #include "data/object_events/movement_action_func_tables.h"
 
+static void Step1(struct Sprite *sprite, u8 dir)
+{
+    sprite->x += sDirectionToVectors[dir].x;
+    sprite->y += sDirectionToVectors[dir].y;
+}
+
+static void Step2(struct Sprite *sprite, u8 dir)
+{
+    sprite->x += 2 * (u16)sDirectionToVectors[dir].x;
+    sprite->y += 2 * (u16)sDirectionToVectors[dir].y;
+}
+
+static void Step3(struct Sprite *sprite, u8 dir)
+{
+    sprite->x += 2 * (u16)sDirectionToVectors[dir].x + (u16)sDirectionToVectors[dir].x;
+    sprite->y += 2 * (u16)sDirectionToVectors[dir].y + (u16)sDirectionToVectors[dir].y;
+}
+
+static void Step4(struct Sprite *sprite, u8 dir)
+{
+    sprite->x += 4 * (u16)sDirectionToVectors[dir].x;
+    sprite->y += 4 * (u16)sDirectionToVectors[dir].y;
+}
+
+static void Step8(struct Sprite *sprite, u8 dir)
+{
+    sprite->x += 8 * (u16)sDirectionToVectors[dir].x;
+    sprite->y += 8 * (u16)sDirectionToVectors[dir].y;
+}
+
 static void ClearObjectEvent(struct ObjectEvent *objectEvent)
 {
     *objectEvent = (struct ObjectEvent){};
@@ -5297,13 +5327,70 @@ bool8 MovementAction_WalkSlowRight_Step1(struct ObjectEvent *objectEvent, struct
     return FALSE;
 }
 
-static bool8 MovementAction_WalkSlowerDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+void SetWalkSlowerSpriteData(struct Sprite *sprite, u8 direction)
+{
+    sprite->data[2] = direction;
+    sprite->data[3] = 0;
+    sprite->data[4] = 0;
+}
+
+void InitNpcForWalkSlower(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
+{
+    s16 x;
+    s16 y;
+
+    x = objectEvent->currentCoords.x;
+    y = objectEvent->currentCoords.y;
+    SetObjectEventDirection(objectEvent, direction);
+    MoveCoords(direction, &x, &y);
+    ShiftObjectEventCoords(objectEvent, x, y);
+    SetWalkSlowerSpriteData(sprite, direction);
+    sprite->animPaused = FALSE;
+    objectEvent->triggerGroundEffectsOnMove = TRUE;
+    sprite->data[2] = 1;
+}
+
+void InitWalkSlower(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
+{
+    InitNpcForWalkSlower(objectEvent, sprite, direction);
+    SetStepAnimHandleAlternation(objectEvent, sprite, GetMoveDirectionAnimNum(objectEvent->facingDirection));
+}
+
+bool8 UpdateWalkSlowerAnim(struct Sprite *sprite)
+{
+    if (!(sprite->animDelayCounter & 1))
+    {
+        Step1(sprite, sprite->data[2]);
+        sprite->animDelayCounter++;
+    }
+
+    sprite->animDelayCounter++;
+
+    if (sprite->animDelayCounter > 15)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 UpdateWalkSlower(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowerAnim(sprite))
+    {
+        ShiftStillObjectEventCoords(objectEvent);
+        objectEvent->triggerGroundEffectsOnStop = TRUE;
+        sprite->animPaused = TRUE;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkSlowerDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitWalkSlower(objectEvent, sprite, DIR_SOUTH);
     return MovementAction_WalkSlowerDown_Step1(objectEvent, sprite);
 }
 
-static bool8 MovementAction_WalkSlowerDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateWalkSlower(objectEvent, sprite))
     {
@@ -5313,13 +5400,13 @@ static bool8 MovementAction_WalkSlowerDown_Step1(struct ObjectEvent *objectEvent
     return FALSE;
 }
 
-static bool8 MovementAction_WalkSlowerUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitWalkSlower(objectEvent, sprite, DIR_NORTH);
     return MovementAction_WalkSlowerUp_Step1(objectEvent, sprite);
 }
 
-static bool8 MovementAction_WalkSlowerUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateWalkSlower(objectEvent, sprite))
     {
@@ -5329,13 +5416,13 @@ static bool8 MovementAction_WalkSlowerUp_Step1(struct ObjectEvent *objectEvent, 
     return FALSE;
 }
 
-static bool8 MovementAction_WalkSlowerLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitWalkSlower(objectEvent, sprite, DIR_WEST);
     return MovementAction_WalkSlowerLeft_Step1(objectEvent, sprite);
 }
 
-static bool8 MovementAction_WalkSlowerLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateWalkSlower(objectEvent, sprite))
     {
@@ -5345,13 +5432,13 @@ static bool8 MovementAction_WalkSlowerLeft_Step1(struct ObjectEvent *objectEvent
     return FALSE;
 }
 
-static bool8 MovementAction_WalkSlowerRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitWalkSlower(objectEvent, sprite, DIR_EAST);
     return MovementAction_WalkSlowerRight_Step1(objectEvent, sprite);
 }
 
-static bool8 MovementAction_WalkSlowerRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+bool8 MovementAction_WalkSlowerRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateWalkSlower(objectEvent, sprite))
     {
@@ -8255,36 +8342,6 @@ void UnfreezeObjectEvents(void)
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
         if (gObjectEvents[i].active)
             UnfreezeObjectEvent(&gObjectEvents[i]);
-}
-
-static void Step1(struct Sprite *sprite, u8 dir)
-{
-    sprite->x += sDirectionToVectors[dir].x;
-    sprite->y += sDirectionToVectors[dir].y;
-}
-
-static void Step2(struct Sprite *sprite, u8 dir)
-{
-    sprite->x += 2 * (u16)sDirectionToVectors[dir].x;
-    sprite->y += 2 * (u16)sDirectionToVectors[dir].y;
-}
-
-static void Step3(struct Sprite *sprite, u8 dir)
-{
-    sprite->x += 2 * (u16)sDirectionToVectors[dir].x + (u16)sDirectionToVectors[dir].x;
-    sprite->y += 2 * (u16)sDirectionToVectors[dir].y + (u16)sDirectionToVectors[dir].y;
-}
-
-static void Step4(struct Sprite *sprite, u8 dir)
-{
-    sprite->x += 4 * (u16)sDirectionToVectors[dir].x;
-    sprite->y += 4 * (u16)sDirectionToVectors[dir].y;
-}
-
-static void Step8(struct Sprite *sprite, u8 dir)
-{
-    sprite->x += 8 * (u16)sDirectionToVectors[dir].x;
-    sprite->y += 8 * (u16)sDirectionToVectors[dir].y;
 }
 
 #define sSpeed data[4]
