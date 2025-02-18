@@ -21,7 +21,7 @@ SSAnne_2F_Corridor_Text_RivalDefeat::
     .string "POKéMON!$"
 
 SSAnne_2F_Corridor_Text_RivalVictory::
-    .string "{PLAYER}‥！\n"
+    .string "{PLAYER}..! \n"
     .string "ふなよい　してるのか！\p"
     .string "もっと　からだ\n"
     .string "きたえた　ほうが　いいぜ！$"

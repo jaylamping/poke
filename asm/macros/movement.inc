@@ -25,6 +25,8 @@
 	create_movement_action delay_4, MOVEMENT_ACTION_DELAY_4
 	create_movement_action delay_8, MOVEMENT_ACTION_DELAY_8
 	create_movement_action delay_16, MOVEMENT_ACTION_DELAY_16
+	create_movement_action walk_slower_left, MOVEMENT_ACTION_WALK_SLOWER_LEFT
+	create_movement_action walk_slower_right, MOVEMENT_ACTION_WALK_SLOWER_RIGHT
 	create_movement_action walk_fast_down, MOVEMENT_ACTION_WALK_FAST_DOWN
 	create_movement_action walk_fast_up, MOVEMENT_ACTION_WALK_FAST_UP
 	create_movement_action walk_fast_left, MOVEMENT_ACTION_WALK_FAST_LEFT
