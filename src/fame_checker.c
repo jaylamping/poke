@@ -171,7 +171,7 @@ static const u8 *const sNonTrainerNamePointers[] = {
     gFameCheckerBillName,
     gFameCheckerMrFujiName};
 
-static const u8 sFameCheckerTrainerPicIdxs[] = {
+static const u16 sFameCheckerTrainerPicIdxs[] = {
     [FAMECHECKER_OAK] = TRAINER_PIC_CAMPER,
     [FAMECHECKER_DAISY] = TRAINER_PIC_LASS,
     [FAMECHECKER_BROCK] = TRAINER_PIC_LEADER_BROCK,
@@ -263,7 +263,7 @@ static const u8 *const sFameCheckerFlavorTextPointers[] = {
     gFameCheckerFlavorText_MrFuji0, gFameCheckerFlavorText_MrFuji1, gFameCheckerFlavorText_MrFuji2, gFameCheckerFlavorText_MrFuji3, gFameCheckerFlavorText_MrFuji4, gFameCheckerFlavorText_MrFuji5,
     gFameCheckerFlavorText_Giovanni0, gFameCheckerFlavorText_Giovanni1, gFameCheckerFlavorText_Giovanni2, gFameCheckerFlavorText_Giovanni3, gFameCheckerFlavorText_Giovanni4, gFameCheckerFlavorText_Giovanni5};
 
-static const u8 sFameCheckerArrayNpcGraphicsIds[] = {
+static const u16 sFameCheckerArrayNpcGraphicsIds[] = {
     // OAK
     OBJ_EVENT_GFX_SIGN,
     OBJ_EVENT_GFX_PROF_OAK,
