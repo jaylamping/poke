@@ -6,6 +6,7 @@
 #include "graphics.h"
 #include "battle.h"
 #include "battle_setup.h"
+#include "constants/battle_ai.h"
 #include "menu.h"
 #include "trainer_pokemon_sprites.h"
 #include "scanline_effect.h"
@@ -18,7 +19,11 @@
 #include "text_window.h"
 #include "fame_checker.h"
 #include "strings.h"
+#include "data.h"
+#include "constants/trainers.h"
+#include "data/trainer_parties.h"
 #include "constants/event_objects.h"
+#include "data/trainers.h"
 
 #define SPRITETAG_SELECTOR_CURSOR 1000
 #define SPRITETAG_QUESTION_MARK 1001
@@ -1455,14 +1460,14 @@ static void FC_DoMoveCursor(s32 itemIndex, bool8 onInit)
     u16 who;
     ListMenuGetScrollAndRow(sFameCheckerData->listMenuTaskId, &listY, &cursorY);
     who = listY + cursorY;
-    AddTextPrinterParameterized4(FCWINDOWID_LIST, FONT_NORMAL, 8, 14 * cursorY + 4, 0, 0, sTextColor_Green, 0, sListMenuItems[itemIndex].label);
+    AddTextPrinterParameterized4(FCWINDOWID_LIST, FONT_NORMAL, 8, 14 * cursorY + 4, 0, 0, sTextColor_Green, 0, sListMenuItems[itemIndex].name);
     if (!onInit)
     {
         if (listY < sFameCheckerData->listMenuTopIdx2)
             sFameCheckerData->listMenuDrawnSelIdx++;
         else if (listY > sFameCheckerData->listMenuTopIdx2 && who != sFameCheckerData->numUnlockedPersons - 1)
             sFameCheckerData->listMenuDrawnSelIdx--;
-        AddTextPrinterParameterized4(FCWINDOWID_LIST, FONT_NORMAL, 8, 14 * sFameCheckerData->listMenuDrawnSelIdx + 4, 0, 0, sTextColor_DkGrey, 0, sListMenuItems[sFameCheckerData->listMenuCurIdx].label);
+        AddTextPrinterParameterized4(FCWINDOWID_LIST, FONT_NORMAL, 8, 14 * sFameCheckerData->listMenuDrawnSelIdx + 4, 0, 0, sTextColor_DkGrey, 0, sListMenuItems[sFameCheckerData->listMenuCurIdx].name);
     }
     sFameCheckerData->listMenuCurIdx = itemIndex;
     sFameCheckerData->listMenuDrawnSelIdx = cursorY;
@@ -1481,20 +1486,20 @@ static u8 FC_PopulateListMenu(void)
         {
             if (sTrainerIdxs[fameCheckerIdx] < FC_NONTRAINER_START)
             {
-                sListMenuItems[nitems].label = gTrainers[sTrainerIdxs[fameCheckerIdx]].trainerName;
-                sListMenuItems[nitems].index = nitems;
+                sListMenuItems[nitems].name = gTrainers[sTrainerIdxs[fameCheckerIdx]].trainerName;
+                sListMenuItems[nitems].id = nitems;
             }
             else
             {
-                sListMenuItems[nitems].label = sNonTrainerNamePointers[sTrainerIdxs[fameCheckerIdx] - FC_NONTRAINER_START];
-                sListMenuItems[nitems].index = nitems;
+                sListMenuItems[nitems].name = sNonTrainerNamePointers[sTrainerIdxs[fameCheckerIdx] - FC_NONTRAINER_START];
+                sListMenuItems[nitems].id = nitems;
             }
             sFameCheckerData->unlockedPersons[nitems] = fameCheckerIdx;
             nitems++;
         }
     }
-    sListMenuItems[nitems].label = gFameCheckerText_Cancel;
-    sListMenuItems[nitems].index = nitems;
+    sListMenuItems[nitems].name = gFameCheckerText_Cancel;
+    sListMenuItems[nitems].id = nitems;
     sFameCheckerData->unlockedPersons[nitems] = 0xFF;
     nitems++;
     gFameChecker_ListMenuTemplate.totalItems = nitems;

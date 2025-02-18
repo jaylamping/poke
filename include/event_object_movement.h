@@ -8,7 +8,8 @@
 // time while walking around the overworld. The only exceptions are the palettes for the player and
 // the "special" NPC, which can be swapped out. This also means that e.g. two "special" NPCs
 // with competing palettes cannot be properly loaded at the same time.
-enum {
+enum
+{
     PALSLOT_PLAYER,
     PALSLOT_PLAYER_REFLECTION,
     PALSLOT_NPC_1,
@@ -50,32 +51,32 @@ enum ReflectionTypes
 
 #define FIGURE_8_LENGTH 72
 
-#define GROUND_EFFECT_FLAG_TALL_GRASS_ON_SPAWN   (1 << 0)
-#define GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE    (1 << 1)
-#define GROUND_EFFECT_FLAG_LONG_GRASS_ON_SPAWN   (1 << 2)
-#define GROUND_EFFECT_FLAG_LONG_GRASS_ON_MOVE    (1 << 3)
-#define GROUND_EFFECT_FLAG_WATER_REFLECTION      (1 << 4)
-#define GROUND_EFFECT_FLAG_ICE_REFLECTION        (1 << 5)
+#define GROUND_EFFECT_FLAG_TALL_GRASS_ON_SPAWN (1 << 0)
+#define GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE (1 << 1)
+#define GROUND_EFFECT_FLAG_LONG_GRASS_ON_SPAWN (1 << 2)
+#define GROUND_EFFECT_FLAG_LONG_GRASS_ON_MOVE (1 << 3)
+#define GROUND_EFFECT_FLAG_WATER_REFLECTION (1 << 4)
+#define GROUND_EFFECT_FLAG_ICE_REFLECTION (1 << 5)
 #define GROUND_EFFECT_FLAG_SHALLOW_FLOWING_WATER (1 << 6)
-#define GROUND_EFFECT_FLAG_SAND                  (1 << 7)
-#define GROUND_EFFECT_FLAG_DEEP_SAND             (1 << 8)
-#define GROUND_EFFECT_FLAG_RIPPLES               (1 << 9)
-#define GROUND_EFFECT_FLAG_PUDDLE                (1 << 10)
-#define GROUND_EFFECT_FLAG_SAND_PILE             (1 << 11)
-#define GROUND_EFFECT_FLAG_LAND_IN_TALL_GRASS    (1 << 12)
-#define GROUND_EFFECT_FLAG_LAND_IN_LONG_GRASS    (1 << 13)
+#define GROUND_EFFECT_FLAG_SAND (1 << 7)
+#define GROUND_EFFECT_FLAG_DEEP_SAND (1 << 8)
+#define GROUND_EFFECT_FLAG_RIPPLES (1 << 9)
+#define GROUND_EFFECT_FLAG_PUDDLE (1 << 10)
+#define GROUND_EFFECT_FLAG_SAND_PILE (1 << 11)
+#define GROUND_EFFECT_FLAG_LAND_IN_TALL_GRASS (1 << 12)
+#define GROUND_EFFECT_FLAG_LAND_IN_LONG_GRASS (1 << 13)
 #define GROUND_EFFECT_FLAG_LAND_IN_SHALLOW_WATER (1 << 14)
-#define GROUND_EFFECT_FLAG_LAND_IN_DEEP_WATER    (1 << 15)
+#define GROUND_EFFECT_FLAG_LAND_IN_DEEP_WATER (1 << 15)
 #define GROUND_EFFECT_FLAG_LAND_ON_NORMAL_GROUND (1 << 16)
-#define GROUND_EFFECT_FLAG_SHORT_GRASS           (1 << 17)
-#define GROUND_EFFECT_FLAG_HOT_SPRINGS           (1 << 18)
-#define GROUND_EFFECT_FLAG_SEAWEED               (1 << 19)
+#define GROUND_EFFECT_FLAG_SHORT_GRASS (1 << 17)
+#define GROUND_EFFECT_FLAG_HOT_SPRINGS (1 << 18)
+#define GROUND_EFFECT_FLAG_SEAWEED (1 << 19)
 
 // Sprite data for the CameraObject functions
 #define sCamera_FollowSpriteId data[0]
-#define sCamera_State          data[1]
-#define sCamera_MoveX          data[2]
-#define sCamera_MoveY          data[3]
+#define sCamera_State data[1]
+#define sCamera_MoveX data[2]
+#define sCamera_MoveY data[3]
 
 struct StepAnimTable
 {
@@ -104,6 +105,7 @@ extern const u16 *const gBerryTreeObjectEventGraphicsIdTablePointers[];
 extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
 extern const u8 *const gBerryTreePaletteSlotTablePointers[];
 
+void CopyObjectGraphicsInfoToSpriteTemplate(u16 graphicsId, void (*callback)(struct Sprite *), struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables);
 void ResetObjectEvents(void);
 u8 GetMoveDirectionAnimNum(u8 direction);
 u8 GetObjectEventIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroupId);
@@ -194,6 +196,7 @@ void ShiftStillObjectEventCoords(struct ObjectEvent *objEvent);
 void ObjectEventMoveDestCoords(struct ObjectEvent *objEvent, u32 direction, s16 *x, s16 *y);
 u8 AddCameraObject(u8 linkedSpriteId);
 void UpdateObjectEventsForCameraUpdate(s16 x, s16 y);
+u8 CreateFameCheckerObject(u8 graphicsId, u8 localId, s16 x, s16 y);
 u8 GetWalkSlowMovementAction(u32);
 u8 GetJumpMovementAction(u32);
 u8 ElevationToPriority(u8 elevation);
@@ -446,4 +449,4 @@ bool32 IsVirtualObjectInvisible(u8 virtualObjId);
 void SetVirtualObjectSpriteAnim(u8 virtualObjId, u8 animNum);
 bool32 IsVirtualObjectAnimating(u8 virtualObjId);
 
-#endif //GUARD_EVENT_OBJECT_MOVEMENT_H
+#endif // GUARD_EVENT_OBJECT_MOVEMENT_H

@@ -1388,6 +1388,39 @@ static void RemoveObjectEventInternal(struct ObjectEvent *objectEvent)
     DestroySprite(&gSprites[objectEvent->spriteId]);
 }
 
+u8 CreateFameCheckerObject(u8 graphicsId, u8 localId, s16 x, s16 y)
+{
+    u8 spriteId;
+    struct Sprite *sprite;
+    struct SpriteTemplate spriteTemplate;
+    const struct SubspriteTable *subspriteTables;
+    const struct ObjectEventGraphicsInfo *graphicsInfo;
+
+    graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
+    CopyObjectGraphicsInfoToSpriteTemplate(graphicsId, SpriteCallbackDummy, &spriteTemplate, &subspriteTables);
+    *(u16 *)&spriteTemplate.paletteTag = TAG_NONE;
+
+    spriteId = CreateSpriteAtEnd(&spriteTemplate, x, y, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        sprite = &gSprites[spriteId];
+        sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
+        sprite->y += sprite->centerToCornerVecY;
+        sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+        sprite->data[0] = localId;
+        if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
+            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+
+        if (subspriteTables != NULL)
+        {
+            SetSubspriteTables(sprite, subspriteTables);
+            sprite->subspriteMode = SUBSPRITES_IGNORE_PRIORITY;
+        }
+        StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_SOUTH));
+    }
+    return spriteId;
+}
+
 void RemoveAllObjectEventsExceptPlayer(void)
 {
     u8 i;
@@ -1524,7 +1557,7 @@ u8 TrySpawnObjectEvent(u8 localId, u8 mapNum, u8 mapGroup)
     return TrySpawnObjectEventTemplate(objectEventTemplate, mapNum, mapGroup, cameraX, cameraY);
 }
 
-static void CopyObjectGraphicsInfoToSpriteTemplate(u16 graphicsId, void (*callback)(struct Sprite *), struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables)
+void CopyObjectGraphicsInfoToSpriteTemplate(u16 graphicsId, void (*callback)(struct Sprite *), struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
 

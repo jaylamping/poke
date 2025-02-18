@@ -5070,4 +5070,10 @@ extern const u8 gMailTilemap_Retro[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
+// fame_checker
+extern const u16 gFameCheckerBgPals[][16];
+extern const u16 gFameCheckerBgTiles[0xa50];
+extern const u16 gFameCheckerBg3Tilemap[0x400];
+extern const u16 gFameCheckerBg2Tilemap[0x400];
+
 #endif // GUARD_GRAPHICS_H

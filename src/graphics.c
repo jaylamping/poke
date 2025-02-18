@@ -1550,6 +1550,11 @@ const u16 gBerryCrush_Crusher_Pal[] = INCBIN_U16("graphics/berry_crush/crusher.g
 const u32 gBerryCrush_Crusher_Gfx[] = INCBIN_U32("graphics/berry_crush/crusher.4bpp.lz");
 const u32 gBerryCrush_TextWindows_Tilemap[] = INCBIN_U32("graphics/berry_crush/text_windows.bin.lz");
 
+const u16 gFameCheckerBgPals[][16] = INCBIN_U16("graphics/fame_checker/bg.gbapal");
+const u16 gFameCheckerBgTiles[] = INCBIN_U16("graphics/fame_checker/bg.4bpp");
+const u16 gFameCheckerBg3Tilemap[] = INCBIN_U16("graphics/fame_checker/tilemap3.bin");
+const u16 gFameCheckerBg2Tilemap[] = INCBIN_U16("graphics/fame_checker/tilemap2.bin");
+
 // random garbage at the end.
 static const u8 sEmpty3[0x54BAC] = {0};
 static const u8 sUnused1[] = {0x0D, 0x00, 0x58, 0x02};
