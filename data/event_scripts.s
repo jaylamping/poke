@@ -21,6 +21,7 @@
 #include "constants/easy_chat.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
+#include "constants/fame_checker.h"
 #include "constants/field_effects.h"
 #include "constants/field_poison.h"
 #include "constants/field_specials.h"
@@ -1523,6 +1524,25 @@ Common_EventScript_NameReceivedPartyMon::
 	fadescreen FADE_TO_BLACK
 	special ChangePokemonNickname
 	waitstate
+	return
+
+Std_PutItemAway::
+	bufferitemnameplural STR_VAR_2, VAR_0x8000, VAR_0x8001
+	checkitemtype VAR_0x8000
+	call EventScript_BufferPutAwayPocketName
+	msgbox Text_PutItemAway
+	return
+
+Std_ReceivedItem::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	call_if_eq VAR_0x8002, MUS_LEVEL_UP, EventScript_ReceivedItemFanfare1
+	call_if_eq VAR_0x8002, MUS_OBTAIN_KEY_ITEM, EventScript_ReceivedItemFanfare2
+	message 0x0
+	waitmessage
+	waitfanfare
+	call_if_eq VAR_0x8002, MUS_LEVEL_UP, EventScript_ReceivedItemWaitFanfare
+	putitemaway VAR_0x8000, VAR_0x8001
+	call EventScript_RestorePrevTextColor
 	return
 
 Common_EventScript_PlayerHandedOverTheItem::
